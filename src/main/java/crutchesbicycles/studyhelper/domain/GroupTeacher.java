@@ -6,6 +6,7 @@ import java.util.List;
 @Entity
 public class GroupTeacher {
     @Id
+    @GeneratedValue
     private long idGroupTeacher;
 
     @OneToOne

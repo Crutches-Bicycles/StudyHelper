@@ -1,22 +1,19 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class TeacherSubject {
 
     @Id
+    @GeneratedValue
     private long idTeacherSubject;
 
-    // DON'T SURE
     @OneToOne
     private Teachers teacher;
 
-    @OneToMany
+    @ManyToMany
     private List<ListSubjects> subjects;
 
     public long getIdTeacherSubject() {

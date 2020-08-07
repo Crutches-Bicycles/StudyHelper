@@ -1,22 +1,30 @@
 package crutchesbicycles.studyhelper.domain;
 
 
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 public class GroupMaterial {
     @Id
+    @GeneratedValue
     private long idMaterial;
 
     @OneToMany
     private List<ListSubjects> subject;
 
+    @Column(nullable = false)
     private String linkTo;
+
+    @Column(nullable = false)
     private String file;
+
+    @Column(nullable = false)
     private String caption;
+
     private String description;
-    private String labelSubject;
+
+    @ManyToMany
+    private List<ListSubjects> labelSubject;
 
     public long getIdMaterial() {
         return idMaterial;
@@ -66,11 +74,11 @@ public class GroupMaterial {
         this.description = description;
     }
 
-    public String getLabelSubject() {
+    public List<ListSubjects> getLabelSubject() {
         return labelSubject;
     }
 
-    public void setLabelSubject(String labelSubject) {
+    public void setLabelSubject(List<ListSubjects> labelSubject) {
         this.labelSubject = labelSubject;
     }
 }

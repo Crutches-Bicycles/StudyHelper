@@ -1,12 +1,14 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Schedules {
     @Id
+    @GeneratedValue
     private long idSchedule;
 
     @ManyToOne

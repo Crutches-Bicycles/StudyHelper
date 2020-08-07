@@ -1,22 +1,28 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class ScheduleRecords {
     @Id
+    @GeneratedValue
     private long idScheduleRecord;
 
     @ManyToOne
     private Schedules schedule;
 
-    private long idDay;
-    private long idPair;
-    private long idSubjectEven;
-    private long idSubjectOdd;
+    @ManyToOne
+    private ListDays days;
+
+    @ManyToOne
+    private ListPairs pairs;
+
+    @ManyToOne
+    private ListSubjects idSubjectEven;
+
+    @ManyToOne
+    private ListSubjects idSubjectOdd;
 
     public long getIdScheduleRecord() {
         return idScheduleRecord;
@@ -34,35 +40,35 @@ public class ScheduleRecords {
         this.schedule = schedule;
     }
 
-    public long getIdDay() {
-        return idDay;
+    public ListDays getDays() {
+        return days;
     }
 
-    public void setIdDay(long idDay) {
-        this.idDay = idDay;
+    public void setDays(ListDays days) {
+        this.days = days;
     }
 
-    public long getIdPair() {
-        return idPair;
+    public ListPairs getPairs() {
+        return pairs;
     }
 
-    public void setIdPair(long idPair) {
-        this.idPair = idPair;
+    public void setPairs(ListPairs pairs) {
+        this.pairs = pairs;
     }
 
-    public long getIdSubjectEven() {
+    public ListSubjects getIdSubjectEven() {
         return idSubjectEven;
     }
 
-    public void setIdSubjectEven(long idSubjectEven) {
+    public void setIdSubjectEven(ListSubjects idSubjectEven) {
         this.idSubjectEven = idSubjectEven;
     }
 
-    public long getIdSubjectOdd() {
+    public ListSubjects getIdSubjectOdd() {
         return idSubjectOdd;
     }
 
-    public void setIdSubjectOdd(long idSubjectOdd) {
+    public void setIdSubjectOdd(ListSubjects idSubjectOdd) {
         this.idSubjectOdd = idSubjectOdd;
     }
 }

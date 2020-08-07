@@ -6,6 +6,7 @@ import java.util.Date;
 @Entity
 public class Traffic {
     @Id
+    @GeneratedValue
     private long idTraffic;
 
     @ManyToOne

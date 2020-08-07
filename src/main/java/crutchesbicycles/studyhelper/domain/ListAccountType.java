@@ -1,12 +1,14 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class ListAccountType {
 
     @Id
+    @GeneratedValue
     private long idAccountType;
     private String description;
 

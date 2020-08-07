@@ -1,14 +1,12 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 public class Accounts implements Serializable {
     @Id
+    @GeneratedValue
     private long idAccount;
 
     @OneToOne
@@ -20,7 +18,6 @@ public class Accounts implements Serializable {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
     @OneToOne
     private ListAccountType accountType;
 

@@ -6,17 +6,24 @@ import java.util.List;
 @Entity
 public class StudentMaterial {
     @Id
+    @GeneratedValue
     private long idMaterial;
 
     @ManyToOne
     private Students student;
 
+    @Column(nullable = false)
     private String linkTo;
+
+    @Column(nullable = false)
     private String file;
+
+    @Column(nullable = false)
     private String caption;
+
     private String description;
 
-    @OneToMany
+    @ManyToMany
     private List<ListSubjects> subject;
 
     public long getIdMaterial() {

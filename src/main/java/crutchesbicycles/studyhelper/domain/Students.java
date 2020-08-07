@@ -1,19 +1,20 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Students {
     @Id
+    @GeneratedValue
     private long idStudent;
 
     @ManyToOne
     private Groups group;
 
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String secondName;
     private String patronymic;
 

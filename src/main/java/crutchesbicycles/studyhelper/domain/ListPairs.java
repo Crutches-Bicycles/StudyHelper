@@ -1,14 +1,12 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 public class ListPairs {
     @Id
+    @GeneratedValue
     private long idPair;
 
     private long number;
