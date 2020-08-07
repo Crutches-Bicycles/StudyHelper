@@ -1,8 +1,6 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -10,6 +8,33 @@ public class GroupTeacher {
     @Id
     private long idGroupTeacher;
 
+    @OneToOne
+    private Groups group;
+
     @ManyToMany
-    private List<Groups> groups;
+    private List<Teachers> teachers;
+
+    public long getIdGroupTeacher() {
+        return idGroupTeacher;
+    }
+
+    public void setIdGroupTeacher(long idGroupTeacher) {
+        this.idGroupTeacher = idGroupTeacher;
+    }
+
+    public Groups getGroup() {
+        return group;
+    }
+
+    public void setGroup(Groups group) {
+        this.group = group;
+    }
+
+    public List<Teachers> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<Teachers> teachers) {
+        this.teachers = teachers;
+    }
 }

@@ -1,9 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class StudentMaterial {
@@ -18,8 +16,8 @@ public class StudentMaterial {
     private String caption;
     private String description;
 
-    @OneToOne
-    private ListSubjects subject;
+    @OneToMany
+    private List<ListSubjects> subject;
 
     public long getIdMaterial() {
         return idMaterial;
@@ -69,11 +67,11 @@ public class StudentMaterial {
         this.description = description;
     }
 
-    public ListSubjects getSubject() {
+    public List<ListSubjects> getSubject() {
         return subject;
     }
 
-    public void setSubject(ListSubjects subject) {
+    public void setSubject(List<ListSubjects> subject) {
         this.subject = subject;
     }
 }
