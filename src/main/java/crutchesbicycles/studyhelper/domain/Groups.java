@@ -6,6 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Сущность Groups. Описывает группу. \n
+ * Состоит из полей:
+ * @param idGroup
+ * @param caption (nullable = false) -- название группы
+ * @param email  (nullable = false, unique = true) -- почта группы
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Groups {
     @Id

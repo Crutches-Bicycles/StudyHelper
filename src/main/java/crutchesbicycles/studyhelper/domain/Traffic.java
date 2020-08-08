@@ -3,6 +3,17 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.Date;
 
+/**
+ * Сущность Traffic. Посещение студентов.\n
+ * Состоит из полей:
+ * @param idStudent
+ * @param student -- Студент
+ * @param scheduleRecord -- Запись в расписании
+ * @param date -- Дата пары
+ * @param isAttend -- отметка посещения (true/false)
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Traffic {
     @Id

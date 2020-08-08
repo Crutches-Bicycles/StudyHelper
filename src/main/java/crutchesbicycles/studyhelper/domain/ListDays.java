@@ -4,6 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+
+/**
+ * Сущность ListDays. Список дней, с коротким названием. \n
+ * Состоит из полей:
+ * @param idDay
+ * @param caption -- название дня (Понедельник и тд)
+ * @param shortCaption -- короткое название (пн, вт и тд)
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class ListDays {
     @Id

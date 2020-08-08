@@ -4,10 +4,24 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Сущность GroupMaterial. Содержит материалы группы.
+ * @param idMaterial
+ * @param subject -- Предмет
+ * @param linkTo -- Ссылка на файл
+ * @param file -- Название файла
+ * @param caption -- Публичное название файла
+ * @param description -- Описание файла
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 public class GroupMaterial {
+
+    /** Уникальный id */
     @Id
     @GeneratedValue
     private long idMaterial;
+
 
     @OneToMany
     private List<ListSubjects> subject;

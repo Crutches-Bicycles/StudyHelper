@@ -5,6 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Сущность ListSubjects. Список предметов. \n
+ * Состоит из полей:
+ * @param idSubject
+ * @param caption -- название предмета
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class ListSubjects {
     @Id

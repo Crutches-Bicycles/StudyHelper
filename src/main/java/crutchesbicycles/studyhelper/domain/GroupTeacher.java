@@ -3,6 +3,16 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.List;
 
+
+/**
+ * Сущность GroupTeacher. Привязка преподавателей к группе. \n
+ * Состоит из полей:
+ * @param idGroupTeacher
+ * @param group -- группа
+ * @param teachers -- список преподавателей группы
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class GroupTeacher {
     @Id

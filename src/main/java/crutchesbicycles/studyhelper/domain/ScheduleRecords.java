@@ -3,6 +3,18 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Сущность ScheduleRecords. Записи в расписании. \n
+ * Состоит из полей:
+ * @param idScheduleRecord
+ * @param schedule -- полное расписание
+ * @param days -- день пары
+ * @param pairs -- номер пары
+ * @param subjectEven -- пара на четной неделе
+ * @param subjectOdd -- пара на нечетной неделе
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class ScheduleRecords {
     @Id
@@ -19,10 +31,10 @@ public class ScheduleRecords {
     private ListPairs pairs;
 
     @ManyToOne
-    private ListSubjects idSubjectEven;
+    private ListSubjects subjectEven;
 
     @ManyToOne
-    private ListSubjects idSubjectOdd;
+    private ListSubjects subjectOdd;
 
     public long getIdScheduleRecord() {
         return idScheduleRecord;
@@ -56,19 +68,19 @@ public class ScheduleRecords {
         this.pairs = pairs;
     }
 
-    public ListSubjects getIdSubjectEven() {
-        return idSubjectEven;
+    public ListSubjects getSubjectEven() {
+        return subjectEven;
     }
 
-    public void setIdSubjectEven(ListSubjects idSubjectEven) {
-        this.idSubjectEven = idSubjectEven;
+    public void setSubjectEven(ListSubjects subjectEven) {
+        this.subjectEven = subjectEven;
     }
 
-    public ListSubjects getIdSubjectOdd() {
-        return idSubjectOdd;
+    public ListSubjects getSubjectOdd() {
+        return subjectOdd;
     }
 
-    public void setIdSubjectOdd(ListSubjects idSubjectOdd) {
-        this.idSubjectOdd = idSubjectOdd;
+    public void setSubjectOdd(ListSubjects subjectOdd) {
+        this.subjectOdd = subjectOdd;
     }
 }

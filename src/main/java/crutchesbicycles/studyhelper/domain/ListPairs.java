@@ -3,6 +3,17 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.Date;
 
+
+/**
+ * Сущность ListPairs. Список дней, с коротким названием. \n
+ * Состоит из полей:
+ * @param idPair
+ * @param number -- номер пары
+ * @param startTime -- начало пары
+ * @param endTime -- конец пары
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class ListPairs {
     @Id

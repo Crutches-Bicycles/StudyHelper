@@ -3,6 +3,19 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * Сущность Accounts. Предоставляет основные поля для аккаунта, внезависимости от типа аккаунта.\n
+ * Расширяет сущность Students.\n
+ * Состоит из полей:\n
+ * @param idAccount -- уникальный id\n
+ * @param student -- Students
+ * @param email -- почта пользователя
+ * @param password -- пароль
+ * @param accountType -- тип аккаунта, может быть как староста, зам старосты и просто студент
+ * @see Students
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Accounts implements Serializable {
     @Id

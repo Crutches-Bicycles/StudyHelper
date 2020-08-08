@@ -5,6 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+/**
+ * Сущность Schedules. Полное расписание. \n
+ * Состоит из полей:
+ * @param idSchedule
+ * @param group -- группа
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Schedules {
     @Id

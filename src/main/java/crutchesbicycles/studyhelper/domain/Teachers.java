@@ -5,6 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+/**
+ * Сущность Teachers. \n
+ * Состоит из полей:
+ * @param idTeacher
+ * @param firstName -- Имя
+ * @param secondName -- Фамилия
+ * @param patronymic -- Отчество
+ * @param email -- почта
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Teachers {
     @Id

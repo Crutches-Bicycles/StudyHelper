@@ -2,6 +2,17 @@ package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
 
+/**
+ * Сущность Students. \n
+ * Состоит из полей:
+ * @param idStudent
+ * @param firstName -- Имя
+ * @param secondName -- Фамилия
+ * @param patronymic -- Отчество
+ * @param group -- группа
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class Students {
     @Id

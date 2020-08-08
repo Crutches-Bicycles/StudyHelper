@@ -3,6 +3,19 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Сущность StudentMaterial. Материалы студента. \n
+ * Состоит из полей:
+ * @param idMaterial
+ * @param student -- студенты
+ * @param linkTo -- местоположение файла (ссылка)
+ * @param file -- навзание файла
+ * @param caption -- публичное название файла
+ * @param description -- описание файла
+ * @param subject -- метки предметов
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
 @Entity
 public class StudentMaterial {
     @Id
