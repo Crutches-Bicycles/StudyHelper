@@ -72,4 +72,14 @@ public class Teachers {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Teachers() {
+    }
+
+    public Teachers(String firstName, String secondName, String patronymic, String email) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.patronymic = patronymic;
+        this.email = email;
+    }
 }

@@ -59,4 +59,13 @@ public class ListPairs {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
+    public ListPairs() {
+    }
+
+    public ListPairs(long number, Date startTime, Date endTime) {
+        this.number = number;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 }

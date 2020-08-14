@@ -68,4 +68,14 @@ public class Students {
     public void setPatronymic(String patronymic) {
         this.patronymic = patronymic;
     }
+
+    public Students() {
+    }
+
+    public Students(Groups group, String firstName, String secondName, String patronymic) {
+        this.group = group;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.patronymic = patronymic;
+    }
 }

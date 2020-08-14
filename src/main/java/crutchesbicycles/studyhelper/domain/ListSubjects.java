@@ -37,4 +37,11 @@ public class ListSubjects {
     public void setCaption(String caption) {
         this.caption = caption;
     }
+
+    public ListSubjects() {
+    }
+
+    public ListSubjects(String caption) {
+        this.caption = caption;
+    }
 }

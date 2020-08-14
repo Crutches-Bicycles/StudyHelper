@@ -12,27 +12,11 @@ import javax.persistence.Id;
  * @author vgtstptlk / Magerram Zeynalov
  * @version 1.0.0
  */
-@Entity
-public class ListAccountType {
 
-    @Id
-    @GeneratedValue
-    private long idAccountType;
-    private String description;
+public enum ListAccountType {
+    ADMIN,
+    USER;
 
-    public long getIdAccountType() {
-        return idAccountType;
-    }
-
-    public void setIdAccountType(long idAccountType) {
-        this.idAccountType = idAccountType;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    ListAccountType() {
     }
 }

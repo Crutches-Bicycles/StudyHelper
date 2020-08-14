@@ -48,4 +48,12 @@ public class TeacherSubject {
     public void setSubjects(List<ListSubjects> subjects) {
         this.subjects = subjects;
     }
+
+    public TeacherSubject() {
+    }
+
+    public TeacherSubject(Teachers teacher, List<ListSubjects> subjects) {
+        this.teacher = teacher;
+        this.subjects = subjects;
+    }
 }

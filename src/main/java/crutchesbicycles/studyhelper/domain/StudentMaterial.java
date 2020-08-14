@@ -94,4 +94,17 @@ public class StudentMaterial {
     public void setSubject(List<ListSubjects> subject) {
         this.subject = subject;
     }
+
+    public StudentMaterial() {
+    }
+
+    public StudentMaterial(Students student, String linkTo, String file, String caption, String description,
+                           List<ListSubjects> subject) {
+        this.student = student;
+        this.linkTo = linkTo;
+        this.file = file;
+        this.caption = caption;
+        this.description = description;
+        this.subject = subject;
+    }
 }

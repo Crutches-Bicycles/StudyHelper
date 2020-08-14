@@ -37,4 +37,11 @@ public class Schedules {
     public void setGroup(Groups group) {
         this.group = group;
     }
+
+    public Schedules() {
+    }
+
+    public Schedules(Groups group) {
+        this.group = group;
+    }
 }

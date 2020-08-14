@@ -83,4 +83,15 @@ public class ScheduleRecords {
     public void setSubjectOdd(ListSubjects subjectOdd) {
         this.subjectOdd = subjectOdd;
     }
+
+    public ScheduleRecords() {
+    }
+
+    public ScheduleRecords(Schedules schedule, ListDays days, ListPairs pairs, ListSubjects subjectEven, ListSubjects subjectOdd) {
+        this.schedule = schedule;
+        this.days = days;
+        this.pairs = pairs;
+        this.subjectEven = subjectEven;
+        this.subjectOdd = subjectOdd;
+    }
 }

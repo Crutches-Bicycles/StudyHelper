@@ -18,6 +18,8 @@ import java.io.Serializable;
  */
 @Entity
 public class Accounts implements Serializable {
+
+
     @Id
     @GeneratedValue
     private long idAccount;
@@ -31,8 +33,19 @@ public class Accounts implements Serializable {
     @Column(nullable = false)
     private String password;
 
-    @OneToOne
+    
+    @Enumerated(EnumType.STRING)
     private ListAccountType accountType;
+
+    public Accounts() {
+    }
+
+    public Accounts(Students student, String email, String password, ListAccountType accountType) {
+        this.student = student;
+        this.email = email;
+        this.password = password;
+        this.accountType = accountType;
+    }
 
     public long getIdAccount() {
         return idAccount;

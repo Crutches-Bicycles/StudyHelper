@@ -46,4 +46,12 @@ public class ListDays {
     public void setShortCaption(String shortCaption) {
         this.shortCaption = shortCaption;
     }
+
+    public ListDays() {
+    }
+
+    public ListDays(String caption, String shortCaption) {
+        this.caption = caption;
+        this.shortCaption = shortCaption;
+    }
 }

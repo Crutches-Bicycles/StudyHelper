@@ -48,4 +48,12 @@ public class GroupTeacher {
     public void setTeachers(List<Teachers> teachers) {
         this.teachers = teachers;
     }
+
+    public GroupTeacher() {
+    }
+
+    public GroupTeacher(Groups group, List<Teachers> teachers) {
+        this.group = group;
+        this.teachers = teachers;
+    }
 }

@@ -70,4 +70,14 @@ public class Traffic {
     public void setAttend(boolean attend) {
         isAttend = attend;
     }
+
+    public Traffic() {
+    }
+
+    public Traffic(Students student, ScheduleRecords scheduleRecord, Date date, boolean isAttend) {
+        this.student = student;
+        this.scheduleRecord = scheduleRecord;
+        this.date = date;
+        this.isAttend = isAttend;
+    }
 }

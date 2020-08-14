@@ -50,4 +50,12 @@ public class Groups {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Groups() {
+    }
+
+    public Groups(String caption, String email) {
+        this.caption = caption;
+        this.email = email;
+    }
 }

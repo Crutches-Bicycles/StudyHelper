@@ -95,4 +95,13 @@ public class GroupMaterial {
     public void setLabelSubject(List<ListSubjects> labelSubject) {
         this.labelSubject = labelSubject;
     }
+
+    public GroupMaterial(List<ListSubjects> subject, String linkTo, String file, String caption, String description, List<ListSubjects> labelSubject) {
+        this.subject = subject;
+        this.linkTo = linkTo;
+        this.file = file;
+        this.caption = caption;
+        this.description = description;
+        this.labelSubject = labelSubject;
+    }
 }
