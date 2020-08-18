@@ -10,4 +10,5 @@ public interface AccountsRepository extends JpaRepository<Accounts, Long> {
     List<Accounts> findAll();
     Optional<Accounts> findByEmail(String email);
     Optional<Accounts> findByIdAccount(Long idAccount);
+    void deleteByIdAccount(Long idAccount);
 }

@@ -4,8 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
-public class UserNotFoundException extends RuntimeException {
-    public UserNotFoundException(String userId){
-        super("Couldn't find user with id '" + userId + "'.");
+public class GroupNotFoundException extends RuntimeException {
+    public GroupNotFoundException(String idGroup) {
+        super("Group with id '" + idGroup + "' not found");
     }
 }
