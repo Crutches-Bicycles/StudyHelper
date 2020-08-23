@@ -1,5 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -31,6 +33,7 @@ public class Accounts implements Serializable {
     private String email;
 
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
 
     

@@ -52,7 +52,49 @@ public class StudentController {
         student.orElseThrow(
                 () -> new StudentNotFoundException(idStudent.toString())
         );
+        studentRepository.deleteById(idStudent);
         return new ResponseEntity<>("Student with id '" + idStudent + "' deleted", HttpStatus.OK);
+    }
+
+    @PutMapping("{idStudent}")
+    ResponseEntity<?> updateStudent(@PathVariable Long idStudent,
+                                    @RequestParam String firstName, @RequestParam String secondName,
+                                    @RequestParam String patronymic, @RequestParam Long idGroup){
+        Optional<Students> optionalStudent = studentRepository.findByIdStudent(idStudent);
+        optionalStudent.orElseThrow(
+                () -> new StudentNotFoundException(idStudent.toString())
+        );
+
+        Students tempStudent = optionalStudent.get();
+        if (!tempStudent.getFirstName().equals(firstName)){
+            tempStudent.setFirstName(firstName);
+        }
+
+        if (!tempStudent.getSecondName().equals(secondName)){
+            tempStudent.setSecondName(secondName);
+        }
+
+        if (!tempStudent.getPatronymic().equals(patronymic)){
+            tempStudent.setPatronymic(patronymic);
+        }
+
+        if (!tempStudent.getFirstName().equals(firstName)){
+            tempStudent.setFirstName(firstName);
+        }
+
+        Optional<Groups> optionalGroup = groupRepository.findByIdGroup(idGroup);
+        optionalGroup.orElseThrow(
+                () -> new GroupNotFoundException(idGroup.toString())
+        );
+
+        Long tempIdGroup = tempStudent.getGroup().getIdGroup();
+        if (!tempIdGroup.toString().equals(idGroup)){
+            tempStudent.setGroup(optionalGroup.get());
+        }
+
+        studentRepository.save(tempStudent);
+
+        return new ResponseEntity<>("Student with id '" + idStudent.toString() + "' updated", HttpStatus.OK);
     }
 
     @Autowired
