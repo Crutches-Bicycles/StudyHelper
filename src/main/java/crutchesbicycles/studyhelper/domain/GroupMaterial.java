@@ -40,6 +40,17 @@ public class GroupMaterial {
     @ManyToMany
     private List<ListSubjects> labelSubject;
 
+    @ManyToOne
+    private Groups group;
+
+    public Groups getGroup() {
+        return group;
+    }
+
+    public void setGroup(Groups group) {
+        this.group = group;
+    }
+
     public long getIdMaterial() {
         return idMaterial;
     }
@@ -96,12 +107,14 @@ public class GroupMaterial {
         this.labelSubject = labelSubject;
     }
 
-    public GroupMaterial(List<ListSubjects> subject, String linkTo, String file, String caption, String description, List<ListSubjects> labelSubject) {
+    public GroupMaterial(List<ListSubjects> subject, String linkTo, String file, String caption, String description,
+                         List<ListSubjects> labelSubject, Groups group) {
         this.subject = subject;
         this.linkTo = linkTo;
         this.file = file;
         this.caption = caption;
         this.description = description;
         this.labelSubject = labelSubject;
+        this.group = group;
     }
 }

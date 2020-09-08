@@ -1,5 +1,5 @@
 package crutchesbicycles.studyhelper.repos;
 
-public class AccountTypeRepository {
+public interface AccountTypeRepository {
 
 }

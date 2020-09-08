@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/groups")
 public class GroupController {
-    private GroupRepository groupRepository;
+    private final GroupRepository groupRepository;
 
     @GetMapping
     List<Groups> getGroups(){
