@@ -1,0 +1,47 @@
+package crutchesbicycles.studyhelper.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+/**
+ * Сущность Schedules. Полное расписание. \n
+ * Состоит из полей:
+ * @param idSchedule
+ * @param group -- группа
+ * @author vgtstptlk / Magerram Zeynalov
+ * @version 1.0.0
+ */
+@Entity
+public class Schedules {
+    @Id
+    @GeneratedValue
+    private long idSchedule;
+
+    @ManyToOne
+    private Groups group;
+
+    public long getIdSchedule() {
+        return idSchedule;
+    }
+
+    public void setIdSchedule(long idSchedule) {
+        this.idSchedule = idSchedule;
+    }
+
+    public Groups getGroup() {
+        return group;
+    }
+
+    public void setGroup(Groups group) {
+        this.group = group;
+    }
+
+    public Schedules() {
+    }
+
+    public Schedules(Groups group) {
+        this.group = group;
+    }
+}
