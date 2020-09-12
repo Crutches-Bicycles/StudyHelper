@@ -1,9 +1,3 @@
 # StudyHelper
 
-Основная ветка для разработки приложений.
-
-Ответвления:
-- develop_rest_api
-- develop_vkbot
-- develop_web
-- develop_mobile
+Основная ветка для разработки Mobile (Мобильного приложения).
