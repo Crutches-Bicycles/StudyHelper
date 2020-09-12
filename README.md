@@ -1,9 +1,4 @@
-# StudyHelper
-
-Лучший помощник студенческим группам.
-
-REST API для проекта
-
+# REST API для проекта
 
 ###### 07.08.2020 3.11
 Готово Accounts+Groups+ListAccountType+StudentMaterial+Students+ListSubjects
