@@ -1,9 +1,4 @@
 # StudyHelper
 
-Основная ветка для развёртывания приложений.
+Основная ветка для развёртывания VKBot.
 
-Ответвления:
-- production_rest_api
-- production_vkbot
-- production_web
-- production_mobile
