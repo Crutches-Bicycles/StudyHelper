@@ -15,6 +15,7 @@ import java.util.List;
  * @author vgtstptlk / Magerram Zeynalov
  * @version 1.0.0
  */
+@Entity
 public class GroupMaterial {
 
     /** Уникальный id */
