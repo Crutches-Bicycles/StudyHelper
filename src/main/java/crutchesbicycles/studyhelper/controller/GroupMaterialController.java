@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/groups")
+@RequestMapping("/api/groups")
 public class GroupMaterialController {
     private final GroupRepository groupRepository;
     private final GroupMaterialRepository groupMaterialRepository;
