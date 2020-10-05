@@ -67,7 +67,7 @@ public class AccountController {
      * Тип запроса: GET
      * @param idAccount (URL шаблон)
      * @return Json c данными аккаунта, также может выдавать исключение UserNotFoundException
-     * @see UserNotFoundException
+     * @throws UserNotFoundException
      */
     @GetMapping("{idAccount}")
     Account getAccountById(@PathVariable Long idAccount){
@@ -90,7 +90,7 @@ public class AccountController {
      * @param accountType --  тип аккаунта
      * @param idStudent -- должен быть в любом случае, если не хотим добавлять, то просто оставляем поле со значением пустым
      * @return HTTP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение UserNotFoundException
-     * @see UserNotFoundException
+     * @throws UserNotFoundException
      */
     @PutMapping("{idAccount}")
     synchronized ResponseEntity<?> editAccount(@PathVariable Long idAccount, @RequestParam String email,
@@ -125,7 +125,7 @@ public class AccountController {
      * Тип запроса: DELETE
      * @param idAccount (URL шаблон)
      * @return HTTP Status OK (200), если всё прошло успешно, также может выдавать исключение UserNotFoundException
-     * @see UserNotFoundException
+     * @throws UserNotFoundException
      */
     @DeleteMapping("{idAccount}")
     synchronized ResponseEntity<?> deleteAccount(@PathVariable Long idAccount){

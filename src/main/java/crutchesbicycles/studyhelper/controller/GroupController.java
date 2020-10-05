@@ -36,7 +36,7 @@ public class GroupController {
      * Тип запроса: GET
      * @param idGroup (URL шаблон) -- id группы
      * @return Json c данными группы, также может выдавать исключение GroupNotFoundException
-     * @see GroupNotFoundException
+     * @throws GroupNotFoundException
      */
     @GetMapping("{idGroup}")
     Group getGroupById(@PathVariable Long idGroup){
@@ -56,8 +56,8 @@ public class GroupController {
      * @param caption (form-data) -- имя группы
      * @param email (form-data) -- почта группы
      * @return статус OK в случае удачного обновления, также может выдавать исключение GroupNotFoundException, GroupExistsException
-     * @see GroupNotFoundException
-     * @see GroupExistsException
+     * @throws GroupNotFoundException
+     * @throws GroupExistsException
      */
     @PutMapping("{idGroup}")
     ResponseEntity<?> updateGroupById(@PathVariable Long idGroup, @RequestParam String caption,
@@ -90,7 +90,7 @@ public class GroupController {
      * @param caption (form-data) -- имя группы
      * @param email (form-data) -- почта группы
      * @return в случае удачного добавления HTTP Status 201, также можеть выдавать исключение GroupExistsException
-     * @see GroupExistsException
+     * @throws GroupExistsException
      */
     @PostMapping
     ResponseEntity<?> createGroup(@RequestParam String caption, @RequestParam String email){
@@ -108,7 +108,7 @@ public class GroupController {
      * Тип запроса: DELETE
      * @param idGroup (URL-шаблон) -- id группы
      * @return в случае удачного добавления HTTP Status 200, также можеть выдавать исключение GroupNotFoundException
-     * @see GroupNotFoundException
+     * @throws GroupNotFoundException
      */
     @DeleteMapping("{idGroup}")
     ResponseEntity<?> deleteGroup(@PathVariable Long idGroup){

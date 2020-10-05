@@ -22,11 +22,26 @@ public class TeacherController {
     private final GroupTeacherRepository groupTeacherRepository;
     private final GroupRepository groupRepository;
 
+    /**
+     * Получить список всех преподавателей\n
+     * <b>Путь: /api/teachers</b> \n
+     * Тип запроса: GET
+     * @return Список всех преподавателей
+     */
     @GetMapping
     List<Teacher> getAllTeachers(){
         return teacherRepository.findAll();
     }
 
+    /**
+     * Получить преподавателя по id \n
+     * <b>Путь: /api/teachers/{idTeachers}</b> \n
+     * Тип запроса: GET
+     * @param idTeacher (URL-шаблон) -- id преподавателя
+     * @return сущность преподавателя,
+     * если отсутствует с данным id может выкинуть исключение TeacherNotFoundException
+     * @throws TeacherNotFoundException
+     */
     @GetMapping("/{idTeacher}")
     Teacher getTeacherById(@PathVariable Long idTeacher){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -37,6 +52,16 @@ public class TeacherController {
         return optionalTeachers.get();
     }
 
+    /**
+     * Создать преподавателя \n
+     * <b>Путь: /api/teachers/</b> \n
+     * Тип запроса: POST
+     * @param email -- почта преподавателя
+     * @param firstName - имя преподавателя
+     * @param patronymic -- отчество преподавателя
+     * @param secondName -- фамилия преподавателя
+     * @return Http Status 201 (CREATED), если сохранен объект
+     */
     @PostMapping
     ResponseEntity<?> createTeacher(@RequestParam String firstName, @RequestParam String secondName,
                                     @RequestParam String patronymic, @RequestParam String email){
@@ -46,6 +71,19 @@ public class TeacherController {
 
     }
 
+    /**
+     * Обновить преподавателя \n
+     * <b>Путь: /api/teachers/{idTeachers}</b> \n
+     * Тип запроса: PUT
+     * @param idTeacher -- id преподавателя
+     * @param firstName -- имя преподавателя
+     * @param secondName -- фамилия преподавателя
+     * @param patronymic -- отчество преподавателя
+     * @param email -- почта преподавателя
+     * @return Http Status 200 (OK), если обновлен объект,
+     * если преподаватель с данным объектом отсутствует в базе, то выкидывает исключение TeacherNotFoundException
+     * @throws TeacherNotFoundException
+     */
     @PutMapping("/{idTeacher}")
     ResponseEntity<?> updateTeacher(@PathVariable Long idTeacher, @RequestParam String firstName,
                                     @RequestParam String secondName, @RequestParam String patronymic,
@@ -77,6 +115,14 @@ public class TeacherController {
 
     }
 
+    /**
+     * Удалить преподавателя \n
+     * <b>Путь: /api/teachers/{idTeachers}</b> \n
+     * Тип запроса: DELETE
+     * @param idTeacher -- id преподавателя
+     * @return HttpStatus 200 (OK) в случае успешного удаления объект,
+     * если преподаватель с данным объектом отсутствует в базе, то выкидывает исключение TeacherNotFoundException
+     */
     @DeleteMapping("/{idTeacher}")
     ResponseEntity<?> deleteTeacher(@PathVariable Long idTeacher){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -88,6 +134,15 @@ public class TeacherController {
         return new ResponseEntity<>("Teacher with id '" + idTeacher.toString() + "' was deleted", HttpStatus.OK);
     }
 
+    /**
+     * Получить список предметов, которые ведет преподаватель \n
+     * <b>Путь: /api/teachers/{idTeachers}/subjects</b> \n
+     * Тип запроса: GET
+     * @param idTeacher -- id преподавателя
+     * @return список предметов, которые ведет преподавателей,
+     * если нет преподавателя с таким id, то выкидывает исключение TeacherNotFoundException
+     * @throws TeacherNotFoundException
+     */
     @GetMapping("/{idTeacher}/subjects")
     List<TeacherSubject> getTeacherSubjects(@PathVariable Long idTeacher){
         teacherRepository.findByIdTeacher(idTeacher).orElseThrow(
@@ -97,6 +152,14 @@ public class TeacherController {
         return teacherSubjectRepository.findAllByTeacherIdTeacher(idTeacher);
     }
 
+    /**
+     * Удалить преподавателя \n
+     * <b>Путь: /api/teachers/{idTeachers}</b> \n
+     * Тип запроса: POST
+     * @param idTeacher
+     * @param idSubject
+     * @return
+     */
     @PostMapping("/{idTeacher}/subjects")
     ResponseEntity<?> createSubject(@PathVariable Long idTeacher, @RequestParam Long idSubject){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
