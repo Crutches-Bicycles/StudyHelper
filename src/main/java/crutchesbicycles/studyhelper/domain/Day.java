@@ -6,7 +6,7 @@ import javax.persistence.Id;
 
 
 /**
- * Сущность ListDays. Список дней, с коротким названием. \n
+ * Сущность Day. Список дней, с коротким названием. \n
  * Состоит из полей:
  * @param idDay
  * @param caption -- название дня (Понедельник и тд)
@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class ListDays {
+public class Day {
     @Id
     @GeneratedValue
     private long idDay;
@@ -47,10 +47,10 @@ public class ListDays {
         this.shortCaption = shortCaption;
     }
 
-    public ListDays() {
+    public Day() {
     }
 
-    public ListDays(String caption, String shortCaption) {
+    public Day(String caption, String shortCaption) {
         this.caption = caption;
         this.shortCaption = shortCaption;
     }

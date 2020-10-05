@@ -20,10 +20,10 @@ public class TeacherSubject {
     private long idTeacherSubject;
 
     @OneToOne
-    private Teachers teacher;
+    private Teacher teacher;
 
     @ManyToMany
-    private List<ListSubjects> subjects;
+    private List<Subject> subjects;
 
     public long getIdTeacherSubject() {
         return idTeacherSubject;
@@ -33,26 +33,26 @@ public class TeacherSubject {
         this.idTeacherSubject = idTeacherSubject;
     }
 
-    public Teachers getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
     }
 
-    public void setTeacher(Teachers teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
 
-    public List<ListSubjects> getSubjects() {
+    public List<Subject> getSubjects() {
         return subjects;
     }
 
-    public void setSubjects(List<ListSubjects> subjects) {
+    public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
     }
 
     public TeacherSubject() {
     }
 
-    public TeacherSubject(Teachers teacher, List<ListSubjects> subjects) {
+    public TeacherSubject(Teacher teacher, List<Subject> subjects) {
         this.teacher = teacher;
         this.subjects = subjects;
     }

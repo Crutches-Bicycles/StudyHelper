@@ -23,13 +23,13 @@ public class TeacherController {
     private final GroupRepository groupRepository;
 
     @GetMapping
-    List<Teachers> getAllTeachers(){
+    List<Teacher> getAllTeachers(){
         return teacherRepository.findAll();
     }
 
     @GetMapping("/{idTeacher}")
-    Teachers getTeacherById(@PathVariable Long idTeacher){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+    Teacher getTeacherById(@PathVariable Long idTeacher){
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
@@ -40,7 +40,7 @@ public class TeacherController {
     @PostMapping
     ResponseEntity<?> createTeacher(@RequestParam String firstName, @RequestParam String secondName,
                                     @RequestParam String patronymic, @RequestParam String email){
-        Teachers  tempTeacher = new Teachers(firstName, secondName, patronymic, email);
+        Teacher tempTeacher = new Teacher(firstName, secondName, patronymic, email);
         teacherRepository.save(tempTeacher);
         return new ResponseEntity<>("Teacher was created", HttpStatus.CREATED);
 
@@ -50,12 +50,12 @@ public class TeacherController {
     ResponseEntity<?> updateTeacher(@PathVariable Long idTeacher, @RequestParam String firstName,
                                     @RequestParam String secondName, @RequestParam String patronymic,
                                     @RequestParam String email){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
 
-        Teachers tempTeacher = optionalTeachers.get();
+        Teacher tempTeacher = optionalTeachers.get();
         if (!tempTeacher.getEmail().equals(email)){
             tempTeacher.setEmail(email);
         }
@@ -79,7 +79,7 @@ public class TeacherController {
 
     @DeleteMapping("/{idTeacher}")
     ResponseEntity<?> deleteTeacher(@PathVariable Long idTeacher){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
@@ -99,13 +99,13 @@ public class TeacherController {
 
     @PostMapping("/{idTeacher}/subjects")
     ResponseEntity<?> createSubject(@PathVariable Long idTeacher, @RequestParam Long idSubject){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
 
         Optional<TeacherSubject> optionalTeacherSubject = teacherSubjectRepository.findByTeacherIdTeacher(idTeacher);
-        Optional<ListSubjects> optionalSubject = subjectRepository.findByIdSubject(idSubject);
+        Optional<Subject> optionalSubject = subjectRepository.findByIdSubject(idSubject);
 
         optionalSubject.orElseThrow(
                 () -> new SubjectNotFoundException(idSubject.toString())
@@ -114,12 +114,12 @@ public class TeacherController {
         TeacherSubject tempTeacherSubject;
         if (optionalTeacherSubject.isPresent()){
             tempTeacherSubject = optionalTeacherSubject.get();
-            List<ListSubjects> tempList = tempTeacherSubject.getSubjects();
+            List<Subject> tempList = tempTeacherSubject.getSubjects();
             tempList.add(optionalSubject.get());
             tempTeacherSubject.setSubjects(tempList);
         }
         else {
-            List<ListSubjects> tempList = new ArrayList<>();
+            List<Subject> tempList = new ArrayList<>();
             tempList.add(optionalSubject.get());
             tempTeacherSubject = new TeacherSubject(optionalTeachers.get(), tempList);
         }
@@ -129,13 +129,13 @@ public class TeacherController {
 
 
     @GetMapping("/{idTeacher}/subjects/{idSubject}")
-    ListSubjects getSubjectById(@PathVariable Long idTeacher, @PathVariable Long idSubject){
+    Subject getSubjectById(@PathVariable Long idTeacher, @PathVariable Long idSubject){
         Optional<TeacherSubject> optionalTeacherSubject = this.teacherSubjectRepository.findByTeacherIdTeacher(idTeacher);
         optionalTeacherSubject.orElseThrow(
                 () -> new TeacherSubjectNotFound(idTeacher.toString())
         );
          TeacherSubject teacherSubject = optionalTeacherSubject.get();
-         Optional<ListSubjects> optionalSubject = findInList(teacherSubject.getSubjects(), idSubject);
+         Optional<Subject> optionalSubject = findInList(teacherSubject.getSubjects(), idSubject);
          optionalSubject.orElseThrow(
                  () -> new SubjectNotFoundException(idSubject.toString())
          );
@@ -156,7 +156,7 @@ public class TeacherController {
 
     @GetMapping("/{idTeacher}/groups")
     List<GroupTeacher> getGroupsByTeacher(@PathVariable Long idTeacher){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
@@ -166,13 +166,13 @@ public class TeacherController {
 
     @PostMapping("/{idTeacher}/groups")
     ResponseEntity<?> createTeacherGroup(@PathVariable Long idTeacher, @RequestParam Long idGroup){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
 
         Optional<GroupTeacher> optionalGroupTeacher = groupTeacherRepository.findByGroupIdGroup(idGroup);
-        Optional<Groups> optionalGroup = groupRepository.findByIdGroup(idGroup);
+        Optional<Group> optionalGroup = groupRepository.findByIdGroup(idGroup);
 
         optionalGroup.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
@@ -181,12 +181,12 @@ public class TeacherController {
         GroupTeacher tempGroupTeacher;
         if (optionalGroupTeacher.isPresent()){
             tempGroupTeacher = optionalGroupTeacher.get();
-            List<Teachers> tempList = tempGroupTeacher.getTeachers();
+            List<Teacher> tempList = tempGroupTeacher.getTeachers();
             tempList.add(optionalTeachers.get());
             tempGroupTeacher.setTeachers(tempList);
         }
         else {
-            List<Teachers> tempList = new ArrayList<>();
+            List<Teacher> tempList = new ArrayList<>();
             tempList.add(optionalTeachers.get());
             tempGroupTeacher = new GroupTeacher(optionalGroup.get(), tempList);
         }
@@ -197,7 +197,7 @@ public class TeacherController {
     // todo:
     @DeleteMapping("/teachers/{idTeacher}/groups/{idGroup}")
     ResponseEntity<?> deleteTeacherGroup(@PathVariable Long idTeacher, @PathVariable Long idGroup){
-        Optional<Teachers> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
+        Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(
                 () -> new TeacherNotFoundException(idTeacher.toString())
         );
@@ -207,14 +207,14 @@ public class TeacherController {
                 () -> new GroupTeacherNotFoundException(idGroup.toString())
         );
 
-        Optional<Groups> optionalGroup = groupRepository.findByIdGroup(idGroup);
+        Optional<Group> optionalGroup = groupRepository.findByIdGroup(idGroup);
 
         optionalGroup.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
         );
 
         GroupTeacher tempGroupTeacher = optionalGroupTeacher.get();
-        List<Teachers> teachers = tempGroupTeacher.getTeachers();
+        List<Teacher> teachers = tempGroupTeacher.getTeachers();
         teachers.remove(optionalTeachers.get());
         groupTeacherRepository.delete(optionalGroupTeacher.get());
         return new ResponseEntity<>("Teacher with id '" + idTeacher.toString() +
@@ -222,8 +222,8 @@ public class TeacherController {
     }
 
 
-    Optional<ListSubjects> findInList(List<ListSubjects> listSubjects, Long idSubject){
-        for (ListSubjects subject: listSubjects){
+    Optional<Subject> findInList(List<Subject> listSubjects, Long idSubject){
+        for (Subject subject: listSubjects){
             if (subject.getIdSubject() == idSubject){
                 return Optional.of(subject);
             }

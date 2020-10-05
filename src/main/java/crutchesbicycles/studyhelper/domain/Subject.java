@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Сущность ListSubjects. Список предметов. \n
+ * Сущность Subject. Список предметов. \n
  * Состоит из полей:
  * @param idSubject
  * @param caption -- название предмета
@@ -14,7 +14,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class ListSubjects {
+public class Subject {
     @Id
     @GeneratedValue
     private long idSubject;
@@ -38,10 +38,10 @@ public class ListSubjects {
         this.caption = caption;
     }
 
-    public ListSubjects() {
+    public Subject() {
     }
 
-    public ListSubjects(String caption) {
+    public Subject(String caption) {
         this.caption = caption;
     }
 }

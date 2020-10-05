@@ -25,7 +25,7 @@ public class GroupMaterial {
 
 
     @OneToMany
-    private List<ListSubjects> subject;
+    private List<Subject> subject;
 
     @Column(nullable = false)
     private String linkTo;
@@ -39,16 +39,16 @@ public class GroupMaterial {
     private String description;
 
     @ManyToMany
-    private List<ListSubjects> labelSubject;
+    private List<Subject> labelSubject;
 
     @ManyToOne
-    private Groups group;
+    private Group group;
 
-    public Groups getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(Groups group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
@@ -60,11 +60,11 @@ public class GroupMaterial {
         this.idMaterial = idMaterial;
     }
 
-    public List<ListSubjects> getSubject() {
+    public List<Subject> getSubject() {
         return subject;
     }
 
-    public void setSubject(List<ListSubjects> subject) {
+    public void setSubject(List<Subject> subject) {
         this.subject = subject;
     }
 
@@ -100,16 +100,16 @@ public class GroupMaterial {
         this.description = description;
     }
 
-    public List<ListSubjects> getLabelSubject() {
+    public List<Subject> getLabelSubject() {
         return labelSubject;
     }
 
-    public void setLabelSubject(List<ListSubjects> labelSubject) {
+    public void setLabelSubject(List<Subject> labelSubject) {
         this.labelSubject = labelSubject;
     }
 
-    public GroupMaterial(List<ListSubjects> subject, String linkTo, String file, String caption, String description,
-                         List<ListSubjects> labelSubject, Groups group) {
+    public GroupMaterial(List<Subject> subject, String linkTo, String file, String caption, String description,
+                         List<Subject> labelSubject, Group group) {
         this.subject = subject;
         this.linkTo = linkTo;
         this.file = file;

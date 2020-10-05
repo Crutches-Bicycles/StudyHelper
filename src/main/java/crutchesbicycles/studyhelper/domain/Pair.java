@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Сущность ListPairs. Список дней, с коротким названием. \n
+ * Сущность Pair. Список дней, с коротким названием. \n
  * Состоит из полей:
  * @param idPair
  * @param number -- номер пары
@@ -15,7 +15,7 @@ import java.util.Date;
  * @version 1.0.0
  */
 @Entity
-public class ListPairs {
+public class Pair {
     @Id
     @GeneratedValue
     private long idPair;
@@ -60,10 +60,10 @@ public class ListPairs {
         this.endTime = endTime;
     }
 
-    public ListPairs() {
+    public Pair() {
     }
 
-    public ListPairs(long number, Date startTime, Date endTime) {
+    public Pair(long number, Date startTime, Date endTime) {
         this.number = number;
         this.startTime = startTime;
         this.endTime = endTime;

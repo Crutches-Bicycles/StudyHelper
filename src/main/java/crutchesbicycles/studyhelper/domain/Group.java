@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Сущность Groups. Описывает группу. \n
+ * Сущность Group. Описывает группу. \n
  * Состоит из полей:
  * @param idGroup
  * @param caption (nullable = false) -- название группы
@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class Groups {
+public class Group {
     @Id
     @GeneratedValue
     private long idGroup;
@@ -51,10 +51,10 @@ public class Groups {
         this.email = email;
     }
 
-    public Groups() {
+    public Group() {
     }
 
-    public Groups(String caption, String email) {
+    public Group(String caption, String email) {
         this.caption = caption;
         this.email = email;
     }

@@ -1,13 +1,12 @@
 package crutchesbicycles.studyhelper.repos;
 
-import crutchesbicycles.studyhelper.domain.ListSubjects;
+import crutchesbicycles.studyhelper.domain.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
 import java.util.Optional;
 
 
-public interface SubjectRepository extends JpaRepository<ListSubjects, Long> {
-    Optional<ListSubjects> findByIdSubject(Long idSubject);
+public interface SubjectRepository extends JpaRepository<Subject, Long> {
+    Optional<Subject> findByIdSubject(Long idSubject);
 
 }

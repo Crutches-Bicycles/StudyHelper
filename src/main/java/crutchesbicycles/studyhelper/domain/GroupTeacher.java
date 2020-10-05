@@ -20,10 +20,10 @@ public class GroupTeacher {
     private long idGroupTeacher;
 
     @OneToOne
-    private Groups group;
+    private Group group;
 
     @ManyToMany
-    private List<Teachers> teachers;
+    private List<Teacher> teachers;
 
     public long getIdGroupTeacher() {
         return idGroupTeacher;
@@ -33,26 +33,26 @@ public class GroupTeacher {
         this.idGroupTeacher = idGroupTeacher;
     }
 
-    public Groups getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(Groups group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
-    public List<Teachers> getTeachers() {
+    public List<Teacher> getTeachers() {
         return teachers;
     }
 
-    public void setTeachers(List<Teachers> teachers) {
+    public void setTeachers(List<Teacher> teachers) {
         this.teachers = teachers;
     }
 
     public GroupTeacher() {
     }
 
-    public GroupTeacher(Groups group, List<Teachers> teachers) {
+    public GroupTeacher(Group group, List<Teacher> teachers) {
         this.group = group;
         this.teachers = teachers;
     }

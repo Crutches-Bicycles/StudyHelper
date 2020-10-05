@@ -5,7 +5,7 @@ import crutchesbicycles.studyhelper.domain.StudentMaterial;
 import crutchesbicycles.studyhelper.exception.StudentMaterialNotFoundException;
 import crutchesbicycles.studyhelper.exception.StudentNotFoundException;
 import crutchesbicycles.studyhelper.repos.StudentMaterialRepository;
-import crutchesbicycles.studyhelper.repos.StudentsRepository;
+import crutchesbicycles.studyhelper.repos.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class StudentMaterialController {
     //todo: не забыть передавать в FileUploadController уже модифицированное имя файла, чтобы не было колизий
     private final StudentMaterialRepository studentMaterialRepository;
-    private final StudentsRepository studentsRepository;
+    private final StudentRepository studentRepository;
 
     @GetMapping("/{idStudent}/materials")
     List<StudentMaterial> getStudentMaterial(@PathVariable Long idStudent){
@@ -39,14 +39,14 @@ public class StudentMaterialController {
     }
 
     void checkStudentById(Long idStudent){
-        studentsRepository.findByIdStudent(idStudent).orElseThrow(
+        studentRepository.findByIdStudent(idStudent).orElseThrow(
                 () -> new StudentNotFoundException(idStudent.toString())
         );
     }
 
     @Autowired
-    StudentMaterialController(StudentMaterialRepository studentMaterialRepository, StudentsRepository studentsRepository) {
-        this.studentsRepository = studentsRepository;
+    StudentMaterialController(StudentMaterialRepository studentMaterialRepository, StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
         this.studentMaterialRepository = studentMaterialRepository;
     }
 }

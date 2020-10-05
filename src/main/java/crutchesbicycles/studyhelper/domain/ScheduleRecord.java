@@ -1,10 +1,9 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
- * Сущность ScheduleRecords. Записи в расписании. \n
+ * Сущность ScheduleRecord. Записи в расписании. \n
  * Состоит из полей:
  * @param idScheduleRecord
  * @param schedule -- полное расписание
@@ -16,25 +15,25 @@ import java.util.List;
  * @version 1.0.0
  */
 @Entity
-public class ScheduleRecords {
+public class ScheduleRecord {
     @Id
     @GeneratedValue
     private long idScheduleRecord;
 
     @ManyToOne
-    private Schedules schedule;
+    private Schedule schedule;
 
     @ManyToOne
-    private ListDays days;
+    private Day days;
 
     @ManyToOne
-    private ListPairs pairs;
+    private Pair pairs;
 
     @ManyToOne
-    private ListSubjects subjectEven;
+    private Subject subjectEven;
 
     @ManyToOne
-    private ListSubjects subjectOdd;
+    private Subject subjectOdd;
 
     public long getIdScheduleRecord() {
         return idScheduleRecord;
@@ -44,50 +43,50 @@ public class ScheduleRecords {
         this.idScheduleRecord = idScheduleRecord;
     }
 
-    public Schedules getSchedule() {
+    public Schedule getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Schedules schedule) {
+    public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
     }
 
-    public ListDays getDays() {
+    public Day getDays() {
         return days;
     }
 
-    public void setDays(ListDays days) {
+    public void setDays(Day days) {
         this.days = days;
     }
 
-    public ListPairs getPairs() {
+    public Pair getPairs() {
         return pairs;
     }
 
-    public void setPairs(ListPairs pairs) {
+    public void setPairs(Pair pairs) {
         this.pairs = pairs;
     }
 
-    public ListSubjects getSubjectEven() {
+    public Subject getSubjectEven() {
         return subjectEven;
     }
 
-    public void setSubjectEven(ListSubjects subjectEven) {
+    public void setSubjectEven(Subject subjectEven) {
         this.subjectEven = subjectEven;
     }
 
-    public ListSubjects getSubjectOdd() {
+    public Subject getSubjectOdd() {
         return subjectOdd;
     }
 
-    public void setSubjectOdd(ListSubjects subjectOdd) {
+    public void setSubjectOdd(Subject subjectOdd) {
         this.subjectOdd = subjectOdd;
     }
 
-    public ScheduleRecords() {
+    public ScheduleRecord() {
     }
 
-    public ScheduleRecords(Schedules schedule, ListDays days, ListPairs pairs, ListSubjects subjectEven, ListSubjects subjectOdd) {
+    public ScheduleRecord(Schedule schedule, Day days, Pair pairs, Subject subjectEven, Subject subjectOdd) {
         this.schedule = schedule;
         this.days = days;
         this.pairs = pairs;

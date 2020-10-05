@@ -1,13 +1,13 @@
 package crutchesbicycles.studyhelper.controller;
 
 
-import crutchesbicycles.studyhelper.domain.Accounts;
-import crutchesbicycles.studyhelper.domain.ListAccountType;
-import crutchesbicycles.studyhelper.domain.Students;
+import crutchesbicycles.studyhelper.domain.Account;
+import crutchesbicycles.studyhelper.domain.AccountType;
+import crutchesbicycles.studyhelper.domain.Student;
 import crutchesbicycles.studyhelper.exception.AccountExistsException;
 import crutchesbicycles.studyhelper.exception.UserNotFoundException;
-import crutchesbicycles.studyhelper.repos.AccountsRepository;
-import crutchesbicycles.studyhelper.repos.StudentsRepository;
+import crutchesbicycles.studyhelper.repos.AccountRepository;
+import crutchesbicycles.studyhelper.repos.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +25,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/accounts")
 public class AccountController {
-    private final AccountsRepository accountRepository;
-    private final StudentsRepository studentRepository;
+    private final AccountRepository accountRepository;
+    private final StudentRepository studentRepository;
 
     /**
      * Получить все аккаунты. Возвращает в формате JSON. \n
@@ -35,7 +35,7 @@ public class AccountController {
      * @return json со списком аккаунтов
      */
     @GetMapping
-    List<Accounts> getAccounts(){
+    List<Account> getAccounts(){
         return accountRepository.findAll();
     }
 
@@ -56,7 +56,7 @@ public class AccountController {
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
         }
-        Accounts account = new Accounts(null, email, password, ListAccountType.valueOf(accountType));
+        Account account = new Account(null, email, password, AccountType.valueOf(accountType));
         accountRepository.save(account);
         return new ResponseEntity<>("Account with email " + email + " Created", HttpStatus.CREATED);
     }
@@ -70,8 +70,8 @@ public class AccountController {
      * @see UserNotFoundException
      */
     @GetMapping("{idAccount}")
-    Accounts getAccountById(@PathVariable Long idAccount){
-        Optional<Accounts> account = accountRepository.findByIdAccount(idAccount);
+    Account getAccountById(@PathVariable Long idAccount){
+        Optional<Account> account = accountRepository.findByIdAccount(idAccount);
         account.orElseThrow(
                 () -> new UserNotFoundException(idAccount.toString())
         );
@@ -96,12 +96,12 @@ public class AccountController {
     synchronized ResponseEntity<?> editAccount(@PathVariable Long idAccount, @RequestParam String email,
                                   @RequestParam String password, @RequestParam String accountType,
                                   @RequestParam Long idStudent){
-        Optional<Accounts> account = accountRepository.findByIdAccount(idAccount);
+        Optional<Account> account = accountRepository.findByIdAccount(idAccount);
         account.orElseThrow(
                 ()-> new UserNotFoundException(idAccount.toString())
         );
-        Optional<Students> optionalStudents = studentRepository.findByIdStudent(idStudent);
-        Accounts tempAccount = account.get();
+        Optional<Student> optionalStudents = studentRepository.findByIdStudent(idStudent);
+        Account tempAccount = account.get();
         optionalStudents.ifPresent(tempAccount::setStudent);
         if (!tempAccount.getEmail().equals(email)){
             tempAccount.setEmail(email);
@@ -112,7 +112,7 @@ public class AccountController {
         }
 
         if (!tempAccount.getAccountType().toString().equals(accountType)){
-            tempAccount.setAccountType(ListAccountType.valueOf(accountType));
+            tempAccount.setAccountType(AccountType.valueOf(accountType));
         }
 
         accountRepository.save(tempAccount);
@@ -138,7 +138,7 @@ public class AccountController {
     }
 
     @Autowired
-    public AccountController(AccountsRepository accountRepository, StudentsRepository studentRepository) {
+    public AccountController(AccountRepository accountRepository, StudentRepository studentRepository) {
         this.accountRepository = accountRepository;
         this.studentRepository = studentRepository;
 

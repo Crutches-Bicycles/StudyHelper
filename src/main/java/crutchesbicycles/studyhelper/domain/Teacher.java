@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Сущность Teachers. \n
+ * Сущность Teacher. \n
  * Состоит из полей:
  * @param idTeacher
  * @param firstName -- Имя
@@ -17,7 +17,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class Teachers {
+public class Teacher {
     @Id
     @GeneratedValue
     private long idTeacher;
@@ -73,10 +73,10 @@ public class Teachers {
         this.email = email;
     }
 
-    public Teachers() {
+    public Teacher() {
     }
 
-    public Teachers(String firstName, String secondName, String patronymic, String email) {
+    public Teacher(String firstName, String secondName, String patronymic, String email) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;

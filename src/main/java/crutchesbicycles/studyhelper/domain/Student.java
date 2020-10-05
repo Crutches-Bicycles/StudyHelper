@@ -3,7 +3,7 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.*;
 
 /**
- * Сущность Students. \n
+ * Сущность Student. \n
  * Состоит из полей:
  * @param idStudent
  * @param firstName -- Имя
@@ -14,13 +14,13 @@ import javax.persistence.*;
  * @version 1.0.0
  */
 @Entity
-public class Students {
+public class Student {
     @Id
     @GeneratedValue
     private long idStudent;
 
     @ManyToOne
-    private Groups group;
+    private Group group;
 
     @Column(nullable = false)
     private String firstName;
@@ -37,11 +37,11 @@ public class Students {
         this.idStudent = idStudent;
     }
 
-    public Groups getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(Groups group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
@@ -69,10 +69,10 @@ public class Students {
         this.patronymic = patronymic;
     }
 
-    public Students() {
+    public Student() {
     }
 
-    public Students(Groups group, String firstName, String secondName, String patronymic) {
+    public Student(Group group, String firstName, String secondName, String patronymic) {
         this.group = group;
         this.firstName = firstName;
         this.secondName = secondName;

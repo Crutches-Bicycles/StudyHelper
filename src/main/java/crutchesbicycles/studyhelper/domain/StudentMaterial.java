@@ -23,7 +23,7 @@ public class StudentMaterial {
     private long idMaterial;
 
     @ManyToOne
-    private Students student;
+    private Student student;
 
     @Column(nullable = false)
     private String linkTo;
@@ -37,7 +37,7 @@ public class StudentMaterial {
     private String description;
 
     @ManyToMany
-    private List<ListSubjects> subject;
+    private List<Subject> subject;
 
     public long getIdMaterial() {
         return idMaterial;
@@ -47,11 +47,11 @@ public class StudentMaterial {
         this.idMaterial = idMaterial;
     }
 
-    public Students getStudent() {
+    public Student getStudent() {
         return student;
     }
 
-    public void setStudent(Students student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 
@@ -87,19 +87,19 @@ public class StudentMaterial {
         this.description = description;
     }
 
-    public List<ListSubjects> getSubject() {
+    public List<Subject> getSubject() {
         return subject;
     }
 
-    public void setSubject(List<ListSubjects> subject) {
+    public void setSubject(List<Subject> subject) {
         this.subject = subject;
     }
 
     public StudentMaterial() {
     }
 
-    public StudentMaterial(Students student, String linkTo, String file, String caption, String description,
-                           List<ListSubjects> subject) {
+    public StudentMaterial(Student student, String linkTo, String file, String caption, String description,
+                           List<Subject> subject) {
         this.student = student;
         this.linkTo = linkTo;
         this.file = file;

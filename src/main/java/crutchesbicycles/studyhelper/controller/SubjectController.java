@@ -1,6 +1,6 @@
 package crutchesbicycles.studyhelper.controller;
 
-import crutchesbicycles.studyhelper.domain.ListSubjects;
+import crutchesbicycles.studyhelper.domain.Subject;
 import crutchesbicycles.studyhelper.repos.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +15,10 @@ public class SubjectController {
     private final SubjectRepository subjectRepository;
 
     @GetMapping
-    List<ListSubjects> getAllSubjects(){
+    List<Subject> getAllSubjects(){
         return subjectRepository.findAll();
     }
-    
+
     @Autowired
     SubjectController(SubjectRepository subjectRepository){
         this.subjectRepository = subjectRepository;

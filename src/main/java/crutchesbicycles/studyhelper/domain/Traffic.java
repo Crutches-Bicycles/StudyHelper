@@ -21,10 +21,10 @@ public class Traffic {
     private long idTraffic;
 
     @ManyToOne
-    private Students student;
+    private Student student;
 
     @ManyToOne
-    private ScheduleRecords scheduleRecord;
+    private ScheduleRecord scheduleRecord;
 
     @Temporal(TemporalType.DATE)
     private Date date;
@@ -39,19 +39,19 @@ public class Traffic {
         this.idTraffic = idTraffic;
     }
 
-    public Students getStudent() {
+    public Student getStudent() {
         return student;
     }
 
-    public void setStudent(Students student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 
-    public ScheduleRecords getScheduleRecord() {
+    public ScheduleRecord getScheduleRecord() {
         return scheduleRecord;
     }
 
-    public void setScheduleRecord(ScheduleRecords scheduleRecord) {
+    public void setScheduleRecord(ScheduleRecord scheduleRecord) {
         this.scheduleRecord = scheduleRecord;
     }
 
@@ -74,7 +74,7 @@ public class Traffic {
     public Traffic() {
     }
 
-    public Traffic(Students student, ScheduleRecords scheduleRecord, Date date, boolean isAttend) {
+    public Traffic(Student student, ScheduleRecord scheduleRecord, Date date, boolean isAttend) {
         this.student = student;
         this.scheduleRecord = scheduleRecord;
         this.date = date;

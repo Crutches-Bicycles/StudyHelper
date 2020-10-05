@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 /**
- * Сущность Schedules. Полное расписание. \n
+ * Сущность Schedule. Полное расписание. \n
  * Состоит из полей:
  * @param idSchedule
  * @param group -- группа
@@ -14,13 +14,13 @@ import javax.persistence.ManyToOne;
  * @version 1.0.0
  */
 @Entity
-public class Schedules {
+public class Schedule {
     @Id
     @GeneratedValue
     private long idSchedule;
 
     @ManyToOne
-    private Groups group;
+    private Group group;
 
     public long getIdSchedule() {
         return idSchedule;
@@ -30,18 +30,18 @@ public class Schedules {
         this.idSchedule = idSchedule;
     }
 
-    public Groups getGroup() {
+    public Group getGroup() {
         return group;
     }
 
-    public void setGroup(Groups group) {
+    public void setGroup(Group group) {
         this.group = group;
     }
 
-    public Schedules() {
+    public Schedule() {
     }
 
-    public Schedules(Groups group) {
+    public Schedule(Group group) {
         this.group = group;
     }
 }

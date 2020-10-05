@@ -6,20 +6,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Сущность Accounts. Предоставляет основные поля для аккаунта, внезависимости от типа аккаунта.\n
- * Расширяет сущность Students.\n
+ * Сущность Account. Предоставляет основные поля для аккаунта, внезависимости от типа аккаунта.\n
+ * Расширяет сущность Student.\n
  * Состоит из полей:\n
  * @param idAccount -- уникальный id\n
- * @param student -- Students
+ * @param student -- Student
  * @param email -- почта пользователя
  * @param password -- пароль
  * @param accountType -- тип аккаунта, может быть как староста, зам старосты и просто студент
- * @see Students
+ * @see Student
  * @author vgtstptlk / Magerram Zeynalov
  * @version 1.0.0
  */
 @Entity
-public class Accounts implements Serializable {
+public class Account implements Serializable {
 
 
     @Id
@@ -27,7 +27,7 @@ public class Accounts implements Serializable {
     private long idAccount;
 
     @OneToOne
-    private Students student;
+    private Student student;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -38,12 +38,12 @@ public class Accounts implements Serializable {
 
     
     @Enumerated(EnumType.STRING)
-    private ListAccountType accountType;
+    private AccountType accountType;
 
-    public Accounts() {
+    public Account() {
     }
 
-    public Accounts(Students student, String email, String password, ListAccountType accountType) {
+    public Account(Student student, String email, String password, AccountType accountType) {
         this.student = student;
         this.email = email;
         this.password = password;
@@ -58,11 +58,11 @@ public class Accounts implements Serializable {
         this.idAccount = idAccount;
     }
 
-    public Students getStudent() {
+    public Student getStudent() {
         return student;
     }
 
-    public void setStudent(Students student) {
+    public void setStudent(Student student) {
         this.student = student;
     }
 
@@ -82,11 +82,11 @@ public class Accounts implements Serializable {
         this.password = password;
     }
 
-    public ListAccountType getAccountType() {
+    public AccountType getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(ListAccountType accountType) {
+    public void setAccountType(AccountType accountType) {
         this.accountType = accountType;
     }
 }

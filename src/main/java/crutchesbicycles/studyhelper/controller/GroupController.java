@@ -1,10 +1,8 @@
 package crutchesbicycles.studyhelper.controller;
+import crutchesbicycles.studyhelper.domain.Group;
 import crutchesbicycles.studyhelper.domain.GroupTeacher;
-import crutchesbicycles.studyhelper.domain.Groups;
-import crutchesbicycles.studyhelper.domain.Teachers;
 import crutchesbicycles.studyhelper.exception.GroupExistsException;
 import crutchesbicycles.studyhelper.exception.GroupNotFoundException;
-import crutchesbicycles.studyhelper.exception.UserNotFoundException;
 import crutchesbicycles.studyhelper.repos.GroupRepository;
 import crutchesbicycles.studyhelper.repos.GroupTeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +26,7 @@ public class GroupController {
      * @return Json c группами
      */
     @GetMapping
-    List<Groups> getGroups(){
+    List<Group> getGroups(){
         return groupRepository.findAll();
     }
 
@@ -41,8 +39,8 @@ public class GroupController {
      * @see GroupNotFoundException
      */
     @GetMapping("{idGroup}")
-    Groups getGroupById(@PathVariable Long idGroup){
-        Optional<Groups> optionalGroup = groupRepository.findByIdGroup(idGroup);
+    Group getGroupById(@PathVariable Long idGroup){
+        Optional<Group> optionalGroup = groupRepository.findByIdGroup(idGroup);
         optionalGroup.orElseThrow(
                 ()-> new GroupNotFoundException(idGroup.toString())
         );
@@ -64,7 +62,7 @@ public class GroupController {
     @PutMapping("{idGroup}")
     ResponseEntity<?> updateGroupById(@PathVariable Long idGroup, @RequestParam String caption,
                                       @RequestParam String email){
-        Optional<Groups> optionalGroup = groupRepository.findByIdGroup(idGroup);
+        Optional<Group> optionalGroup = groupRepository.findByIdGroup(idGroup);
         optionalGroup.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
         );
@@ -72,7 +70,7 @@ public class GroupController {
             throw new GroupExistsException(email, caption);
         }
 
-        Groups tempGroup = optionalGroup.get();
+        Group tempGroup = optionalGroup.get();
         if (!tempGroup.getEmail().equals(email)){
             tempGroup.setEmail(email);
         }
@@ -99,7 +97,7 @@ public class GroupController {
         if (groupRepository.findByEmailOrCaption(email, caption).isPresent()){
             throw new GroupExistsException(email, caption);
         }
-        Groups tempGroup = new Groups(caption, email);
+        Group tempGroup = new Group(caption, email);
         groupRepository.save(tempGroup);
         return new ResponseEntity<>("Group was created", HttpStatus.CREATED);
     }
