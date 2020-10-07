@@ -1,12 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "acdefghilmnprstu",
-  1: "aglstu",
+  0: "acdefgilmnpstu",
+  1: "adfgpstu",
   2: "c",
-  3: "aghlrstu",
-  4: "acdefgilmstu",
-  5: "acdefgilnpstu",
-  6: "gs"
+  3: "adfgpstu",
+  4: "acdefgimpstu",
+  5: "acdefgilnpstu"
 };
 
 var indexSectionNames =
@@ -16,8 +15,7 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "variables",
-  6: "pages"
+  5: "variables"
 };
 
 var indexSectionLabels =
@@ -27,7 +25,6 @@ var indexSectionLabels =
   2: "Пространства имен",
   3: "Файлы",
   4: "Функции",
-  5: "Переменные",
-  6: "Страницы"
+  5: "Переменные"
 };
 

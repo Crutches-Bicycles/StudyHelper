@@ -1,10 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Сущность Group. Описывает группу. \n
@@ -15,7 +12,7 @@ import javax.persistence.Id;
  * @author vgtstptlk / Magerram Zeynalov
  * @version 1.0.0
  */
-@Entity
+@Entity(name = "group_")
 public class Group {
     @Id
     @GeneratedValue

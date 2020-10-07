@@ -1,0 +1,133 @@
+\hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller}{}\doxysection{Класс crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller}
+\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller}\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsection*{Функции с областью видимости пакета}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_subject}{Subject}} $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a6b35edc8711ec16ce3072cd8450cd417}{get\+All\+Subjects}} ()
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a08d7c0cd7bb759031fade5000af706e2}{create\+Subject}} (@Request\+Param String caption)
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_subject}{Subject}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a663b47d6d75aff824b6bccf2ea4ed845}{get\+Subject\+By\+Id}} (@Path\+Variable Long id\+Subject)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a9ca08758da2da0e131a4cfd378b0998c}{update\+Subject}} (@Path\+Variable Long id\+Subject, @Request\+Param String caption)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a0a4d90b3204139ae7c1306582aeaa357}{delete\+Subject\+By\+Id}} (@Path\+Variable Long id\+Subject)
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afc1e4e6d28c2c95181ff051bc8b93878}{Subject\+Controller}} (\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afd634e0ee788397609e4e1c72a0af8ec}{subject\+Repository}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afd634e0ee788397609e4e1c72a0af8ec}{subject\+Repository}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afc1e4e6d28c2c95181ff051bc8b93878}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afc1e4e6d28c2c95181ff051bc8b93878}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!SubjectController@{SubjectController}}
+\index{SubjectController@{SubjectController}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{SubjectController()}{SubjectController()}}
+{\footnotesize\ttfamily crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+Subject\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}}}]{subject\+Repository }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a08d7c0cd7bb759031fade5000af706e2}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a08d7c0cd7bb759031fade5000af706e2}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!createSubject@{createSubject}}
+\index{createSubject@{createSubject}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{createSubject()}{createSubject()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+create\+Subject (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Создать предмет ~\newline
+{\bfseries{Путь\+: /api/subjects/}} ~\newline
+Тип запроса\+: P\+O\+ST \begin{DoxyReturn}{Возвращает}
+H\+T\+TP Status 201 C\+R\+E\+A\+T\+ED 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a0a4d90b3204139ae7c1306582aeaa357}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a0a4d90b3204139ae7c1306582aeaa357}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!deleteSubjectById@{deleteSubjectById}}
+\index{deleteSubjectById@{deleteSubjectById}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{deleteSubjectById()}{deleteSubjectById()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+delete\+Subject\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Subject }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Удалить предмет по id ~\newline
+{\bfseries{Путь\+: /api/subjects/\{id\+Subject\}}} ~\newline
+Тип запроса\+: D\+E\+L\+E\+TE 
+\begin{DoxyParams}{Аргументы}
+{\em id\+Subject} & (U\+R\+L-\/шаблон) -- id предмета \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Http\+Status 200 (OK) в случае удачного удаления, если отсутствует с данным id может выкинуть исключение Subject\+Not\+Found\+Exception 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Subject\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a6b35edc8711ec16ce3072cd8450cd417}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a6b35edc8711ec16ce3072cd8450cd417}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!getAllSubjects@{getAllSubjects}}
+\index{getAllSubjects@{getAllSubjects}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{getAllSubjects()}{getAllSubjects()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_subject}{Subject}}$>$ crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+get\+All\+Subjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Получить все предметы ~\newline
+{\bfseries{Путь\+: /api/subjects/}} ~\newline
+Тип запроса\+: G\+ET \begin{DoxyReturn}{Возвращает}
+Список предметов 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a663b47d6d75aff824b6bccf2ea4ed845}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a663b47d6d75aff824b6bccf2ea4ed845}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!getSubjectById@{getSubjectById}}
+\index{getSubjectById@{getSubjectById}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{getSubjectById()}{getSubjectById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_subject}{Subject}} crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+get\+Subject\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Subject }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Получить предмет по id ~\newline
+{\bfseries{Путь\+: /api/subjects/\{id\+Subject\}}} ~\newline
+Тип запроса\+: G\+ET 
+\begin{DoxyParams}{Аргументы}
+{\em id\+Subject} & (U\+R\+L-\/шаблон) -- id предмета \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+сущность Subject, в случае отсутствия с данным id может выкинуть исключение Subject\+Not\+Found\+Exception 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Subject\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a9ca08758da2da0e131a4cfd378b0998c}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_a9ca08758da2da0e131a4cfd378b0998c}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!updateSubject@{updateSubject}}
+\index{updateSubject@{updateSubject}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{updateSubject()}{updateSubject()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+update\+Subject (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Subject,  }\item[{@Request\+Param String}]{caption }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Обновить поля предмета по id ~\newline
+{\bfseries{Путь\+: /api/subjects/\{id\+Subject\}}} ~\newline
+Тип запроса\+: P\+UT 
+\begin{DoxyParams}{Аргументы}
+{\em id\+Subject} & (U\+R\+L-\/шаблон) -- id предмета \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Http\+Status 200 (OK) в случае удачного обнавления, если отсутствует с данным id может выкинуть исключение Subject\+Not\+Found\+Exception 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Исключения}
+{\em Subject\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afd634e0ee788397609e4e1c72a0af8ec}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller_afd634e0ee788397609e4e1c72a0af8ec}} 
+\index{crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}!subjectRepository@{subjectRepository}}
+\index{subjectRepository@{subjectRepository}!crutchesbicycles.studyhelper.controller.SubjectController@{crutchesbicycles.studyhelper.controller.SubjectController}}
+\doxysubsubsection{\texorpdfstring{subjectRepository}{subjectRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Subject\+Controller.\+subject\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vgtstptlk/\+Desktop/ÐÐÐ Ð­Ð/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/controller/\mbox{\hyperlink{_subject_controller_8java}{Subject\+Controller.\+java}}\end{DoxyCompactItemize}

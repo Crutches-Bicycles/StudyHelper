@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_120',['main',['../classcrutchesbicycles_1_1studyhelper_1_1_studyhelper_application.html#ad9b2a1d202d5f151360015091f8037d9',1,'crutchesbicycles::studyhelper::StudyhelperApplication']]]
+  ['number_164',['number',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_pair.html#abecfbec582ca7456c4f16537b1aaf53e',1,'crutchesbicycles::studyhelper::domain::Pair']]]
 ];

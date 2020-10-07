@@ -20,6 +20,10 @@ public class StudentController {
     private final StudentRepository studentRepository;
     private final GroupRepository groupRepository;
 
+    /**
+     * Возвращает список студентов.
+     * @return
+     */
     @GetMapping
     List<Student> getStudents(){
         return studentRepository.findAll();

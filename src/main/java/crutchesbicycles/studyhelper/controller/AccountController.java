@@ -103,6 +103,7 @@ public class AccountController {
         Optional<Student> optionalStudents = studentRepository.findByIdStudent(idStudent);
         Account tempAccount = account.get();
         optionalStudents.ifPresent(tempAccount::setStudent);
+        // TODO: 06.10.2020  
         if (!tempAccount.getEmail().equals(email)){
             tempAccount.setEmail(email);
         }

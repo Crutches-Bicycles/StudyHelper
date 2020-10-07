@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['schedulerecords_223',['ScheduleRecords',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_schedule_records.html',1,'crutchesbicycles::studyhelper::domain']]],
-  ['schedules_224',['Schedules',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_schedules.html',1,'crutchesbicycles::studyhelper::domain']]],
-  ['studentcontroller_225',['StudentController',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_student_controller.html',1,'crutchesbicycles::studyhelper::controller']]],
-  ['studentmaterial_226',['StudentMaterial',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_student_material.html',1,'crutchesbicycles::studyhelper::domain']]],
-  ['studentnotfoundexception_227',['StudentNotFoundException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_student_not_found_exception.html',1,'crutchesbicycles::studyhelper::exception']]],
-  ['students_228',['Students',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_students.html',1,'crutchesbicycles::studyhelper::domain']]],
-  ['studentsrepository_229',['StudentsRepository',['../interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_students_repository.html',1,'crutchesbicycles::studyhelper::repos']]],
-  ['studyhelperapplication_230',['StudyhelperApplication',['../classcrutchesbicycles_1_1studyhelper_1_1_studyhelper_application.html',1,'crutchesbicycles::studyhelper']]],
-  ['studyhelperapplicationtests_231',['StudyhelperApplicationTests',['../classcrutchesbicycles_1_1studyhelper_1_1_studyhelper_application_tests.html',1,'crutchesbicycles::studyhelper']]]
+  ['group_284',['Group',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_group.html',1,'crutchesbicycles::studyhelper::domain']]],
+  ['groupcontroller_285',['GroupController',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_group_controller.html',1,'crutchesbicycles::studyhelper::controller']]],
+  ['groupexistsexception_286',['GroupExistsException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_group_exists_exception.html',1,'crutchesbicycles::studyhelper::exception']]],
+  ['groupmaterial_287',['GroupMaterial',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_group_material.html',1,'crutchesbicycles::studyhelper::domain']]],
+  ['groupmaterialcontroller_288',['GroupMaterialController',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_group_material_controller.html',1,'crutchesbicycles::studyhelper::controller']]],
+  ['groupmaterialnotfoundexception_289',['GroupMaterialNotFoundException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_group_material_not_found_exception.html',1,'crutchesbicycles::studyhelper::exception']]],
+  ['groupmaterialrepository_290',['GroupMaterialRepository',['../interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_material_repository.html',1,'crutchesbicycles::studyhelper::repos']]],
+  ['groupnotfoundexception_291',['GroupNotFoundException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_group_not_found_exception.html',1,'crutchesbicycles::studyhelper::exception']]],
+  ['grouprepository_292',['GroupRepository',['../interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_repository.html',1,'crutchesbicycles::studyhelper::repos']]],
+  ['groupteacher_293',['GroupTeacher',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_group_teacher.html',1,'crutchesbicycles::studyhelper::domain']]],
+  ['groupteachernotfoundexception_294',['GroupTeacherNotFoundException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_group_teacher_not_found_exception.html',1,'crutchesbicycles::studyhelper::exception']]],
+  ['groupteacherrepository_295',['GroupTeacherRepository',['../interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_teacher_repository.html',1,'crutchesbicycles::studyhelper::repos']]]
 ];

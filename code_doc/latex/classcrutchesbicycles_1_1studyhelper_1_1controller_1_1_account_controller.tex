@@ -3,16 +3,16 @@
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfd42473ed57fba0e66eef0664dbd518}{Account\+Controller}} (\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_accounts_repository}{Accounts\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a82acde65745df886f206d559daa6c70a}{account\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_students_repository}{Students\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aef633299d498359d49c7db0ea218a855}{student\+Repository}})
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}{Account\+Controller}} (\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_account_repository}{Account\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a800c1d36b05638d93ca625066309f2ff}{account\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_student_repository}{Student\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad8493d79d1de4384fb46af809e2491ed}{student\+Repository}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Функции с областью видимости пакета}
 \begin{DoxyCompactItemize}
 \item 
-List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_accounts}{Accounts}} $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aba7149b3e0374f870bd0728fc79df97f}{get\+Accounts}} ()
+List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aeddb08dd10b508c62cbe4dc1fedc6195}{get\+Accounts}} ()
 \item 
 synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a92db5b1f189ca8e77475481b102302b0}{create\+Account}} (@Request\+Param String email, @Request\+Param String password, @Request\+Param String account\+Type)
 \item 
-\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_accounts}{Accounts}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a6ce014afde0b4688fa9d6b874b513286}{get\+Account\+By\+Id}} (@Path\+Variable Long id\+Account)
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a72668b8a5fb714fd9e8f6de560889d50}{get\+Account\+By\+Id}} (@Path\+Variable Long id\+Account)
 \item 
 synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}{edit\+Account}} (@Path\+Variable Long id\+Account, @Request\+Param String email, @Request\+Param String password, @Request\+Param String account\+Type, @Request\+Param Long id\+Student)
 \item 
@@ -21,9 +21,9 @@ synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1s
 \doxysubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
-final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_accounts_repository}{Accounts\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a82acde65745df886f206d559daa6c70a}{account\+Repository}}
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_account_repository}{Account\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a800c1d36b05638d93ca625066309f2ff}{account\+Repository}}
 \item 
-final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_students_repository}{Students\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aef633299d498359d49c7db0ea218a855}{student\+Repository}}
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_student_repository}{Student\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad8493d79d1de4384fb46af809e2491ed}{student\+Repository}}
 \end{DoxyCompactItemize}
 
 
@@ -33,11 +33,11 @@ Account controller -- контроллер для аккаунта ~\newline
 Если параметры не помечены как \char`\"{}(\+U\+R\+L шаблон)\char`\"{}, то это означет, что они типа form-\/data 
 
 \doxysubsection{Конструктор(ы)}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfd42473ed57fba0e66eef0664dbd518}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfd42473ed57fba0e66eef0664dbd518}} 
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!AccountController@{AccountController}}
 \index{AccountController@{AccountController}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{AccountController()}{AccountController()}}
-{\footnotesize\ttfamily crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_accounts_repository}{Accounts\+Repository}}}]{account\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_students_repository}{Students\+Repository}}}]{student\+Repository }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_account_repository}{Account\+Repository}}}]{account\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_student_repository}{Student\+Repository}}}]{student\+Repository }\end{DoxyParamCaption})}
 
 
 
@@ -81,9 +81,11 @@ Account\+Exists\+Exception
 \begin{DoxyReturn}{Возвращает}
 H\+T\+TP Status OK (200), если всё прошло успешно, также может выдавать исключение User\+Not\+Found\+Exception 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{См. также}
-User\+Not\+Found\+Exception 
-\end{DoxySeeAlso}
+
+\begin{DoxyExceptions}{Исключения}
+{\em User\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!editAccount@{editAccount}}
 \index{editAccount@{editAccount}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
@@ -109,14 +111,16 @@ User\+Not\+Found\+Exception
 \begin{DoxyReturn}{Возвращает}
 H\+T\+TP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение User\+Not\+Found\+Exception 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{См. также}
-User\+Not\+Found\+Exception 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a6ce014afde0b4688fa9d6b874b513286}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a6ce014afde0b4688fa9d6b874b513286}} 
+
+\begin{DoxyExceptions}{Исключения}
+{\em User\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a72668b8a5fb714fd9e8f6de560889d50}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a72668b8a5fb714fd9e8f6de560889d50}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!getAccountById@{getAccountById}}
 \index{getAccountById@{getAccountById}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{getAccountById()}{getAccountById()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_accounts}{Accounts}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Account\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Account\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
 
 Получить аккаунт по id ~\newline
 {\bfseries{Путь\+: /api/accounts/\{id\+Account\}}} ~\newline
@@ -128,14 +132,16 @@ User\+Not\+Found\+Exception
 \begin{DoxyReturn}{Возвращает}
 Json c данными аккаунта, также может выдавать исключение User\+Not\+Found\+Exception 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{См. также}
-User\+Not\+Found\+Exception 
-\end{DoxySeeAlso}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aba7149b3e0374f870bd0728fc79df97f}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aba7149b3e0374f870bd0728fc79df97f}} 
+
+\begin{DoxyExceptions}{Исключения}
+{\em User\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aeddb08dd10b508c62cbe4dc1fedc6195}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aeddb08dd10b508c62cbe4dc1fedc6195}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!getAccounts@{getAccounts}}
 \index{getAccounts@{getAccounts}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{getAccounts()}{getAccounts()}}
-{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_accounts}{Accounts}}$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Accounts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}}$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Accounts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
 
 Получить все аккаунты. Возвращает в формате J\+S\+ON. ~\newline
 {\bfseries{Путь\+: /api/accounts}} ~\newline
@@ -145,20 +151,20 @@ json со списком аккаунтов
 
 
 \doxysubsection{Данные класса}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a82acde65745df886f206d559daa6c70a}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a82acde65745df886f206d559daa6c70a}} 
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a800c1d36b05638d93ca625066309f2ff}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a800c1d36b05638d93ca625066309f2ff}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!accountRepository@{accountRepository}}
 \index{accountRepository@{accountRepository}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{accountRepository}{accountRepository}}
-{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_accounts_repository}{Accounts\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+account\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_account_repository}{Account\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+account\+Repository\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aef633299d498359d49c7db0ea218a855}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aef633299d498359d49c7db0ea218a855}} 
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad8493d79d1de4384fb46af809e2491ed}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad8493d79d1de4384fb46af809e2491ed}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!studentRepository@{studentRepository}}
 \index{studentRepository@{studentRepository}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{studentRepository}{studentRepository}}
-{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_students_repository}{Students\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+student\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_student_repository}{Student\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+student\+Repository\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/mag13/\+Desktop/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/controller/\mbox{\hyperlink{_account_controller_8java}{Account\+Controller.\+java}}\end{DoxyCompactItemize}
+/\+Users/vgtstptlk/\+Desktop/ÐÐÐ Ð­Ð/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/controller/\mbox{\hyperlink{_account_controller_8java}{Account\+Controller.\+java}}\end{DoxyCompactItemize}
