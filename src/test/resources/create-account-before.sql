@@ -1,4 +1,4 @@
-truncate table account;
+delete from account;
 
 
 

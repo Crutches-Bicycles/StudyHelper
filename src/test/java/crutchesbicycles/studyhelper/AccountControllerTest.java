@@ -1,11 +1,8 @@
 package crutchesbicycles.studyhelper;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import crutchesbicycles.studyhelper.controller.AccountController;
 import crutchesbicycles.studyhelper.exception.AccountExistsException;
 import crutchesbicycles.studyhelper.exception.UserNotFoundException;
-import crutchesbicycles.studyhelper.repos.AccountRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +12,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.StringContains.containsString;
@@ -79,6 +74,7 @@ public class AccountControllerTest {
     }
 
     @Test
+    // TODO: 09.10.2020 Нет обработки изменения почты на уже существующую
     public void editAccountTest() throws Exception{
         this.mockMvc.perform(put("/api/accounts/10")
                 .param("email","example3@gmail.com")

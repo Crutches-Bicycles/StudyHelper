@@ -1,0 +1,4 @@
+delete from subject;
+
+
+
