@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Muller Hairline';
+	src: url(../../assets/fonts/MullerHairlineItalic.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerHairlineItalic.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerHairlineItalic.woff2) format('woff2'),
+	url(../../assets/fonts/MullerHairlineItalic.woff) format('woff'),
+	url(../../assets/fonts/MullerHairlineItalic.ttf) format('truetype');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Muller Hairline';
+	src: url(../../assets/fonts/MullerHairline.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerHairline.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerHairline.woff2) format('woff2'),
+	url(../../assets/fonts/MullerHairline.woff) format('woff'),
+	url(../../assets/fonts/MullerHairline.ttf) format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
