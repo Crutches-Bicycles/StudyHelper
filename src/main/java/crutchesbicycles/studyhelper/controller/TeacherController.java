@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,9 +63,13 @@ public class TeacherController {
      * @param secondName -- фамилия преподавателя
      * @return Http Status 201 (CREATED), если сохранен объект
      */
+    // TODO: 09.10.2020 написать исключение проверки одинаковых почт
     @PostMapping
     ResponseEntity<?> createTeacher(@RequestParam String firstName, @RequestParam String secondName,
                                     @RequestParam String patronymic, @RequestParam String email){
+        if (teacherRepository.findByEmail(email).isPresent()){
+            throw new TeacherExistsException(email);
+        }
         Teacher tempTeacher = new Teacher(firstName, secondName, patronymic, email);
         teacherRepository.save(tempTeacher);
         return new ResponseEntity<>("Teacher was created", HttpStatus.CREATED);
@@ -84,6 +89,7 @@ public class TeacherController {
      * если преподаватель с данным объектом отсутствует в базе, то выкидывает исключение TeacherNotFoundException
      * @throws TeacherNotFoundException
      */
+    // TODO: 09.10.2020 аналогично с проверкой почты
     @PutMapping("/{idTeacher}")
     ResponseEntity<?> updateTeacher(@PathVariable Long idTeacher, @RequestParam String firstName,
                                     @RequestParam String secondName, @RequestParam String patronymic,
@@ -123,6 +129,7 @@ public class TeacherController {
      * @return HttpStatus 200 (OK) в случае успешного удаления объект,
      * если преподаватель с данным объектом отсутствует в базе, то выкидывает исключение TeacherNotFoundException
      */
+    // TODO: 09.10.2020 связать удаление в бд
     @DeleteMapping("/{idTeacher}")
     ResponseEntity<?> deleteTeacher(@PathVariable Long idTeacher){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -160,6 +167,7 @@ public class TeacherController {
      * @param idSubject
      * @return
      */
+
     @PostMapping("/{idTeacher}/subjects")
     ResponseEntity<?> createSubject(@PathVariable Long idTeacher, @RequestParam Long idSubject){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -178,8 +186,10 @@ public class TeacherController {
         if (optionalTeacherSubject.isPresent()){
             tempTeacherSubject = optionalTeacherSubject.get();
             List<Subject> tempList = tempTeacherSubject.getSubjects();
-            tempList.add(optionalSubject.get());
-            tempTeacherSubject.setSubjects(tempList);
+            if (!tempList.contains(optionalSubject.get())) {
+                tempList.add(optionalSubject.get());
+                tempTeacherSubject.setSubjects(tempList);
+            }
         }
         else {
             List<Subject> tempList = new ArrayList<>();
@@ -206,6 +216,7 @@ public class TeacherController {
          // todo: optimize this code
     }
 
+
     @DeleteMapping("/{idTeacher}/subjects/{idSubject}")
     ResponseEntity<?> deleteTeacherSubject(@PathVariable Long idTeacher, @PathVariable Long idSubject){
         Optional<TeacherSubject> optionalTeacherSubject = this.teacherSubjectRepository.findByTeacherIdTeacher(idTeacher);
@@ -213,7 +224,17 @@ public class TeacherController {
                 () -> new TeacherSubjectNotFound(idTeacher.toString())
         );
 
-        teacherSubjectRepository.delete(optionalTeacherSubject.get());
+        Optional<Subject> optionalSubject = subjectRepository.findByIdSubject(idSubject);
+        optionalSubject.orElseThrow(
+                () -> new SubjectNotFoundException(idSubject.toString())
+        );
+        Subject subject = optionalSubject.get();
+        TeacherSubject teacherSubject = optionalTeacherSubject.get();
+        List<Subject> subjectList = teacherSubject.getSubjects();
+        subjectList.remove(subject);
+        teacherSubject.setSubjects(subjectList);
+
+        teacherSubjectRepository.save(teacherSubject);
         return new ResponseEntity<>("Teacher Subject with id '" + idTeacher +"' deleted", HttpStatus.OK);
     }
 
@@ -258,7 +279,7 @@ public class TeacherController {
     }
 
     // todo:
-    @DeleteMapping("/teachers/{idTeacher}/groups/{idGroup}")
+    @DeleteMapping("/{idTeacher}/groups/{idGroup}")
     ResponseEntity<?> deleteTeacherGroup(@PathVariable Long idTeacher, @PathVariable Long idGroup){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
         optionalTeachers.orElseThrow(

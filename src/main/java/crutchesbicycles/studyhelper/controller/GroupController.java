@@ -66,8 +66,12 @@ public class GroupController {
         optionalGroup.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
         );
-        if (groupRepository.findByEmailOrCaption(email, caption).isPresent()){
-            throw new GroupExistsException(email, caption);
+
+        Optional<Group> existGroup = groupRepository.findByEmailOrCaption(email, caption);
+        if (existGroup.isPresent()){
+            if (existGroup.get().getIdGroup() != idGroup) {
+                throw new GroupExistsException(email, caption);
+            }
         }
 
         Group tempGroup = optionalGroup.get();
@@ -111,6 +115,7 @@ public class GroupController {
      * @throws GroupNotFoundException
      */
     @DeleteMapping("{idGroup}")
+
     ResponseEntity<?> deleteGroup(@PathVariable Long idGroup){
         groupRepository.findByIdGroup(idGroup).orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
@@ -128,7 +133,7 @@ public class GroupController {
      * @throws GroupNotFoundException
      */
     // TODO: 04.10.2020 проверить создается ли сущность GroupTeacher вместе с Group
-    @GetMapping("/groups/{idGroup}/teachers")
+    @GetMapping("/{idGroup}/teachers")
     GroupTeacher getTeacherGroup(@PathVariable Long idGroup){
         Optional<GroupTeacher> optionalGroupTeacher = this.groupTeacherRepository.findByGroupIdGroup(idGroup);
         optionalGroupTeacher.orElseThrow(

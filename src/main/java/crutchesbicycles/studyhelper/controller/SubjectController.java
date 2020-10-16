@@ -3,6 +3,7 @@ package crutchesbicycles.studyhelper.controller;
 import crutchesbicycles.studyhelper.domain.Subject;
 import crutchesbicycles.studyhelper.domain.TeacherSubject;
 import crutchesbicycles.studyhelper.exception.GroupNotFoundException;
+import crutchesbicycles.studyhelper.exception.SubjectExistException;
 import crutchesbicycles.studyhelper.exception.SubjectNotFoundException;
 import crutchesbicycles.studyhelper.repos.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +35,13 @@ public class SubjectController {
      * <b>Путь: /api/subjects/</b> \n
      * Тип запроса: POST
      * @return HTTP Status 201 CREATED
+     * @throws SubjectExistException -- если существует предмет с таким же именем
      */
     @PostMapping
     ResponseEntity<?> createSubject(@RequestParam String caption){
+        if (subjectRepository.findByCaption(caption).isPresent()){
+            throw new SubjectExistException(caption);
+        }
         Subject subject = new Subject(caption);
         subjectRepository.save(subject);
         return new ResponseEntity<>("Subject with caption '" + caption + "' created.", HttpStatus.CREATED);
@@ -69,6 +74,7 @@ public class SubjectController {
      * @return HttpStatus 200 (OK) в случае удачного обнавления, если отсутствует с данным id может выкинуть исключение SubjectNotFoundException
      * @throws SubjectNotFoundException
      */
+    // TODO: 09.10.2020 подумать об одинаковости
     @PutMapping("/{idSubject}")
     ResponseEntity<?> updateSubject(@PathVariable Long idSubject, @RequestParam String caption){
         Optional<Subject> optionalSubject = subjectRepository.findByIdSubject(idSubject);

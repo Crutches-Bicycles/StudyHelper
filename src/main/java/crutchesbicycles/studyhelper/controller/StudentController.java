@@ -82,10 +82,6 @@ public class StudentController {
             tempStudent.setPatronymic(patronymic);
         }
 
-        if (!tempStudent.getFirstName().equals(firstName)){
-            tempStudent.setFirstName(firstName);
-        }
-
         Optional<Group> optionalGroup = groupRepository.findByIdGroup(idGroup);
         optionalGroup.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
