@@ -7,14 +7,19 @@ use Illuminate\Http\Request;
 class GuestPageController extends Controller
 {
 
-    function registration()
+    public function welcome()
     {
-        return 'Registration page';
+        return view('welcome');
     }
 
-    function login()
+    public function registration()
     {
-        return 'Login page';
+        return view('registration');
+    }
+
+    public function login()
+    {
+        return view('login');
     }
 
 }

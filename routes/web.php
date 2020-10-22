@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', '\App\Http\Controllers\GuestPageController@welcome')->name('welcome');
 
 Route::get('/login', '\App\Http\Controllers\GuestPageController@login')->name('login');
 Route::get('/registration', '\App\Http\Controllers\GuestPageController@registration')->name('registration');

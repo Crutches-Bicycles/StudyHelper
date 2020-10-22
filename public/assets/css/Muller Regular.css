@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'Muller Regular';
+	src: url(../../assets/fonts/MullerRegularItalic.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerRegularItalic.eot) format('embedded-opentype'),
+	url(../../assets/fonts/MullerRegularItalic.woff2) format('woff2'),
+	url(../../assets/fonts/MullerRegularItalic.woff) format('woff'),
+	url(../../assets/fonts/MullerRegularItalic.ttf) format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
