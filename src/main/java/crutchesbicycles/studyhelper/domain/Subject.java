@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Сущность Subject. Список предметов. \n
@@ -14,7 +15,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class Subject {
+public class Subject implements Serializable {
     @Id
     @GeneratedValue
     private long idSubject;

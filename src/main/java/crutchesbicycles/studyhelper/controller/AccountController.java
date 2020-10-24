@@ -9,6 +9,8 @@ import crutchesbicycles.studyhelper.exception.UserNotFoundException;
 import crutchesbicycles.studyhelper.repos.AccountRepository;
 import crutchesbicycles.studyhelper.repos.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +23,7 @@ import java.util.Optional;
  * Account controller -- контроллер для аккаунта \n
  * <b>Путь: /api/accounts/</b> \n
  * Если параметры не помечены как "(URL шаблон)", то это означет, что они типа form-data
+ * <b>ПРОИСХОДИТ ТЕСТИРОВАНИЕ КЭШИРОВАНИЯ МОЖЕТ РАБОТАТЬ НЕ ОЧЕНЬ СТАБИЛЬНО</b>
  */
 @RestController
 @RequestMapping("/api/accounts")
@@ -50,8 +53,9 @@ public class AccountController {
      * @return HTTP Status 201, если аккаунт удачно создан. Иначе выдает исключение AccountExistsException
      * @see AccountExistsException
      */
+    @Cacheable(value = "accounts")
     @PostMapping
-    synchronized ResponseEntity<?> createAccount(@RequestParam String email, @RequestParam String password,
+    public synchronized ResponseEntity<?> createAccount(@RequestParam String email, @RequestParam String password,
                                                  @RequestParam String accountType){
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
@@ -69,8 +73,9 @@ public class AccountController {
      * @return Json c данными аккаунта, также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
      */
+    @Cacheable(value = "accounts")
     @GetMapping("{idAccount}")
-    Account getAccountById(@PathVariable Long idAccount){
+    public Account getAccountById(@PathVariable Long idAccount){
         Optional<Account> account = accountRepository.findByIdAccount(idAccount);
         account.orElseThrow(
                 () -> new UserNotFoundException(idAccount.toString())
@@ -92,8 +97,9 @@ public class AccountController {
      * @return HTTP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
      */
+    @Cacheable(value = "accounts")
     @PutMapping("{idAccount}")
-    synchronized ResponseEntity<?> editAccount(@PathVariable Long idAccount, @RequestParam String email,
+    public synchronized ResponseEntity<?> editAccount(@PathVariable Long idAccount, @RequestParam String email,
                                   @RequestParam String password, @RequestParam String accountType,
                                   @RequestParam Long idStudent){
         Optional<Account> account = accountRepository.findByIdAccount(idAccount);
@@ -131,8 +137,9 @@ public class AccountController {
      * @return HTTP Status OK (200), если всё прошло успешно, также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
      */
+    @CacheEvict(value = "accounts")
     @DeleteMapping("{idAccount}")
-    synchronized ResponseEntity<?> deleteAccount(@PathVariable Long idAccount){
+    public synchronized ResponseEntity<?> deleteAccount(@PathVariable Long idAccount){
         accountRepository.findByIdAccount(idAccount).orElseThrow(
                 () -> new UserNotFoundException(idAccount.toString())
         );

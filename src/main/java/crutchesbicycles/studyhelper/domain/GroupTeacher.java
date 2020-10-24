@@ -1,6 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @version 1.0.0
  */
 @Entity
-public class GroupTeacher {
+public class GroupTeacher implements Serializable {
     @Id
     @GeneratedValue
     private long idGroupTeacher;

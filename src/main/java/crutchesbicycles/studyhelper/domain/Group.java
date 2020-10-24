@@ -2,6 +2,7 @@ package crutchesbicycles.studyhelper.domain;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Сущность Group. Описывает группу. \n
@@ -13,7 +14,7 @@ import javax.persistence.*;
  * @version 1.0.0
  */
 @Entity(name = "group_")
-public class Group {
+public class Group implements Serializable {
     @Id
     @GeneratedValue
     private long idGroup;

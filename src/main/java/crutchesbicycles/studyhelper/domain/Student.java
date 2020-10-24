@@ -1,6 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Сущность Student. \n
@@ -14,7 +15,7 @@ import javax.persistence.*;
  * @version 1.0.0
  */
 @Entity
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue
     private long idStudent;
