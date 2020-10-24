@@ -1,6 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Сущность ScheduleRecord. Записи в расписании. \n
@@ -15,7 +16,7 @@ import javax.persistence.*;
  * @version 1.0.0
  */
 @Entity
-public class ScheduleRecord {
+public class ScheduleRecord implements Serializable {
     @Id
     @GeneratedValue
     private long idScheduleRecord;

@@ -54,8 +54,9 @@ public class StudentMaterialControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.file").value("exampleFile3"));
     }
+
     @Test
-    public  void StudentMaterialNotFoundException()throws Exception{
+    public  void StudentMaterialNotFoundException() throws Exception{
         this.mockMvc.perform(get("/api/students/10/materials/15"))
                 .andExpect(status().isNotFound())
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof StudentMaterialNotFoundException));

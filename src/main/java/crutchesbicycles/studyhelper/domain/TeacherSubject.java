@@ -22,7 +22,7 @@ public class TeacherSubject {
     @OneToOne
     private Teacher teacher;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.ALL})
     private List<Subject> subjects;
 
     public long getIdTeacherSubject() {

@@ -1,6 +1,8 @@
 package crutchesbicycles.studyhelper.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -21,6 +23,7 @@ import java.io.Serializable;
 @Entity
 public class Account implements Serializable {
 
+    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
     @Id
     @GeneratedValue
@@ -79,8 +82,9 @@ public class Account implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = PASSWORD_ENCODER.encode(password);
     }
+
 
     public AccountType getAccountType() {
         return accountType;

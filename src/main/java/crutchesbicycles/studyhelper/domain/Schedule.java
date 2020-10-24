@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 
 /**
  * Сущность Schedule. Полное расписание. \n
@@ -14,7 +15,7 @@ import javax.persistence.ManyToOne;
  * @version 1.0.0
  */
 @Entity
-public class Schedule {
+public class Schedule implements Serializable {
     @Id
     @GeneratedValue
     private long idSchedule;

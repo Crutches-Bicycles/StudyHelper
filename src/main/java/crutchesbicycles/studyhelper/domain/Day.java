@@ -3,6 +3,7 @@ package crutchesbicycles.studyhelper.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 
 /**
@@ -15,7 +16,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class Day {
+public class Day implements Serializable {
     @Id
     @GeneratedValue
     private long idDay;

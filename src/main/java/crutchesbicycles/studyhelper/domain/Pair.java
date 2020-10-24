@@ -1,6 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -15,7 +16,7 @@ import java.util.Date;
  * @version 1.0.0
  */
 @Entity
-public class Pair {
+public class Pair implements Serializable {
     @Id
     @GeneratedValue
     private long idPair;

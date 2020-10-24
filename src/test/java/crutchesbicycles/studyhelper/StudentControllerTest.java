@@ -89,7 +89,7 @@ public class StudentControllerTest {
     @Test
     public void updateStudentTest() throws Exception{
         this.mockMvc.perform(put("/api/students/10")
-                .param("firstName","Игорь")
+                .param("firstName","Igor")
                 .param("secondName","Игорев")
                 .param("patronymic","Игоревич")
                 .param("idGroup","10"))
@@ -97,7 +97,7 @@ public class StudentControllerTest {
                 .andExpect(content().string(containsString("updated")));
         this.mockMvc.perform(get("/api/students/10"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.firstName").value("Игорь"));
+                .andExpect(jsonPath("$.firstName").value("Igor"));
     }
 
 

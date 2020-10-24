@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Сущность Teacher. \n
@@ -17,7 +18,7 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity
-public class Teacher {
+public class Teacher implements Serializable {
     @Id
     @GeneratedValue
     private long idTeacher;
