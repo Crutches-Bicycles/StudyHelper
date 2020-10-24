@@ -53,7 +53,6 @@ public class AccountController {
      * @return HTTP Status 201, если аккаунт удачно создан. Иначе выдает исключение AccountExistsException
      * @see AccountExistsException
      */
-    @Cacheable(value = "accounts")
     @PostMapping
     public synchronized ResponseEntity<?> createAccount(@RequestParam String email, @RequestParam String password,
                                                  @RequestParam String accountType){
