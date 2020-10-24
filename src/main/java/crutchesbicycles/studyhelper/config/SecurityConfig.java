@@ -17,27 +17,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@Configuration
+//@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .defaultSuccessUrl("/", true)
-                .permitAll()
-                .and()
-                .httpBasic()
-                .and()
-                .csrf().disable()
-                .logout()
-                .logoutSuccessUrl("/");
+//        http
+//                .authorizeRequests()
+//                .antMatchers("/**").permitAll()
+//                .and()
+//                .httpBasic()
+//                .and()
+//                .csrf().disable();
     }
 
 }
