@@ -30,7 +30,7 @@ public class TrafficController {
         return optionalTraffic.get();
     }
 
-    // TODO: 24.10.2020 доделать завтра 
+    // TODO: 24.10.2020 доделать завтра
     @PostMapping("/students/{idStudent}/traffic")
     ResponseEntity<?> createTraffic(){
         return new ResponseEntity<>("Traffic created", HttpStatus.CREATED);
