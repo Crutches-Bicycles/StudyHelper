@@ -45,6 +45,10 @@ public class GroupMaterial implements Serializable {
     @ManyToOne
     private Group group;
 
+    public GroupMaterial() {
+
+    }
+
     public Group getGroup() {
         return group;
     }

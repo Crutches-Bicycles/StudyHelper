@@ -11,6 +11,7 @@ package crutchesbicycles.studyhelper.domain;
 
 public enum AccountType {
     ADMIN,
+    HEADMAN,
     USER;
 
     AccountType() {
