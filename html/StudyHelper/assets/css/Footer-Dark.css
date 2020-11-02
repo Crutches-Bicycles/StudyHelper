@@ -110,3 +110,7 @@
   border: none;
 }
 
+.border_r20 {
+  border-radius: 20px;
+}
+
