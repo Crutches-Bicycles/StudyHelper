@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand bg-light navigation-clean" style="/*background-color: #0085ff;*/">
+<nav class="navbar navbar-light navbar-expand bg-light navigation-clean" style="background-color: #0085ff;">
     <div class="container">
         <a class="navbar-brand" href={{ route('welcome') }} style="font-family: 'Fredoka One', cursive;font-size: 28px;">
         <img src="assets/img/Group%2017.png" style="width: 50px;margin-right: 5px;margin-top: -5px;">StudyHelper</a>

@@ -4,6 +4,8 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\Auth;
+
 class UserPageController extends Controller
 {
 
@@ -12,34 +14,35 @@ class UserPageController extends Controller
         $this->middleware('auth');
     }
 
-    function profile()
+    public function logout()
     {
-        return 'User profile page';
+        Auth::logout();
+        return redirect()->route('welcome');
     }
 
-    function group()
+    public function profile()
     {
-        return 'Group page';
+        return view('profile');
     }
 
-    function signIn()
+    public function group()
     {
-        return 'Sign in to group';
+        return view('group');
     }
 
-    function schedule()
+    public function schedule()
     {
         return 'Set Schedule by elder';
     }
 
-    function delegate()
+    public function delegate()
     {
         return 'Delegate ';
     }
 
-    function traffic()
+    public function traffic()
     {
-        return 'Set traffic by elder';
+        return view('traffic');
     }
 
 }

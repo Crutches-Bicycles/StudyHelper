@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/login_user', function () {
+    if (Auth::attempt([
+        'email' => 'test@mail.ru',
+        'password' => 'qwerty'
+    ])) {
+        print_r("Auth user success");
+        return redirect()->route('welcome');
+    }
+});
+
+Route::get('/logout_user', function () {
+    Auth::logout();
+    print_r('Logout user success');
+    return redirect()->route('welcome');
+});
+
+
 Route::get('/', '\App\Http\Controllers\GuestPageController@welcome')->name('welcome');
 
 Route::get('/login', '\App\Http\Controllers\GuestPageController@login')->name('login');
 Route::get('/registration', '\App\Http\Controllers\GuestPageController@registration')->name('registration');
+Route::get('/logout', '\App\Http\Controllers\UserPageController@logout')->name('logout');
 
 Route::get('/profile', '\App\Http\Controllers\UserPageController@profile')->name('profile');
 Route::get('/group', '\App\Http\Controllers\UserPageController@group')->name('group');
-Route::get('/sign-in', '\App\Http\Controllers\UserPageController@signIn')->name('signin');
 
 Route::get('/schedule', '\App\Http\Controllers\UserPageController@schedule')->name('schedule');
 Route::get('/traffic', '\App\Http\Controllers\UserPageController@traffic')->name('traffic');

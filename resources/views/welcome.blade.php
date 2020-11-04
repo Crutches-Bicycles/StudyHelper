@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title') StudyHelper @endsection
+
 @section('content')
 
     <header class="masthead text-white text-center" style="background: url('assets/img/bg-masthead.jpg')no-repeat center center;background-size: cover;background-image: url(&quot;assets/img/eiEE4atmtwA%201.png&quot;);">
@@ -141,5 +143,6 @@
         </div>
     </section>
 
+    @include('components.footer')
 @endsection
 

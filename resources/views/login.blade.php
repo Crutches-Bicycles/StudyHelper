@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('title') Войти @endsection
+
 @section('content')
 
     <div class="login-clean" style="background-color: rgba(241,247,252,0);">
