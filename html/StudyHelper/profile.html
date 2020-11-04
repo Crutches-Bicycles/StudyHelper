@@ -239,11 +239,49 @@
                     </table>
                 </div>
                 <div class="row" style="height: 43px;padding-top: 2px;padding-bottom: 18px;background-color: rgba(23,23,23,0);">
-                    <div class="col-lg-2 col-xl-2 offset-lg-6 offset-xl-10"><a class="btn btn-primary" role="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 32px;" href="addmyfile.html">Добавить</a></div>
+                    <div class="col-lg-2 col-xl-2 offset-lg-6 offset-xl-10"><a class="btn btn-primary" role="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 32px;"href="javascript:PopUpShow1()">Добавить</a></div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+        <div class="container login-clean" style="background-color: rgba(241,247,252,0);">
+        <form class="borderroundlog" method="post" style="width: 462px;height: 388px;background-color: #0085ff;">
+            <h1 class="text-center" style="color: rgb(255,255,255);margin-bottom: 20px;margin-top: -10px;font-family: Muller;">Выбор файлы</h1>
+            <div class="form-group"><input class="form-control" type="text" placeholder="Название файла"></div>
+            <div class="form-group"><input class="form-control" type="text" placeholder="Описание"></div>
+            <div class="form-group"><select class="form-control"><optgroup label="This is a group"><option value="12" selected="">This is item 1</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+            <div class="custom-file"><input type="file" class="custom-file-input border_r20"><label class="custom-file-label border_r20">Upload File</label></div>
+            <div class="form-row" style="height: 72px;margin-top: -3px;">
+                <div class="col-xl-6 offset-lg-3 offset-xl-3" style="padding: 0px;height: 71px;width: 159px;">
+                    <div class="form-group" style="width: 144px;margin-left: 10px;"><button class="btn btn-primary btn-block swiper-next" type="submit" style="background-color: #ffd600;width: 172px;height: 36px;padding: 0px;color: rgb(0,0,0);font-size: 14px;font-weight: normal;font-family: Muller;">Добаивть</button></div>
+                </div>
+            </div>
+            <div class="text-right" style="margin-top: -365px;margin-right: -15px;"><a href="javascript:PopUpHide1()"><i class="fa fa-close" style="font-size: 21px;color: rgb(0,0,0);"></i></a></div>
+        </form>
+    </div>
+    </div>
+</div>
+ <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы    
+        PopUpHide1();
+        PopUpHide2();
+        PopUpHide3();
+
+    });
+    //Функция отображения PopUp
+    function PopUpShow1(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide1(){
+        $("#popup1").hide();
+    }
+    
+</script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
