@@ -4,9 +4,13 @@ package crutchesbicycles.studyhelper.security.jwt;
 import com.sun.java.swing.action.ActionManager;
 import crutchesbicycles.studyhelper.domain.Account;
 import crutchesbicycles.studyhelper.domain.AccountType;
+import crutchesbicycles.studyhelper.domain.Role;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public final class JwtUserFactory {
 
@@ -19,12 +23,13 @@ public final class JwtUserFactory {
                 account.getIdAccount(),
                 account.getEmail(),
                 account.getPassword(),
-                account.getAccountType(),
-                null
+                account.getRoles(),
+                mapToGrantedAuthority(new ArrayList<>(account.getRoles() ))
         );
     }
 
-    public static List<GrantedAuthority> mapToGrantedAuthority(AccountType accountType){
-        return AccountType.stream
+    public static List<GrantedAuthority> mapToGrantedAuthority(List<Role> roles){
+         return roles.stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 }

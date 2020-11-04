@@ -2,19 +2,43 @@ package crutchesbicycles.studyhelper.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import java.util.List;
 
 @Entity
 public class Role {
-    private String id;
+    private Long id;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String name;
 
-    @Id
-    public String getId() {
+    @ManyToMany(mappedBy = "roles")
+    private List<Account> accounts;
+
+    public Long getId() {
         return id;
     }
 
-    private String name; 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<Account> accounts) {
+        this.accounts = accounts;
+    }
+
+    public Role() {
+    }
 }

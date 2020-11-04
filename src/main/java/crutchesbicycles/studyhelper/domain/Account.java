@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Сущность Account. Предоставляет основные поля для аккаунта, внезависимости от типа аккаунта.\n
@@ -39,18 +40,18 @@ public class Account implements Serializable {
     @JsonIgnore
     private String password;
 
-    
-    @Enumerated(EnumType.STRING)
-    private AccountType accountType;
+    @ManyToMany
+    private List<Role> roles;
+
 
     public Account() {
     }
 
-    public Account(Student student, String email, String password, AccountType accountType) {
+    public Account(Student student, String email, String password, List<Role> roles) {
         this.student = student;
         this.email = email;
         this.password = password;
-        this.accountType = accountType;
+        this.roles = roles;
     }
 
     public long getIdAccount() {
@@ -86,11 +87,11 @@ public class Account implements Serializable {
     }
 
 
-    public AccountType getAccountType() {
-        return accountType;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setAccountType(AccountType accountType) {
-        this.accountType = accountType;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

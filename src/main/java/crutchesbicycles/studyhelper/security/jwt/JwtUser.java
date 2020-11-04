@@ -1,13 +1,14 @@
 package crutchesbicycles.studyhelper.security.jwt;
 
 import crutchesbicycles.studyhelper.domain.AccountType;
-import crutchesbicycles.studyhelper.domain.Student;
+import crutchesbicycles.studyhelper.domain.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.Collection;
+import java.util.List;
 
 public class JwtUser implements UserDetails {
 
@@ -16,7 +17,7 @@ public class JwtUser implements UserDetails {
     private final String email;
     private final String password;
     @Enumerated(EnumType.STRING)
-    private final AccountType accountType;
+    private final List<Role> roles;
 
 
     private final Collection<? extends GrantedAuthority> authorities;
@@ -24,12 +25,12 @@ public class JwtUser implements UserDetails {
     public JwtUser(Long idAccount,
                    String email,
                    String password,
-                   AccountType accountType,
+                   List<Role> roles,
                    Collection<? extends GrantedAuthority> authorities) {
         this.idAccount = idAccount;
         this.email = email;
         this.password = password;
-        this.accountType = accountType;
+        this.roles = roles;
         this.authorities = authorities;
     }
 
@@ -57,8 +58,8 @@ public class JwtUser implements UserDetails {
         return email;
     }
 
-    public AccountType getAccountType() {
-        return accountType;
+    public List<Role> getRoles() {
+        return roles;
     }
 
     @Override
