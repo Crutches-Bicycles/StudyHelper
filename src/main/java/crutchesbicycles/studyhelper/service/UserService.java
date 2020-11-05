@@ -39,7 +39,7 @@ public class UserService {
                 () -> new AccountNotFoundException(email)
         );
 
-        
+        return accountOptional.get();
     }
 
     @Autowired
