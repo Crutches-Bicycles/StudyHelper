@@ -1,8 +1,10 @@
-package crutchesbicycles.studyhelper.security.jwt;
+package crutchesbicycles.studyhelper.security;
 
 import crutchesbicycles.studyhelper.domain.Account;
 import crutchesbicycles.studyhelper.exception.AccountNotFoundException;
 import crutchesbicycles.studyhelper.repos.AccountRepository;
+import crutchesbicycles.studyhelper.security.jwt.JwtUser;
+import crutchesbicycles.studyhelper.security.jwt.JwtUserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

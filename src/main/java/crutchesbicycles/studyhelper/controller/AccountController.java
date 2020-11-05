@@ -47,7 +47,7 @@ public class AccountController {
     /**
      * Создает аккаунт в системе. \n
      * <b>Путь: /api/accounts</b> \n
-     * Тип запроса: POST
+     *
      * @param email -- почта пользователя. Важно: email должен быть уникальным
      * @param password -- пароль пользователя. Должен передаваться уже ЗАШИФРОВАННЫЙ
      * @param roles -- тип аккаунта. Администратор, например.
@@ -55,9 +55,8 @@ public class AccountController {
      * @see AccountExistsException
      */
     // TODO: 02.11.2020 аккуратно с roles
-    @PostMapping
-    public synchronized ResponseEntity<?> createAccount(@RequestParam String email, @RequestParam String password,
-                                                 @RequestParam List<Role> roles){
+    public synchronized ResponseEntity<?> createAccount(String email, String password,
+                                                 List<Role> roles){
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
         }
