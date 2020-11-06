@@ -1,9 +1,12 @@
 package crutchesbicycles.studyhelper.controller;
 
+import crutchesbicycles.studyhelper.domain.Account;
 import crutchesbicycles.studyhelper.domain.Group;
 import crutchesbicycles.studyhelper.domain.Student;
+import crutchesbicycles.studyhelper.exception.AccountNotFoundException;
 import crutchesbicycles.studyhelper.exception.GroupNotFoundException;
 import crutchesbicycles.studyhelper.exception.StudentNotFoundException;
+import crutchesbicycles.studyhelper.repos.AccountRepository;
 import crutchesbicycles.studyhelper.repos.GroupRepository;
 import crutchesbicycles.studyhelper.repos.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import java.util.Optional;
 public class StudentController {
     private final StudentRepository studentRepository;
     private final GroupRepository groupRepository;
+    private final AccountRepository accountRepository;
 
     /**
      * Возвращает список студентов.
@@ -31,13 +35,24 @@ public class StudentController {
 
     @PostMapping
     ResponseEntity<?> createStudent(@RequestParam String firstName, @RequestParam String secondName,
-                                    @RequestParam String patronymic, @RequestParam Long idGroup){
+                                    @RequestParam String patronymic, @RequestParam Long idGroup,
+                                    @RequestParam Long idAccount){
         Optional<Group> groupOptional = groupRepository.findByIdGroup(idGroup);
         groupOptional.orElseThrow(
                 () -> new GroupNotFoundException(idGroup.toString())
         );
         Student student = new Student(groupOptional.get(), firstName, secondName, patronymic);
         long idStudent = studentRepository.save(student).getIdStudent();
+
+        Optional<Account> accountOptional = accountRepository.findByIdAccount(idAccount);
+        accountOptional.orElseThrow(
+                () -> new AccountNotFoundException(idAccount.toString())
+        );
+
+        Account account = accountOptional.get();
+        account.setStudent(student);
+        accountRepository.save(account);
+
         return new ResponseEntity<>("Student with id '" + idStudent + "' created", HttpStatus.CREATED);
     }
 
@@ -98,8 +113,10 @@ public class StudentController {
     }
 
     @Autowired
-    public StudentController(StudentRepository studentRepository, GroupRepository groupRepository) {
+    public StudentController(StudentRepository studentRepository, GroupRepository groupRepository, AccountRepository accountRepository) {
         this.studentRepository = studentRepository;
         this.groupRepository = groupRepository;
+        this.accountRepository = accountRepository;
     }
+
 }

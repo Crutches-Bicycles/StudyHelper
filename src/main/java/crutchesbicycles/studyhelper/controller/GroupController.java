@@ -67,9 +67,9 @@ public class GroupController {
                 () -> new GroupNotFoundException(idGroup.toString())
         );
 
-        Optional<Group> existGroup = groupRepository.findByEmailOrCaption(email, caption);
-        if (existGroup.isPresent()){
-            if (existGroup.get().getIdGroup() != idGroup) {
+        List<Group> existGroup = groupRepository.findByEmailOrCaption(email, caption);
+        if (existGroup.size() > 0){
+            if (existGroup.get(0).getIdGroup() != idGroup) {
                 throw new GroupExistsException(email, caption);
             }
         }
@@ -98,7 +98,7 @@ public class GroupController {
      */
     @PostMapping
     ResponseEntity<?> createGroup(@RequestParam String caption, @RequestParam String email){
-        if (groupRepository.findByEmailOrCaption(email, caption).isPresent()){
+        if (groupRepository.findByEmailOrCaption(email, caption).size() > 0){
             throw new GroupExistsException(email, caption);
         }
         Group tempGroup = new Group(caption, email);

@@ -3,6 +3,7 @@ package crutchesbicycles.studyhelper.controller;
 
 import crutchesbicycles.studyhelper.domain.Account;
 import crutchesbicycles.studyhelper.domain.AccountType;
+import crutchesbicycles.studyhelper.domain.Role;
 import crutchesbicycles.studyhelper.domain.Student;
 import crutchesbicycles.studyhelper.exception.AccountExistsException;
 import crutchesbicycles.studyhelper.exception.UserNotFoundException;
@@ -46,23 +47,22 @@ public class AccountController {
     /**
      * Создает аккаунт в системе. \n
      * <b>Путь: /api/accounts</b> \n
-     * Тип запроса: POST
+     *
      * @param email -- почта пользователя. Важно: email должен быть уникальным
      * @param password -- пароль пользователя. Должен передаваться уже ЗАШИФРОВАННЫЙ
-     * @param accountType -- тип аккаунта. Администратор, например.
+     * @param roles -- тип аккаунта. Администратор, например.
      * @return HTTP Status 201, если аккаунт удачно создан. Иначе выдает исключение AccountExistsException
      * @see AccountExistsException
      */
-    @Cacheable(value = "accounts")
-    @PostMapping
-    public synchronized ResponseEntity<?> createAccount(@RequestParam String email, @RequestParam String password,
-                                                 @RequestParam String accountType){
+    // TODO: 02.11.2020 аккуратно с roles
+    public Account createAccount(String email, String password,
+                                                 List<Role> roles){
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
         }
-        Account account = new Account(null, email, password, AccountType.valueOf(accountType));
+        Account account = new Account(null, email, password, roles);
         accountRepository.save(account);
-        return new ResponseEntity<>("Account with email " + email + " Created", HttpStatus.CREATED);
+        return null;
     }
 
     /**
@@ -92,7 +92,7 @@ public class AccountController {
      * @param idAccount (URL шаблон)
      * @param email -- почта
      * @param password -- пароль. Важно: должен быть зашифрован
-     * @param accountType --  тип аккаунта
+     * @param roles --  тип аккаунта
      * @param idStudent -- должен быть в любом случае, если не хотим добавлять, то просто оставляем поле со значением пустым
      * @return HTTP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
@@ -100,7 +100,7 @@ public class AccountController {
     @Cacheable(value = "accounts")
     @PutMapping("{idAccount}")
     public synchronized ResponseEntity<?> editAccount(@PathVariable Long idAccount, @RequestParam String email,
-                                  @RequestParam String password, @RequestParam String accountType,
+                                  @RequestParam String password, @RequestParam List<Role> roles,
                                   @RequestParam Long idStudent){
         Optional<Account> account = accountRepository.findByIdAccount(idAccount);
         account.orElseThrow(
@@ -121,8 +121,8 @@ public class AccountController {
             tempAccount.setPassword(password);
         }
 
-        if (!tempAccount.getAccountType().toString().equals(accountType)){
-            tempAccount.setAccountType(AccountType.valueOf(accountType));
+        if (!tempAccount.getRoles().equals(roles)){
+            tempAccount.setRoles(roles);
         }
 
         accountRepository.save(tempAccount);
