@@ -1,7 +1,6 @@
 package crutchesbicycles.studyhelper.controller;
 
 import crutchesbicycles.studyhelper.domain.Account;
-import crutchesbicycles.studyhelper.security.UserDetailController;
 import crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider;
 import crutchesbicycles.studyhelper.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,8 +21,9 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final JwtTokenProvider jwtTokenProvider;
     private final UserService userService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @RequestMapping("login")
+    @PostMapping("login")
     public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password){
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
@@ -45,12 +42,26 @@ public class AuthController {
         }
     }
 
+    /**
+     * Создать аккаунт в системе \n
+     * <b>Путь: /api/accounts</b> \n
+     * @param email -- email пользователя
+     * @param password -- пароль пользователя
+     * @param i -- тип пользователя (0 -- user, 1 -- староста+user, 2 -- admin+user+староста)
+     * @return
+     */
+    @PostMapping("register")
+    public ResponseEntity<?> register(@RequestParam String email, @RequestParam String password, @RequestParam Integer i){
+        Account account = new Account(null, email, password, null);
+        Account createdAccount = userService.register(account, i);
+        return ResponseEntity.ok(createdAccount);
+    }
+
     @Autowired
-    public AuthController(AuthenticationManager authenticationManager,
-                          JwtTokenProvider jwtTokenProvider,
-                          UserDetailController userDetailController) {
+    public AuthController(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider, UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
-        this.userDetailController = userDetailController;
+        this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 }

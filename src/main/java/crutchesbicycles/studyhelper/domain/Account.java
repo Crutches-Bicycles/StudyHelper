@@ -1,6 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Cascade;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -24,8 +25,6 @@ import java.util.List;
 @Entity
 public class Account implements Serializable {
 
-    public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
-
     @Id
     @GeneratedValue
     private long idAccount;
@@ -40,6 +39,7 @@ public class Account implements Serializable {
     @JsonIgnore
     private String password;
 
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     @ManyToMany
     private List<Role> roles;
 
@@ -83,7 +83,7 @@ public class Account implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = PASSWORD_ENCODER.encode(password);
+        this.password = password;
     }
 
 

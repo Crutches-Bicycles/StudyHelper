@@ -1,5 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -8,10 +10,13 @@ import java.util.List;
 
 @Entity
 public class Role {
+
+    @Id
     private Long id;
 
     private String name;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "roles")
     private List<Account> accounts;
 

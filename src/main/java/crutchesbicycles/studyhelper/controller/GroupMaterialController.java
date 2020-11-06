@@ -20,6 +20,13 @@ public class GroupMaterialController {
     private final GroupRepository groupRepository;
     private final GroupMaterialRepository groupMaterialRepository;
 
+    /**
+     * Получает материалы группы \n
+     * <b>Путь: /api/groups/{idGroup}/materials</b> \n
+     * Тип запроса: GET \n
+     * @param idGroup -- id группы \n
+     * @return список материалов группы
+     */
     @GetMapping("/{idGroup}/materials")
     List<GroupMaterial> getGroupMaterial(@PathVariable Long idGroup){
         // проверка существует ли группа
@@ -27,6 +34,14 @@ public class GroupMaterialController {
         return groupMaterialRepository.findAllByGroupIdGroup(idGroup);
     }
 
+    /**
+     * Получает материал группы по id \n
+     * <b>Путь: /api/groups/{idGroup}/materials/{idMaterial}</b> \n
+     * Тип запроса: GET \n
+     * @param idGroup -- id группы \n
+     * @param idMaterial -- id материала группы \n
+     * @return список материалов группы
+     */
     @GetMapping("/{idGroup}/material/{idMaterial}")
     GroupMaterial getGroupMaterialById(@PathVariable Long idGroup, @PathVariable Long idMaterial){
         checkGroup(idGroup);

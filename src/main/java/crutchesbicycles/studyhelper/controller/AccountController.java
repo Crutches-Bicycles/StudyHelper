@@ -55,14 +55,14 @@ public class AccountController {
      * @see AccountExistsException
      */
     // TODO: 02.11.2020 аккуратно с roles
-    public synchronized ResponseEntity<?> createAccount(String email, String password,
+    public Account createAccount(String email, String password,
                                                  List<Role> roles){
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
         }
         Account account = new Account(null, email, password, roles);
         accountRepository.save(account);
-        return new ResponseEntity<>("Account with email " + email + " Created", HttpStatus.CREATED);
+        return null;
     }
 
     /**
