@@ -1,8 +1,11 @@
 package crutchesbicycles.studyhelper.repos;
 
+import crutchesbicycles.studyhelper.domain.Schedule;
 import crutchesbicycles.studyhelper.domain.ScheduleRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ScheduleRepository extends JpaRepository<ScheduleRecord, Long> {
+import java.util.Optional;
 
+public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
+    Optional<Schedule> findByGroupIdGroup(Long idGroup);
 }

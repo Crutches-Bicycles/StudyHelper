@@ -1,24 +1,19 @@
 package crutchesbicycles.studyhelper.controller;
 
-import crutchesbicycles.studyhelper.domain.*;
+import crutchesbicycles.studyhelper.domain.ScheduleRecord;
+import crutchesbicycles.studyhelper.domain.Student;
+import crutchesbicycles.studyhelper.domain.Traffic;
 import crutchesbicycles.studyhelper.exception.ScheduleRecordNotFoundException;
 import crutchesbicycles.studyhelper.exception.StudentNotFoundException;
 import crutchesbicycles.studyhelper.exception.TrafficNotFoundException;
 import crutchesbicycles.studyhelper.repos.ScheduleRecordRepository;
 import crutchesbicycles.studyhelper.repos.StudentRepository;
 import crutchesbicycles.studyhelper.repos.TrafficRepository;
-import crutchesbicycles.studyhelper.security.jwt.JwtUser;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;

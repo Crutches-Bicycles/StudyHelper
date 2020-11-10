@@ -23,6 +23,14 @@ public class AuthController {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    /**
+     * Вход в систему \n
+     * <b>Путь: /api/auth/login</b> \n
+     * Тип запроса: POST \n
+     * @param email -- почта пользователя
+     * @param password -- пароль в открытом виде (шифруется на сервере)
+     * @return jwtToken (expired_time=8640000ms (1 день))
+     */
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestParam String email, @RequestParam String password){
         try {
@@ -48,7 +56,7 @@ public class AuthController {
      * @param email -- email пользователя
      * @param password -- пароль пользователя
      * @param i -- тип пользователя (0 -- user, 1 -- староста+user, 2 -- admin+user+староста)
-     * @return
+     * @return HttpStatus OK и созданный аккаунт
      */
     @PostMapping("register")
     public ResponseEntity<?> register(@RequestParam String email, @RequestParam String password, @RequestParam Integer i){
