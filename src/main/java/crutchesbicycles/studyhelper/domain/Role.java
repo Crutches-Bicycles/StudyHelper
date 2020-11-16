@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Role {
+public class Role implements Serializable {
 
     @Id
     private Long id;

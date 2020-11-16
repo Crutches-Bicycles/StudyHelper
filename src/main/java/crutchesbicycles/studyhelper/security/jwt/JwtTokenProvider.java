@@ -60,7 +60,7 @@ public class  JwtTokenProvider {
     }
 
     public Authentication getAuthentication(String token) {
-        UserDetails userDetails = this.userDetailController.loadUserByUsername(getUsername(token));
+        JwtUser userDetails = this.userDetailController.loadUserByUsername(getUsername(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 

@@ -1,5 +1,7 @@
 package crutchesbicycles.studyhelper.domain;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -22,18 +24,23 @@ public class ScheduleRecord implements Serializable {
     private long idScheduleRecord;
 
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Schedule schedule;
 
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Day days;
 
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Pair pairs;
 
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Subject subjectEven;
 
     @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
     private Subject subjectOdd;
 
     public long getIdScheduleRecord() {
