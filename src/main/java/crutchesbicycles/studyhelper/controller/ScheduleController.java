@@ -51,7 +51,7 @@ public class ScheduleController {
 
         Optional<Schedule> optionalSchedule = scheduleRepository.findByGroupIdGroup(idGroup);
         Schedule schedule = optionalSchedule.orElseGet(
-                () -> new Schedule(group);
+                () -> new Schedule(group)
         );
 
         Day day = dayRepository.findByCaption(dayCaption).orElseThrow(
