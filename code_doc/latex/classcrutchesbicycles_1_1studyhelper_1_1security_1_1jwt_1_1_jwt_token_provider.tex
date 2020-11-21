@@ -1,0 +1,113 @@
+\hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}{}\doxysection{Класс crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider}
+\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+B\+Crypt\+Password\+Encoder \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a615a0f100b564d79c6d7e0ac435b9112}{password\+Encoder}} ()
+\item 
+String \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb79fca89b9615fb94d53eac4acebf0b}{create\+Token}} (String username, List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$ roles)
+\item 
+Authentication \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ad246022ca73961fc476bf402916329e3}{get\+Authentication}} (String token)
+\item 
+String \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab8d9dbd8b2611b4b1fbbe87c68278d9f}{get\+Username}} (String token)
+\item 
+String \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a5b54a22693f460aa435ef42d7223e590}{resolve\+Token}} (Http\+Servlet\+Request req)
+\item 
+boolean \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a4150922029b6650dae6d8d0cbb147d7a}{validate\+Token}} (String token)
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab2298bf5d90827cbfcfaf546f34d1f2c}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ String $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ac91d92847c330b1ded0fae6526a88f64}{get\+Role\+Names}} (List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$ user\+Roles)
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ae4a3dfcae0995b79a3f70523391fcd53}{secret}}
+\item 
+long \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb97257ba080193e25e9fe971827b08c}{validity\+In\+Milliseconds}}
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1_user_detail_controller}{User\+Detail\+Controller}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_aa576b5100d3e40eaebe03a5b432f96ed}{user\+Detail\+Controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb79fca89b9615fb94d53eac4acebf0b}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb79fca89b9615fb94d53eac4acebf0b}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!createToken@{createToken}}
+\index{createToken@{createToken}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{createToken()}{createToken()}}
+{\footnotesize\ttfamily String crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+create\+Token (\begin{DoxyParamCaption}\item[{String}]{username,  }\item[{List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$}]{roles }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ad246022ca73961fc476bf402916329e3}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ad246022ca73961fc476bf402916329e3}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!getAuthentication@{getAuthentication}}
+\index{getAuthentication@{getAuthentication}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{getAuthentication()}{getAuthentication()}}
+{\footnotesize\ttfamily Authentication crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+get\+Authentication (\begin{DoxyParamCaption}\item[{String}]{token }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ac91d92847c330b1ded0fae6526a88f64}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ac91d92847c330b1ded0fae6526a88f64}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!getRoleNames@{getRoleNames}}
+\index{getRoleNames@{getRoleNames}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{getRoleNames()}{getRoleNames()}}
+{\footnotesize\ttfamily List$<$String$>$ crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+get\+Role\+Names (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$}]{user\+Roles }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab8d9dbd8b2611b4b1fbbe87c68278d9f}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab8d9dbd8b2611b4b1fbbe87c68278d9f}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily String crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+get\+Username (\begin{DoxyParamCaption}\item[{String}]{token }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab2298bf5d90827cbfcfaf546f34d1f2c}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ab2298bf5d90827cbfcfaf546f34d1f2c}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!init@{init}}
+\index{init@{init}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a615a0f100b564d79c6d7e0ac435b9112}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a615a0f100b564d79c6d7e0ac435b9112}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!passwordEncoder@{passwordEncoder}}
+\index{passwordEncoder@{passwordEncoder}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{passwordEncoder()}{passwordEncoder()}}
+{\footnotesize\ttfamily B\+Crypt\+Password\+Encoder crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+password\+Encoder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a5b54a22693f460aa435ef42d7223e590}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a5b54a22693f460aa435ef42d7223e590}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!resolveToken@{resolveToken}}
+\index{resolveToken@{resolveToken}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{resolveToken()}{resolveToken()}}
+{\footnotesize\ttfamily String crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+resolve\+Token (\begin{DoxyParamCaption}\item[{Http\+Servlet\+Request}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a4150922029b6650dae6d8d0cbb147d7a}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_a4150922029b6650dae6d8d0cbb147d7a}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!validateToken@{validateToken}}
+\index{validateToken@{validateToken}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{validateToken()}{validateToken()}}
+{\footnotesize\ttfamily boolean crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+validate\+Token (\begin{DoxyParamCaption}\item[{String}]{token }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ae4a3dfcae0995b79a3f70523391fcd53}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_ae4a3dfcae0995b79a3f70523391fcd53}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!secret@{secret}}
+\index{secret@{secret}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{secret}{secret}}
+{\footnotesize\ttfamily String crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+secret\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_aa576b5100d3e40eaebe03a5b432f96ed}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_aa576b5100d3e40eaebe03a5b432f96ed}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!userDetailController@{userDetailController}}
+\index{userDetailController@{userDetailController}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{userDetailController}{userDetailController}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1_user_detail_controller}{User\+Detail\+Controller}} crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+user\+Detail\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb97257ba080193e25e9fe971827b08c}\label{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider_adb97257ba080193e25e9fe971827b08c}} 
+\index{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}!validityInMilliseconds@{validityInMilliseconds}}
+\index{validityInMilliseconds@{validityInMilliseconds}!crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider@{crutchesbicycles.studyhelper.security.jwt.JwtTokenProvider}}
+\doxysubsubsection{\texorpdfstring{validityInMilliseconds}{validityInMilliseconds}}
+{\footnotesize\ttfamily long crutchesbicycles.\+studyhelper.\+security.\+jwt.\+Jwt\+Token\+Provider.\+validity\+In\+Milliseconds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vgtstptlk/\+Desktop/ÐÐÐ Ð­Ð/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/security/jwt/\mbox{\hyperlink{_jwt_token_provider_8java}{Jwt\+Token\+Provider.\+java}}\end{DoxyCompactItemize}

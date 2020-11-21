@@ -22,6 +22,7 @@ public class StudentMaterialController {
     private final StudentMaterialRepository studentMaterialRepository;
     private final StudentRepository studentRepository;
 
+
     @GetMapping("/{idStudent}/materials")
     List<StudentMaterial> getStudentMaterial(@PathVariable Long idStudent){
         checkStudentById(idStudent);

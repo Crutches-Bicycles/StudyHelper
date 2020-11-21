@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['updategroupbyid_543',['updateGroupById',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_group_controller.html#a216184814a90bf281c77866182e3573a',1,'crutchesbicycles::studyhelper::controller::GroupController']]],
-  ['updatestudent_544',['updateStudent',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_student_controller.html#a31417326fc4f6f754bf65baa98559df3',1,'crutchesbicycles::studyhelper::controller::StudentController']]],
-  ['updatesubject_545',['updateSubject',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_subject_controller.html#a9ca08758da2da0e131a4cfd378b0998c',1,'crutchesbicycles::studyhelper::controller::SubjectController']]],
-  ['updateteacher_546',['updateTeacher',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_teacher_controller.html#a71a7826faaa59897b97a1edbdfc209bb',1,'crutchesbicycles::studyhelper::controller::TeacherController']]],
-  ['usernotfoundexception_547',['UserNotFoundException',['../classcrutchesbicycles_1_1studyhelper_1_1exception_1_1_user_not_found_exception.html#a65b677008772209f2a0a723da509ac3c',1,'crutchesbicycles::studyhelper::exception::UserNotFoundException']]]
+  ['register_788',['register',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller.html#afc48bc0a40cf6bcc361d122e7bab3e88',1,'crutchesbicycles.studyhelper.controller.AuthController.register()'],['../classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service.html#a6c83f11103740fee2f1a20ee83e04d55',1,'crutchesbicycles.studyhelper.service.UserService.register()']]],
+  ['resolvetoken_789',['resolveToken',['../classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider.html#a5b54a22693f460aa435ef42d7223e590',1,'crutchesbicycles::studyhelper::security::jwt::JwtTokenProvider']]],
+  ['role_790',['Role',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role.html#a0c5b1ba70058fa027289fd70936ca423',1,'crutchesbicycles::studyhelper::domain::Role']]]
 ];

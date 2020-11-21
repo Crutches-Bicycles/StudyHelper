@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['accountrepository_548',['accountRepository',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller.html#a800c1d36b05638d93ca625066309f2ff',1,'crutchesbicycles::studyhelper::controller::AccountController']]],
-  ['accounttype_549',['accountType',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account.html#ac297afde5e1e866ee86911ef057fedb7',1,'crutchesbicycles::studyhelper::domain::Account']]],
-  ['admin_550',['ADMIN',['../enumcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account_type.html#af81347682d0d5270c0745d6a3151ead6',1,'crutchesbicycles::studyhelper::domain::AccountType']]]
+  ['accountrepository_878',['accountRepository',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller.html#a800c1d36b05638d93ca625066309f2ff',1,'crutchesbicycles.studyhelper.controller.AccountController.accountRepository()'],['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_student_controller.html#a59baed14d38c30ab4150e984d8bcc999',1,'crutchesbicycles.studyhelper.controller.StudentController.accountRepository()'],['../classcrutchesbicycles_1_1studyhelper_1_1security_1_1_user_detail_controller.html#af8d4eb2dbbf5a60a2ab7222458119e1e',1,'crutchesbicycles.studyhelper.security.UserDetailController.accountRepository()'],['../classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service.html#a71a7ef67fcccc9f206e8a1961ff5134e',1,'crutchesbicycles.studyhelper.service.UserService.accountRepository()']]],
+  ['accounts_879',['accounts',['../classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role.html#a805ba049031e42339c13012855d33180',1,'crutchesbicycles::studyhelper::domain::Role']]],
+  ['admin_880',['ADMIN',['../enumcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account_type.html#af81347682d0d5270c0745d6a3151ead6',1,'crutchesbicycles::studyhelper::domain::AccountType']]],
+  ['authenticationmanager_881',['authenticationManager',['../classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller.html#a919b18f27af062c8717828111c330901',1,'crutchesbicycles::studyhelper::controller::AuthController']]],
+  ['authorities_882',['authorities',['../classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_user.html#a96aa840c7be492cf589f7a4b9f3cea5a',1,'crutchesbicycles::studyhelper::security::jwt::JwtUser']]]
 ];
