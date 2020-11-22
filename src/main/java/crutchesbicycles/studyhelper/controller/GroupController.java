@@ -131,6 +131,8 @@ public class GroupController {
 
     /**
      * Получить список преподавателей группу \n
+     * <b>Путь: /api/groups/{idGroup}/teachers</b> \n
+     * Тип запроса: GET
      * @param idGroup (URL-шаблон) -- id группы
      * @return сущность GroupTeacher в JSON, в случае ошибки выдает исключение
      * @throws GroupNotFoundException

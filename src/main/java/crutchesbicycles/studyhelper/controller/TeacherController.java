@@ -201,6 +201,12 @@ public class TeacherController {
     }
 
 
+    /**
+     *
+     * @param idTeacher
+     * @param idSubject
+     * @return
+     */
     @GetMapping("/{idTeacher}/subjects/{idSubject}")
     Subject getSubjectById(@PathVariable Long idTeacher, @PathVariable Long idSubject){
         Optional<TeacherSubject> optionalTeacherSubject = this.teacherSubjectRepository.findByTeacherIdTeacher(idTeacher);
@@ -216,7 +222,14 @@ public class TeacherController {
          // todo: optimize this code
     }
 
-
+    /**
+     * Открепить предмет от преподавателя \n
+     * <b>Путь: /api/teachers/{idTeacher}/{idSubject}</b> \n
+     * Тип запроса: DELETE
+     * @param idTeacher -- id преподавателя
+     * @param idSubject -- id предмета
+     * @return HttpStatus OK
+     */
     @DeleteMapping("/{idTeacher}/subjects/{idSubject}")
     ResponseEntity<?> deleteTeacherSubject(@PathVariable Long idTeacher, @PathVariable Long idSubject){
         Optional<TeacherSubject> optionalTeacherSubject = this.teacherSubjectRepository.findByTeacherIdTeacher(idTeacher);
@@ -238,6 +251,13 @@ public class TeacherController {
         return new ResponseEntity<>("Teacher Subject with id '" + idTeacher +"' deleted", HttpStatus.OK);
     }
 
+    /**
+     * Получить группы, которые ведет преподаватель \n
+     * <b>Путь: /api/teachers/{idTeacher}/{idSubject}</b> \n
+     * Тип запроса: GET
+     * @param idTeacher - id преподавателя
+     * @return
+     */
     @GetMapping("/{idTeacher}/groups")
     List<GroupTeacher> getGroupsByTeacher(@PathVariable Long idTeacher){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -248,6 +268,14 @@ public class TeacherController {
         return groupTeacherRepository.findAllByTeachersContaining(optionalTeachers.get());
     }
 
+    /**
+     * Прикрепить преподавателя к группе \n
+     * <b>Путь: /api/teachers/{idTeacher}/groups</b> \n
+     * Тип запроса: POST
+     * @param idTeacher -- id преподавателя
+     * @param idGroup -- id группы
+     * @return HttpStatus CREATED
+     */
     @PostMapping("/{idTeacher}/groups")
     ResponseEntity<?> createTeacherGroup(@PathVariable Long idTeacher, @RequestParam Long idGroup){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);
@@ -279,6 +307,15 @@ public class TeacherController {
     }
 
     // todo:
+
+    /**
+     * Открепить преподавателя от группы \n
+     * <b>Путь: /api/teachers/{idTeacher}/{idGroup}</b> \n
+     * Тип запроса: DELETE
+     * @param idTeacher -- id преподавателя
+     * @param idGroup -- id группы
+     * @return HttpStatus OK
+     */
     @DeleteMapping("/{idTeacher}/groups/{idGroup}")
     ResponseEntity<?> deleteTeacherGroup(@PathVariable Long idTeacher, @PathVariable Long idGroup){
         Optional<Teacher> optionalTeachers = teacherRepository.findByIdTeacher(idTeacher);

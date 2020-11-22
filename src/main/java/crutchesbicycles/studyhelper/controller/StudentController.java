@@ -25,14 +25,27 @@ public class StudentController {
     private final AccountRepository accountRepository;
 
     /**
-     * Возвращает список студентов.
-     * @return
+     * Возвращает список студентов. \n
+     * <b>Путь: /api/students/</b> \n
+     * Тип запроса: GET
+     * @return список студентов {@link Student}
      */
     @GetMapping
     List<Student> getStudents(){
         return studentRepository.findAll();
     }
 
+    /**
+     * Создает студениа и прикрепляет к аккаунту \n
+     * <b>Путь: /api/students</b> \n
+     * @param firstName -- имя
+     * @param secondName -- фамилия
+     * @param patronymic -- отчество
+     * @param idGroup -- номер группы
+     * @param idAccount -- id аккаунта к которому будет прикрепелен студент
+     * @return HttpStatus OK с телом {@link Account} в случае удачного выполнения запрос, также может выдать исключения GroupNotFoundException,
+     * AccountNotFoundException
+     */
     @PostMapping
     ResponseEntity<?> createStudent(@RequestParam String firstName, @RequestParam String secondName,
                                     @RequestParam String patronymic, @RequestParam Long idGroup,
@@ -53,9 +66,16 @@ public class StudentController {
         account.setStudent(student);
         accountRepository.save(account);
 
-        return new ResponseEntity<>("Student with id '" + idStudent + "' created", HttpStatus.CREATED);
+        return ResponseEntity.ok(account);
     }
 
+    /**
+     * Получить студента по id \n
+     * <b>Путь: /api/students/{idStudent}</b> \n\n
+     * Тип запроса: GET
+     * @param idStudent -- id студента
+     * @return сущность студента {@link Student}
+     */
     @GetMapping("{idStudent}")
     Student getStudentById(@PathVariable Long idStudent){
         Optional<Student> student = studentRepository.findByIdStudent(idStudent);
@@ -65,6 +85,13 @@ public class StudentController {
         return student.get();
     }
 
+    /**
+     * Удаляет студента в системе \n
+     * <b>Путь: /api/students/{idStudent}</b> \n
+     * Тип запроса: DELETE
+     * @param idStudent -- id студента 
+     * @return HttpStatus Ok с id удаленного студента ({@link Student}), может выдать исключение {@link StudentNotFoundException}
+     */
     @DeleteMapping("{idStudent}")
     ResponseEntity<?> deleteStudent(@PathVariable Long idStudent){
         Optional<Student> student = studentRepository.findByIdStudent(idStudent);
@@ -75,6 +102,13 @@ public class StudentController {
         return new ResponseEntity<>("Student with id '" + idStudent + "' deleted", HttpStatus.OK);
     }
 
+    /**
+     * Обновляет студента в системе \n
+     * <b>Путь: /api/students/{idStudent}</b> \n
+     * Тип запроса: PUT
+     * @param idStudent -- id студента
+     * @return HttpStatus Ok с данными обновленного студента ({@link Student}), может выдать исключение {@link StudentNotFoundException}
+     */
     @PutMapping("{idStudent}")
     ResponseEntity<?> updateStudent(@PathVariable Long idStudent,
                                     @RequestParam String firstName, @RequestParam String secondName,
@@ -109,7 +143,7 @@ public class StudentController {
 
         studentRepository.save(tempStudent);
 
-        return new ResponseEntity<>("Student with id '" + idStudent.toString() + "' updated", HttpStatus.OK);
+        return ResponseEntity.ok(tempStudent);
     }
 
     @Autowired

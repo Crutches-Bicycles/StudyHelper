@@ -36,7 +36,7 @@ public class AccountController {
      * Получить все аккаунты. Возвращает в формате JSON. \n
      * <b>Путь: /api/accounts</b> \n
      * Тип запроса: GET
-     * @return json со списком аккаунтов
+     * @return json со списком аккаунтов ({@link Account})
      */
     @GetMapping
     List<Account> getAccounts(){
@@ -45,6 +45,7 @@ public class AccountController {
 
 
     /**
+     * <b>Не использовать вместо метода /register</b> \n
      * Создает аккаунт в системе. \n
      * <b>Путь: /api/accounts</b> \n
      *
@@ -53,16 +54,17 @@ public class AccountController {
      * @param roles -- тип аккаунта. Администратор, например.
      * @return HTTP Status 201, если аккаунт удачно создан. Иначе выдает исключение AccountExistsException
      * @see AccountExistsException
+     * @see Account
      */
     // TODO: 02.11.2020 аккуратно с roles
-    public Account createAccount(String email, String password,
+    public ResponseEntity<?> createAccount(String email, String password,
                                                  List<Role> roles){
         if (accountRepository.findByEmail(email).isPresent()) {
             throw new AccountExistsException(email);
         }
         Account account = new Account(null, email, password, roles);
         accountRepository.save(account);
-        return null;
+        return ResponseEntity.ok(account);
     }
 
     /**
@@ -70,7 +72,7 @@ public class AccountController {
      * <b>Путь: /api/accounts/{idAccount}</b> \n
      * Тип запроса: GET
      * @param idAccount (URL шаблон)
-     * @return Json c данными аккаунта, также может выдавать исключение UserNotFoundException
+     * @return Json c данными аккаунта ({@link Account}), также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
      */
     @Cacheable(value = "accounts")
@@ -94,7 +96,7 @@ public class AccountController {
      * @param password -- пароль. Важно: должен быть зашифрован
      * @param roles --  тип аккаунта
      * @param idStudent -- должен быть в любом случае, если не хотим добавлять, то просто оставляем поле со значением пустым
-     * @return HTTP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение UserNotFoundException
+     * @return HTTP Status 200 с данными аккаунта ({@link Account}) в случае успешного обновления информации в аккаунте, также может выдавать исключение UserNotFoundException
      * @throws UserNotFoundException
      */
     @Cacheable(value = "accounts")
@@ -126,7 +128,7 @@ public class AccountController {
         }
 
         accountRepository.save(tempAccount);
-        return new ResponseEntity<>("Information updated: " + idAccount, HttpStatus.OK);
+        return ResponseEntity.ok(tempAccount);
     }
 
     /**

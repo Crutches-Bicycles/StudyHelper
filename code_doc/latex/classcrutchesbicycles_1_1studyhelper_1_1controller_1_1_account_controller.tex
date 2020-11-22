@@ -3,20 +3,20 @@
 \doxysubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ae0e8cde5400d1e4602c1d725673e4e45}{create\+Account}} (String email, String password, List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$ roles)
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a72668b8a5fb714fd9e8f6de560889d50}{get\+Account\+By\+Id}} (@Path\+Variable Long id\+Account)
+\item 
+synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0f98e00ac7a0d0f7d095dacffc6cdf6}{edit\+Account}} (@Path\+Variable Long id\+Account, @Request\+Param String email, @Request\+Param String password, @Request\+Param List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$ roles, @Request\+Param Long id\+Student)
+\item 
+synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfbb715e1ef078e29bc7b51131446698}{delete\+Account}} (@Path\+Variable Long id\+Account)
+\item 
 \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}{Account\+Controller}} (\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_account_repository}{Account\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a800c1d36b05638d93ca625066309f2ff}{account\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_student_repository}{Student\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad8493d79d1de4384fb46af809e2491ed}{student\+Repository}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Функции с областью видимости пакета}
 \begin{DoxyCompactItemize}
 \item 
 List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_aeddb08dd10b508c62cbe4dc1fedc6195}{get\+Accounts}} ()
-\item 
-synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a92db5b1f189ca8e77475481b102302b0}{create\+Account}} (@Request\+Param String email, @Request\+Param String password, @Request\+Param String account\+Type)
-\item 
-\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a72668b8a5fb714fd9e8f6de560889d50}{get\+Account\+By\+Id}} (@Path\+Variable Long id\+Account)
-\item 
-synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}{edit\+Account}} (@Path\+Variable Long id\+Account, @Request\+Param String email, @Request\+Param String password, @Request\+Param String account\+Type, @Request\+Param Long id\+Student)
-\item 
-synchronized Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfbb715e1ef078e29bc7b51131446698}{delete\+Account}} (@Path\+Variable Long id\+Account)
 \end{DoxyCompactItemize}
 \doxysubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
@@ -30,7 +30,7 @@ final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_stu
 \doxysubsection{Подробное описание}
 Account controller -- контроллер для аккаунта ~\newline
 {\bfseries{Путь\+: /api/accounts/}} ~\newline
-Если параметры не помечены как \char`\"{}(\+U\+R\+L шаблон)\char`\"{}, то это означет, что они типа form-\/data 
+Если параметры не помечены как \char`\"{}(\+U\+R\+L шаблон)\char`\"{}, то это означет, что они типа form-\/data {\bfseries{ПРОИСХОДИТ ТЕСТИРОВАНИЕ КЭШИРОВАНИЯ МОЖЕТ РАБОТАТЬ НЕ ОЧЕНЬ СТАБИЛЬНО}} 
 
 \doxysubsection{Конструктор(ы)}
 \mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a2178f64c5349d778c44c842de1c77500}} 
@@ -42,21 +42,22 @@ Account controller -- контроллер для аккаунта ~\newline
 
 
 \doxysubsection{Методы}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a92db5b1f189ca8e77475481b102302b0}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_a92db5b1f189ca8e77475481b102302b0}} 
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ae0e8cde5400d1e4602c1d725673e4e45}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ae0e8cde5400d1e4602c1d725673e4e45}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!createAccount@{createAccount}}
 \index{createAccount@{createAccount}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{createAccount()}{createAccount()}}
-{\footnotesize\ttfamily synchronized Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+create\+Account (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{email,  }\item[{@Request\+Param String}]{password,  }\item[{@Request\+Param String}]{account\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+create\+Account (\begin{DoxyParamCaption}\item[{String}]{email,  }\item[{String}]{password,  }\item[{List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$}]{roles }\end{DoxyParamCaption})}
 
+{\bfseries{Не использовать вместо метода /register}} ~\newline
 Создает аккаунт в системе. ~\newline
 {\bfseries{Путь\+: /api/accounts}} ~\newline
-Тип запроса\+: P\+O\+ST 
+ 
 \begin{DoxyParams}{Аргументы}
 {\em email} & -- почта пользователя. Важно\+: email должен быть уникальным \\
 \hline
 {\em password} & -- пароль пользователя. Должен передаваться уже ЗАШИФРОВАННЫЙ \\
 \hline
-{\em account\+Type} & -- тип аккаунта. Администратор, например. \\
+{\em roles} & -- тип аккаунта. Администратор, например. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
@@ -64,12 +65,14 @@ H\+T\+TP Status 201, если аккаунт удачно создан. Инач
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{См. также}
 Account\+Exists\+Exception 
+
+Account 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfbb715e1ef078e29bc7b51131446698}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_abfbb715e1ef078e29bc7b51131446698}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!deleteAccount@{deleteAccount}}
 \index{deleteAccount@{deleteAccount}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{deleteAccount()}{deleteAccount()}}
-{\footnotesize\ttfamily synchronized Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+delete\+Account (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily synchronized Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+delete\+Account (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})}
 
 Удалить аккаунт. ~\newline
 {\bfseries{Путь\+: /api/accounts/\{id\+Account\}}} ~\newline
@@ -86,11 +89,11 @@ H\+T\+TP Status OK (200), если всё прошло успешно, такж�
 {\em User\+Not\+Found\+Exception} & \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0211b909cbab9d58c7b2bcbd4646412}} 
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0f98e00ac7a0d0f7d095dacffc6cdf6}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_account_controller_ad0f98e00ac7a0d0f7d095dacffc6cdf6}} 
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!editAccount@{editAccount}}
 \index{editAccount@{editAccount}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{editAccount()}{editAccount()}}
-{\footnotesize\ttfamily synchronized Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+edit\+Account (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account,  }\item[{@Request\+Param String}]{email,  }\item[{@Request\+Param String}]{password,  }\item[{@Request\+Param String}]{account\+Type,  }\item[{@Request\+Param Long}]{id\+Student }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily synchronized Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+edit\+Account (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account,  }\item[{@Request\+Param String}]{email,  }\item[{@Request\+Param String}]{password,  }\item[{@Request\+Param List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_role}{Role}} $>$}]{roles,  }\item[{@Request\+Param Long}]{id\+Student }\end{DoxyParamCaption})}
 
 Обновить аккаунт. ~\newline
 {\bfseries{Путь\+: /api/accounts/\{id\+Account\}}} ~\newline
@@ -103,13 +106,13 @@ H\+T\+TP Status OK (200), если всё прошло успешно, такж�
 \hline
 {\em password} & -- пароль. Важно\+: должен быть зашифрован \\
 \hline
-{\em account\+Type} & -- тип аккаунта \\
+{\em roles} & -- тип аккаунта \\
 \hline
 {\em id\+Student} & -- должен быть в любом случае, если не хотим добавлять, то просто оставляем поле со значением пустым \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-H\+T\+TP Status 200 в случае успешного обновления информации в аккаунте, также может выдавать исключение User\+Not\+Found\+Exception 
+H\+T\+TP Status 200 с данными аккаунта (\mbox{\hyperlink{}{Account}}) в случае успешного обновления информации в аккаунте, также может выдавать исключение User\+Not\+Found\+Exception 
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Исключения}
@@ -120,7 +123,7 @@ H\+T\+TP Status 200 в случае успешного обновления ин
 \index{crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}!getAccountById@{getAccountById}}
 \index{getAccountById@{getAccountById}!crutchesbicycles.studyhelper.controller.AccountController@{crutchesbicycles.studyhelper.controller.AccountController}}
 \doxysubsubsection{\texorpdfstring{getAccountById()}{getAccountById()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Account\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_account}{Account}} crutchesbicycles.\+studyhelper.\+controller.\+Account\+Controller.\+get\+Account\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Account }\end{DoxyParamCaption})}
 
 Получить аккаунт по id ~\newline
 {\bfseries{Путь\+: /api/accounts/\{id\+Account\}}} ~\newline
@@ -130,7 +133,7 @@ H\+T\+TP Status 200 в случае успешного обновления ин
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Возвращает}
-Json c данными аккаунта, также может выдавать исключение User\+Not\+Found\+Exception 
+Json c данными аккаунта (\mbox{\hyperlink{}{Account}}), также может выдавать исключение User\+Not\+Found\+Exception 
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Исключения}
@@ -146,7 +149,7 @@ Json c данными аккаунта, также может выдавать �
 Получить все аккаунты. Возвращает в формате J\+S\+ON. ~\newline
 {\bfseries{Путь\+: /api/accounts}} ~\newline
 Тип запроса\+: G\+ET \begin{DoxyReturn}{Возвращает}
-json со списком аккаунтов 
+json со списком аккаунтов (\mbox{\hyperlink{}{Account}}) 
 \end{DoxyReturn}
 
 

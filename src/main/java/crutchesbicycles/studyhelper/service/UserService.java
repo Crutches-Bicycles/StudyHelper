@@ -35,7 +35,7 @@ public class UserService {
             throw new AccountExistsException(account.getEmail());
         }
 
-        Role userRole = roleRepository.findByName("USER");
+        Role userRole = roleRepository.findByName("ROLE_USER");
         Role adminRole;
         Role headmanRole;
 
@@ -43,12 +43,12 @@ public class UserService {
         roleList.add(userRole);
 
         if (i == 1){
-            headmanRole =roleRepository.findByName("HEADMAN");
+            headmanRole =roleRepository.findByName("ROLE_HEADMAN");
             roleList.add(headmanRole);
         }
         if (i == 2){
-            headmanRole = roleRepository.findByName("HEADMAN");
-            adminRole = roleRepository.findByName("ADMIN");
+            headmanRole = roleRepository.findByName("ROLE_HEADMAN");
+            adminRole = roleRepository.findByName("ROLE_ADMIN");
             roleList.add(headmanRole);
             roleList.add(adminRole);
         }

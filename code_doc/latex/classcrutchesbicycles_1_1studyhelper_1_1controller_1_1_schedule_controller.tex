@@ -1,0 +1,110 @@
+\hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller}{}\doxysection{Класс crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller}
+\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller}\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a5eaf71a55ee233a98e6a3cb3cdeb26ed}{Schedule\+Controller}} (\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_record_repository}{Schedule\+Record\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a95356c239aec5dc8a1714ea8d34431a8}{schedule\+Record\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_repository}{Group\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a67b02c943a8eea4cd7872df43557120b}{group\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_day_repository}{Day\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_aad58c7a83265afe0c0ee9f1b65a599a8}{day\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_ad10987fd3b9d6c61f6fff5c87853a208}{subject\+Repository}}, \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_repository}{Schedule\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a47d78e8c228f1d1f8093ac38562c4103}{schedule\+Repository}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции с областью видимости пакета}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_schedule_record}{Schedule\+Record}} $>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a0142ca021c3f33f0d7e52cd19d16cd6a}{get\+All\+Schedules}} ()
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a01f7e5fc45e2f1f152d51cf86a08ee2e}{create\+Schedule}} (@Request\+Param Long id\+Group, @Request\+Param String day\+Caption, @Request\+Param Long number\+Pair, @Request\+Param @Json\+Format(pattern=\char`\"{}H\+H\+:mm\+:ss\char`\"{}) Date date\+Start, @Request\+Param @Json\+Format(pattern=\char`\"{}H\+H\+:mm\+:ss\char`\"{}) Date date\+End, @Request\+Param Long id\+Subject\+Even, @Request\+Param Long id\+Subject\+Odd)
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_record_repository}{Schedule\+Record\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a95356c239aec5dc8a1714ea8d34431a8}{schedule\+Record\+Repository}}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_repository}{Group\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a67b02c943a8eea4cd7872df43557120b}{group\+Repository}}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_day_repository}{Day\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_aad58c7a83265afe0c0ee9f1b65a599a8}{day\+Repository}}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_ad10987fd3b9d6c61f6fff5c87853a208}{subject\+Repository}}
+\item 
+final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_repository}{Schedule\+Repository}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a47d78e8c228f1d1f8093ac38562c4103}{schedule\+Repository}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a5eaf71a55ee233a98e6a3cb3cdeb26ed}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a5eaf71a55ee233a98e6a3cb3cdeb26ed}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!ScheduleController@{ScheduleController}}
+\index{ScheduleController@{ScheduleController}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{ScheduleController()}{ScheduleController()}}
+{\footnotesize\ttfamily crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+Schedule\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_record_repository}{Schedule\+Record\+Repository}}}]{schedule\+Record\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_repository}{Group\+Repository}}}]{group\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_day_repository}{Day\+Repository}}}]{day\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}}}]{subject\+Repository,  }\item[{\mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_repository}{Schedule\+Repository}}}]{schedule\+Repository }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a01f7e5fc45e2f1f152d51cf86a08ee2e}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a01f7e5fc45e2f1f152d51cf86a08ee2e}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!createSchedule@{createSchedule}}
+\index{createSchedule@{createSchedule}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{createSchedule()}{createSchedule()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+create\+Schedule (\begin{DoxyParamCaption}\item[{@Request\+Param Long}]{id\+Group,  }\item[{@Request\+Param String}]{day\+Caption,  }\item[{@Request\+Param Long}]{number\+Pair,  }\item[{@Request\+Param @Json\+Format(pattern=\char`\"{}H\+H\+:mm\+:ss\char`\"{}) Date}]{date\+Start,  }\item[{@Request\+Param @Json\+Format(pattern=\char`\"{}H\+H\+:mm\+:ss\char`\"{}) Date}]{date\+End,  }\item[{@Request\+Param Long}]{id\+Subject\+Even,  }\item[{@Request\+Param Long}]{id\+Subject\+Odd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+Создание еденицы расписания (пример -- блок пары в распиании мирэа) ~\newline
+{\bfseries{/api/schedules}} 
+\begin{DoxyParams}{Аргументы}
+{\em id\+Group} & -- id группы \\
+\hline
+{\em day\+Caption} & -\/ название дня (полное) \\
+\hline
+{\em number\+Pair} & -\/ номер пары \\
+\hline
+{\em date\+Start} & -\/ во сколько начинается в формате \char`\"{}\+H\+H\+:mm\+:ss\char`\"{} \\
+\hline
+{\em date\+End} & -\/ во сколько заканчивается пара \char`\"{}\+H\+H\+:mm\+:ss\char`\"{} \\
+\hline
+{\em id\+Subject\+Even} & -\/ id предмета на четной неделе \\
+\hline
+{\em id\+Subject\+Odd} & -\/ id предмета на нечетной неделе \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Http\+Status Ok и саму сущность 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a0142ca021c3f33f0d7e52cd19d16cd6a}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a0142ca021c3f33f0d7e52cd19d16cd6a}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!getAllSchedules@{getAllSchedules}}
+\index{getAllSchedules@{getAllSchedules}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{getAllSchedules()}{getAllSchedules()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_schedule_record}{Schedule\+Record}}$>$ crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+get\+All\+Schedules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_aad58c7a83265afe0c0ee9f1b65a599a8}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_aad58c7a83265afe0c0ee9f1b65a599a8}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!dayRepository@{dayRepository}}
+\index{dayRepository@{dayRepository}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{dayRepository}{dayRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_day_repository}{Day\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+day\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a67b02c943a8eea4cd7872df43557120b}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a67b02c943a8eea4cd7872df43557120b}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!groupRepository@{groupRepository}}
+\index{groupRepository@{groupRepository}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{groupRepository}{groupRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_group_repository}{Group\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+group\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a95356c239aec5dc8a1714ea8d34431a8}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a95356c239aec5dc8a1714ea8d34431a8}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!scheduleRecordRepository@{scheduleRecordRepository}}
+\index{scheduleRecordRepository@{scheduleRecordRepository}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{scheduleRecordRepository}{scheduleRecordRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_record_repository}{Schedule\+Record\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+schedule\+Record\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a47d78e8c228f1d1f8093ac38562c4103}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_a47d78e8c228f1d1f8093ac38562c4103}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!scheduleRepository@{scheduleRepository}}
+\index{scheduleRepository@{scheduleRepository}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{scheduleRepository}{scheduleRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_schedule_repository}{Schedule\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+schedule\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_ad10987fd3b9d6c61f6fff5c87853a208}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_schedule_controller_ad10987fd3b9d6c61f6fff5c87853a208}} 
+\index{crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}!subjectRepository@{subjectRepository}}
+\index{subjectRepository@{subjectRepository}!crutchesbicycles.studyhelper.controller.ScheduleController@{crutchesbicycles.studyhelper.controller.ScheduleController}}
+\doxysubsubsection{\texorpdfstring{subjectRepository}{subjectRepository}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_subject_repository}{Subject\+Repository}} crutchesbicycles.\+studyhelper.\+controller.\+Schedule\+Controller.\+subject\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vgtstptlk/\+Desktop/ÐÐÐ Ð­Ð/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/controller/\mbox{\hyperlink{_schedule_controller_8java}{Schedule\+Controller.\+java}}\end{DoxyCompactItemize}

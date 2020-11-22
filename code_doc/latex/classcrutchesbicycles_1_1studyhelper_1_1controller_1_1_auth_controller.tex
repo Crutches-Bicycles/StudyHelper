@@ -1,0 +1,105 @@
+\hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller}{}\doxysection{Класс crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller}
+\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller}\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a73c4d5a4a75399515e9369416fa29269}{login}} (@Request\+Param String email, @Request\+Param String password)
+\item 
+Response\+Entity$<$?$>$ \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_afc48bc0a40cf6bcc361d122e7bab3e88}{register}} (@Request\+Param String email, @Request\+Param String password, @Request\+Param Integer i)
+\item 
+\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a9db288c052de720a1d8de4430540e54a}{Auth\+Controller}} (Authentication\+Manager \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a919b18f27af062c8717828111c330901}{authentication\+Manager}}, \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}{Jwt\+Token\+Provider}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_aa78a2dff377219122228b5bc7c737d7c}{jwt\+Token\+Provider}}, \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service}{User\+Service}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ada52ba0a7937f8a49ad5eff1c737bf76}{user\+Service}}, B\+Crypt\+Password\+Encoder \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ac630244d26d50aa5d44e5c01292dc831}{b\+Crypt\+Password\+Encoder}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+final Authentication\+Manager \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a919b18f27af062c8717828111c330901}{authentication\+Manager}}
+\item 
+final \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}{Jwt\+Token\+Provider}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_aa78a2dff377219122228b5bc7c737d7c}{jwt\+Token\+Provider}}
+\item 
+final \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service}{User\+Service}} \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ada52ba0a7937f8a49ad5eff1c737bf76}{user\+Service}}
+\item 
+final B\+Crypt\+Password\+Encoder \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ac630244d26d50aa5d44e5c01292dc831}{b\+Crypt\+Password\+Encoder}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a9db288c052de720a1d8de4430540e54a}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a9db288c052de720a1d8de4430540e54a}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!AuthController@{AuthController}}
+\index{AuthController@{AuthController}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{AuthController()}{AuthController()}}
+{\footnotesize\ttfamily crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+Auth\+Controller (\begin{DoxyParamCaption}\item[{Authentication\+Manager}]{authentication\+Manager,  }\item[{\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}{Jwt\+Token\+Provider}}}]{jwt\+Token\+Provider,  }\item[{\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service}{User\+Service}}}]{user\+Service,  }\item[{B\+Crypt\+Password\+Encoder}]{b\+Crypt\+Password\+Encoder }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a73c4d5a4a75399515e9369416fa29269}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a73c4d5a4a75399515e9369416fa29269}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!login@{login}}
+\index{login@{login}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+login (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{email,  }\item[{@Request\+Param String}]{password }\end{DoxyParamCaption})}
+
+Вход в систему ~\newline
+{\bfseries{Путь\+: /api/auth/login}} ~\newline
+Тип запроса\+: P\+O\+ST ~\newline
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & -- почта пользователя \\
+\hline
+{\em password} & -- пароль в открытом виде (шифруется на сервере) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+jwt\+Token (expired\+\_\+time=8640000ms (1 день)) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_afc48bc0a40cf6bcc361d122e7bab3e88}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_afc48bc0a40cf6bcc361d122e7bab3e88}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!register@{register}}
+\index{register@{register}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily Response\+Entity$<$?$>$ crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+register (\begin{DoxyParamCaption}\item[{@Request\+Param String}]{email,  }\item[{@Request\+Param String}]{password,  }\item[{@Request\+Param Integer}]{i }\end{DoxyParamCaption})}
+
+Создать аккаунт в системе ~\newline
+{\bfseries{Путь\+: /api/auth/register}} ~\newline
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & -- email пользователя \\
+\hline
+{\em password} & -- пароль пользователя \\
+\hline
+{\em i} & -- тип пользователя (0 -- user, 1 -- староста+user, 2 -- admin+user+староста) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Http\+Status OK и созданный аккаунт (\mbox{\hyperlink{}{Account}}) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a919b18f27af062c8717828111c330901}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_a919b18f27af062c8717828111c330901}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!authenticationManager@{authenticationManager}}
+\index{authenticationManager@{authenticationManager}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{authenticationManager}{authenticationManager}}
+{\footnotesize\ttfamily final Authentication\+Manager crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+authentication\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ac630244d26d50aa5d44e5c01292dc831}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ac630244d26d50aa5d44e5c01292dc831}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!bCryptPasswordEncoder@{bCryptPasswordEncoder}}
+\index{bCryptPasswordEncoder@{bCryptPasswordEncoder}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{bCryptPasswordEncoder}{bCryptPasswordEncoder}}
+{\footnotesize\ttfamily final B\+Crypt\+Password\+Encoder crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+b\+Crypt\+Password\+Encoder\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_aa78a2dff377219122228b5bc7c737d7c}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_aa78a2dff377219122228b5bc7c737d7c}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!jwtTokenProvider@{jwtTokenProvider}}
+\index{jwtTokenProvider@{jwtTokenProvider}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{jwtTokenProvider}{jwtTokenProvider}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1security_1_1jwt_1_1_jwt_token_provider}{Jwt\+Token\+Provider}} crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+jwt\+Token\+Provider\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ada52ba0a7937f8a49ad5eff1c737bf76}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_auth_controller_ada52ba0a7937f8a49ad5eff1c737bf76}} 
+\index{crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}!userService@{userService}}
+\index{userService@{userService}!crutchesbicycles.studyhelper.controller.AuthController@{crutchesbicycles.studyhelper.controller.AuthController}}
+\doxysubsubsection{\texorpdfstring{userService}{userService}}
+{\footnotesize\ttfamily final \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1service_1_1_user_service}{User\+Service}} crutchesbicycles.\+studyhelper.\+controller.\+Auth\+Controller.\+user\+Service\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Объявления и описания членов класса находятся в файле\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vgtstptlk/\+Desktop/ÐÐÐ Ð­Ð/\+Study\+Helper/src/main/java/crutchesbicycles/studyhelper/controller/\mbox{\hyperlink{_auth_controller_8java}{Auth\+Controller.\+java}}\end{DoxyCompactItemize}

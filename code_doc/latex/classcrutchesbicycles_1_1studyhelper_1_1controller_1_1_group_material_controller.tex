@@ -45,12 +45,39 @@ final \mbox{\hyperlink{interfacecrutchesbicycles_1_1studyhelper_1_1repos_1_1_gro
 \doxysubsubsection{\texorpdfstring{getGroupMaterial()}{getGroupMaterial()}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_group_material}{Group\+Material}}$>$ crutchesbicycles.\+studyhelper.\+controller.\+Group\+Material\+Controller.\+get\+Group\+Material (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Group }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
 
+Получает материалы группы ~\newline
+{\bfseries{Путь\+: /api/groups/\{id\+Group\}/materials}} ~\newline
+Тип запроса\+: G\+ET ~\newline
+
+\begin{DoxyParams}{Аргументы}
+{\em id\+Group} & -- id группы ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+список материалов группы 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_group_material_controller_ae69c952e430c07344edcd79c5c963596}\label{classcrutchesbicycles_1_1studyhelper_1_1controller_1_1_group_material_controller_ae69c952e430c07344edcd79c5c963596}} 
 \index{crutchesbicycles.studyhelper.controller.GroupMaterialController@{crutchesbicycles.studyhelper.controller.GroupMaterialController}!getGroupMaterialById@{getGroupMaterialById}}
 \index{getGroupMaterialById@{getGroupMaterialById}!crutchesbicycles.studyhelper.controller.GroupMaterialController@{crutchesbicycles.studyhelper.controller.GroupMaterialController}}
 \doxysubsubsection{\texorpdfstring{getGroupMaterialById()}{getGroupMaterialById()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classcrutchesbicycles_1_1studyhelper_1_1domain_1_1_group_material}{Group\+Material}} crutchesbicycles.\+studyhelper.\+controller.\+Group\+Material\+Controller.\+get\+Group\+Material\+By\+Id (\begin{DoxyParamCaption}\item[{@Path\+Variable Long}]{id\+Group,  }\item[{@Path\+Variable Long}]{id\+Material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [package]}}
 
+Получает материал группы по id ~\newline
+{\bfseries{Путь\+: /api/groups/\{id\+Group\}/materials/\{id\+Material\}}} ~\newline
+Тип запроса\+: G\+ET ~\newline
+
+\begin{DoxyParams}{Аргументы}
+{\em id\+Group} & -- id группы ~\newline
+\\
+\hline
+{\em id\+Material} & -- id материала группы ~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+список материалов группы 
+\end{DoxyReturn}
 
 
 \doxysubsection{Данные класса}

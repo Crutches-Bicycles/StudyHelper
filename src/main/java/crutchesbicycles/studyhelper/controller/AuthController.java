@@ -52,11 +52,11 @@ public class AuthController {
 
     /**
      * Создать аккаунт в системе \n
-     * <b>Путь: /api/accounts</b> \n
+     * <b>Путь: /api/auth/register</b> \n
      * @param email -- email пользователя
      * @param password -- пароль пользователя
      * @param i -- тип пользователя (0 -- user, 1 -- староста+user, 2 -- admin+user+староста)
-     * @return HttpStatus OK и созданный аккаунт
+     * @return HttpStatus OK и созданный аккаунт ({@link Account})
      */
     @PostMapping("register")
     public ResponseEntity<?> register(@RequestParam String email, @RequestParam String password, @RequestParam Integer i){

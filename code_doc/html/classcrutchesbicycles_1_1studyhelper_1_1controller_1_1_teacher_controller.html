@@ -314,6 +314,16 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Прикрепить преподавателя к группе <br  />
+<b>Путь: /api/teachers/{idTeacher}/groups</b> <br  />
+Тип запроса: POST </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTeacher</td><td>&ndash; id преподавателя </td></tr>
+    <tr><td class="paramname">idGroup</td><td>&ndash; id группы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>HttpStatus CREATED </dd></dl>
 
 </div>
 </div>
@@ -385,6 +395,16 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Открепить преподавателя от группы <br  />
+<b>Путь: /api/teachers/{idTeacher}/{idGroup}</b> <br  />
+Тип запроса: DELETE </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTeacher</td><td>&ndash; id преподавателя </td></tr>
+    <tr><td class="paramname">idGroup</td><td>&ndash; id группы </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>HttpStatus OK </dd></dl>
 
 </div>
 </div>
@@ -421,6 +441,16 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Открепить предмет от преподавателя <br  />
+<b>Путь: /api/teachers/{idTeacher}/{idSubject}</b> <br  />
+Тип запроса: DELETE </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTeacher</td><td>&ndash; id преподавателя </td></tr>
+    <tr><td class="paramname">idSubject</td><td>&ndash; id предмета </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>HttpStatus OK </dd></dl>
 
 </div>
 </div>
@@ -511,6 +541,15 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Получить группы, которые ведет преподаватель <br  />
+<b>Путь: /api/teachers/{idTeacher}/{idSubject}</b> <br  />
+Тип запроса: GET </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTeacher</td><td>- id преподавателя </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -547,6 +586,14 @@ $(function() {
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idTeacher</td><td></td></tr>
+    <tr><td class="paramname">idSubject</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd></dd></dl>
 
 </div>
 </div>

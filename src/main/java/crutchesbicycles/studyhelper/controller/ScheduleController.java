@@ -31,14 +31,14 @@ public class ScheduleController {
     /**
      * Создание еденицы расписания (пример -- блок пары в распиании мирэа) \n
      * <b>/api/schedules</b>
-     * @param idGroup
-     * @param dayCaption
-     * @param numberPair
-     * @param dateStart
-     * @param dateEnd
-     * @param idSubjectEven
-     * @param idSubjectOdd
-     * @return
+     * @param idGroup -- id группы
+     * @param dayCaption - название дня (полное)
+     * @param numberPair - номер пары
+     * @param dateStart - во сколько начинается в формате "HH:mm:ss"
+     * @param dateEnd - во сколько заканчивается пара "HH:mm:ss"
+     * @param idSubjectEven - id предмета на четной неделе
+     * @param idSubjectOdd - id предмета на нечетной неделе
+     * @return HttpStatus Ok и саму сущность
      */
     @PostMapping
     ResponseEntity<?> createSchedule(@RequestParam Long idGroup, @RequestParam String dayCaption,
