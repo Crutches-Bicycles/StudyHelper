@@ -15,7 +15,11 @@ class GuestPageController extends Controller
 
     public function registration()
     {
-        return view('registration');
+        $groups = Http::get(env('BASE_API') . '/groups')->json();
+
+        return view('registration', [
+            'groups' => $groups
+        ]);
     }
 
     public function login()

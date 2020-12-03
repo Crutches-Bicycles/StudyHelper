@@ -44,5 +44,6 @@ Route::get('/schedule', '\App\Http\Controllers\UserPageController@schedule')->na
 Route::get('/traffic', '\App\Http\Controllers\UserPageController@traffic')->name('traffic');
 Route::get('/delegate', '\App\Http\Controllers\UserPageController@delegate')->name('delegate');
 
+Route::post('/regUser', '\App\Http\Controllers\ResourceControllers\Auth\RegistrationController@regUser')->name('regUser');
 
 Route::post('groups/create', function () { return 'create group'; });

@@ -17,10 +17,10 @@ class UserSeeder extends Seeder
     {
         if (DB::table('users')->count() === 0) {
             DB::table('users')->insert([
-                'email' => 'test@mail.ru',
+                'email' => 'rest@rest.com',
                 'email_verified_at' => NULL,
-                'password' => Hash::make('qwerty'),
-                'remember_token' => NULL
+                'password' => Hash::make('rest_pass'),
+                'token' => NULL
             ]);
         }
     }
