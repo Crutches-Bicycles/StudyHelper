@@ -35,9 +35,11 @@ public class AccountControllerTest {
     public void getAccountsTest() throws Exception {
         this.mockMvc.perform(get("/api/accounts/"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$",hasSize(2)));
+                .andExpect(jsonPath("$",hasSize(2)))
+                .andExpect(jsonPath("$[0]").isMap());
     }
     @Test
+    // TODO: 30.11.2020 Нет метода запроса, нет маппинга
     public void createAccountTest() throws Exception {
         this.mockMvc.perform(post("/api/accounts/")
                 .param("email","example2@gmail.com")
@@ -79,15 +81,17 @@ public class AccountControllerTest {
         this.mockMvc.perform(put("/api/accounts/10")
                 .param("email","example3@gmail.com")
                 .param("password","1")
-                .param("accountType","ADMIN")
+                .param("roles","")
                 .param("idStudent",""))
                 .andExpect(status().isOk())
-                .andExpect(content().string(containsString("Information updated: 10")));
+                .andExpect(jsonPath("$.email").value("example3@gmail.com"));
         this.mockMvc.perform(get("/api/accounts/10"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.email").value("example3@gmail.com"));
 
     }
+
+
 
     @Test
     public void deleteAccountTest() throws Exception{

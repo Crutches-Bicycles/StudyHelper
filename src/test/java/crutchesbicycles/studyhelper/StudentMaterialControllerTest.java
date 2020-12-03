@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -34,7 +35,9 @@ public class StudentMaterialControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    // TODO: 01.12.2020 Требует только роль, не требует конкретный аккаунт
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void getStudentMaterialTest() throws Exception{
         this.mockMvc.perform(get("/api/students/10/materials"))
                 .andExpect(status().isOk())
@@ -42,6 +45,7 @@ public class StudentMaterialControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void StudentNotFoundExceptionTest() throws Exception{
         this.mockMvc.perform(get("/api/students/15/materials"))
                 .andExpect(status().isNotFound())
@@ -49,6 +53,7 @@ public class StudentMaterialControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void getStudentMaterialByIdTest() throws Exception{
         this.mockMvc.perform(get("/api/students/10/materials/12"))
                 .andExpect(status().isOk())
@@ -56,6 +61,7 @@ public class StudentMaterialControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public  void StudentMaterialNotFoundException() throws Exception{
         this.mockMvc.perform(get("/api/students/10/materials/15"))
                 .andExpect(status().isNotFound())

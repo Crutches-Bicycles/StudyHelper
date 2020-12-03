@@ -3,6 +3,8 @@ package crutchesbicycles.studyhelper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.xml.bind.v2.TODO;
 import crutchesbicycles.studyhelper.controller.AccountController;
+import crutchesbicycles.studyhelper.domain.Group;
+import crutchesbicycles.studyhelper.domain.Subject;
 import crutchesbicycles.studyhelper.domain.TeacherSubject;
 import crutchesbicycles.studyhelper.exception.*;
 import crutchesbicycles.studyhelper.repos.AccountRepository;
@@ -13,6 +15,7 @@ import org.mockito.internal.debugging.MockitoDebuggerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -22,6 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.core.StringContains.containsString;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -32,6 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @TestPropertySource("/application-test.properties")
 @SpringBootTest
+@WithMockUser(roles = {"USER","ADMIN"})
 @Sql(value = {"/create-teacher-before.sql"},executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
 @Sql(value = {"/create-teacher-after.sql"},executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 public class TeacherControllerTest {
@@ -65,6 +70,17 @@ public class TeacherControllerTest {
         this.mockMvc.perform(get("/api/teachers"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$",hasSize(3)));
+    }
+    @Test
+    // TODO: 01.12.2020 Нужно добавить @ResponseStatus(HttpStatus.BAD_REQUEST) в исключение
+    public void TeacherExistsExceptionTest()throws Exception{
+        this.mockMvc.perform(post("/api/teachers")
+                .param("email", "example1@gmail.com")
+                .param("firstName", "Петр")
+                .param("secondName", "Петров")
+                .param("patronymic", "Петрович"))
+                .andExpect(status().isBadRequest())
+                .andExpect(result->assertTrue(result.getResolvedException()instanceof TeacherExistsException));
     }
 
     @Test
@@ -110,7 +126,7 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$[0].subjects",hasSize(3)));
     }
     @Test
-    // TODO: 09.10.2020 Можно привязывать несколько раз преподавателя к предмету.
+    // TODO: 01.12.2020 ??? насчет добавления одного и того же премета
     public void createSubjectTest()throws Exception{
         this.mockMvc.perform(post("/api/teachers/10/subjects")
                 .param("idSubject","13"))
@@ -133,14 +149,13 @@ public class TeacherControllerTest {
                 .andExpect(jsonPath("$.caption").value("first"));
     }
     @Test
-    // TODO: 09.10.2020 Удаляет несуществующие предметы
     public void deleteTeacherSubjectTest()throws Exception{
         this.mockMvc.perform(delete("/api/teachers/10/subjects/10"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Teacher Subject with id '10' deleted")));
         this.mockMvc.perform(get("/api/teachers/10/subjects/10"))
                 .andExpect(status().isNotFound())
-                .andExpect(result->assertTrue(result.getResolvedException() instanceof TeacherSubjectNotFound));
+                .andExpect(result->assertTrue(result.getResolvedException() instanceof SubjectNotFoundException));
     }
     @Test
     public void TeacherSubjectNotFoundTest() throws  Exception{
@@ -149,7 +164,7 @@ public class TeacherControllerTest {
                 .andExpect(result->assertTrue(result.getResolvedException() instanceof TeacherSubjectNotFound));
     }
     @Test
-    public void getGroupByTeacherTest()throws Exception{
+    public void getGroupsByTeacherTest()throws Exception{
         this.mockMvc.perform(get("/api/teachers/10/groups"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$",hasSize(2)));
@@ -164,8 +179,15 @@ public class TeacherControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$",hasSize(3)));
     }
+
     @Test
-    // TODO: 09.10.2020 Повторение teachers в URL
+    public void GroupNotFoundExceptionTest()throws Exception{
+        this.mockMvc.perform(post("/api/teachers/10/groups")
+                .param("idGroup","15"))
+                .andExpect(status().isNotFound())
+                .andExpect(result->assertTrue(result.getResolvedException()instanceof GroupNotFoundException));
+    }
+    @Test
     // TODO: 14.10.2020 Нет метода поиска группы учителя по id
     public void deleteTeacherGroupTest()throws Exception{
         this.mockMvc.perform(delete("/api/teachers/10/groups/10"))
