@@ -17,9 +17,8 @@ class UserSeeder extends Seeder
     {
         if (DB::table('users')->count() === 0) {
             DB::table('users')->insert([
-                'email' => 'rest@rest.com',
-                'email_verified_at' => NULL,
-                'password' => Hash::make('rest_pass'),
+                'email' => 'pmswga@gmail.com',
+                'password' => Hash::make('12345678'),
                 'token' => NULL
             ]);
         }

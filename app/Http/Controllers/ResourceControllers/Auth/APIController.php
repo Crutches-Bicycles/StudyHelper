@@ -10,36 +10,25 @@ use Illuminate\Support\Facades\Http;
 class APIController extends Controller
 {
 
-    private static function getAPIUser()
+    private static function getUser($email)
     {
-        return DB::table('users')->where('email', '=', env('BASE_API_EMAIL'))->first();
+        if (!empty($email)) {
+            return DB::table('users')->where('email', '=', $email)->first();
+        }
+
+        return null;
     }
 
-    private static function isAPIUserExists()
+    private static function updateToken($email)
     {
-        return DB::table('users')->where('email', env('BASE_API_EMAIL'))->exists();
-    }
-
-    private static function updateToken()
-    {
-        DB::table('users')
+        return DB::table('users')
             ->where('email', env('BASE_API_EMAIL'))
             ->update(['token' => self::login()->json('token')]);
     }
 
-    private static function login()
-    {
-        $response = Http::asForm()->post(env('BASE_API') . '/auth/login', [
-            'email' => env('BASE_API_EMAIL'),
-            'password' => env('BASE_API_PASSWORD')
-        ]);
-
-        return $response;
-    }
-
     public static function isTokenExpired()
     {
-        return Http::withToken(self::getAPIUser()->token);
+        return false;
     }
 
     public static function request()
@@ -48,7 +37,7 @@ class APIController extends Controller
             self::updateToken();
         }
 
-        return Http::withToken($apiUser->token);
+        return Http::withToken(self::getUser()->token);
     }
 
 }

@@ -17,9 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'token'
     ];
 
     /**
@@ -32,18 +32,14 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function getToken()
+    {
+        return $this->token;
     }
 
 }

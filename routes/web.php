@@ -14,23 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login_user', function () {
-    if (Auth::attempt([
-        'email' => 'test@mail.ru',
-        'password' => 'qwerty'
-    ])) {
-        print_r("Auth user success");
-        return redirect()->route('welcome');
-    }
-});
-
-Route::get('/logout_user', function () {
-    Auth::logout();
-    print_r('Logout user success');
-    return redirect()->route('welcome');
-});
-
-
 Route::get('/', '\App\Http\Controllers\GuestPageController@welcome')->name('welcome');
 
 Route::get('/login', '\App\Http\Controllers\GuestPageController@login')->name('login');
@@ -45,5 +28,6 @@ Route::get('/traffic', '\App\Http\Controllers\UserPageController@traffic')->name
 Route::get('/delegate', '\App\Http\Controllers\UserPageController@delegate')->name('delegate');
 
 Route::post('/regUser', '\App\Http\Controllers\ResourceControllers\Auth\RegistrationController@regUser')->name('regUser');
+Route::post('/loginUser', '\App\Http\Controllers\GuestPageController@loginUser')->name('loginUser');
 
 Route::post('groups/create', function () { return 'create group'; });
