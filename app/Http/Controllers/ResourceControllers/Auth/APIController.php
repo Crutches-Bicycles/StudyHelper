@@ -10,13 +10,11 @@ use Illuminate\Support\Facades\Http;
 class APIController extends Controller
 {
 
-    private static function getUser($email)
-    {
-        if (!empty($email)) {
-            return DB::table('users')->where('email', '=', $email)->first();
-        }
+    private static $currentUser;
 
-        return null;
+    public static function setCurrentUser($user)
+    {
+        self::$currentUser = $user;
     }
 
     private static function updateToken($email)
@@ -31,13 +29,9 @@ class APIController extends Controller
         return false;
     }
 
-    public static function request()
+    protected static function request()
     {
-        if (self::isTokenExpired()) {
-            self::updateToken();
-        }
-
-        return Http::withToken(self::getUser()->token);
+        return Http::withToken(self::$currentUser->getToken());
     }
 
 }
