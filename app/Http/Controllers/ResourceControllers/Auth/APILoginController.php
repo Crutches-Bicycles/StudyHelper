@@ -12,7 +12,7 @@ class APILoginController extends APIController
     public static function login($email, $password)
     {
         if (!empty($email) && !empty($password)) {
-            $response = Http::asForm()->post(env('BASE_API') . '/auth/login', [
+            $response = Http::asForm()->post(self::$baseAPI . '/auth/login', [
                 'email' => $email,
                 'password' => $password
             ]);

@@ -9,8 +9,13 @@ use Illuminate\Support\Facades\Http;
 
 class APIController extends Controller
 {
+    protected static $baseAPI = 'https://studyhelper-api.herokuapp.com/api';
+    protected static $currentUser;
 
-    private static $currentUser;
+    public static function getBaseAPI()
+    {
+        return self::$baseAPI;
+    }
 
     public static function setCurrentUser($user)
     {
