@@ -16,11 +16,22 @@ class UserSeeder extends Seeder
     public function run()
     {
         if (DB::table('users')->count() === 0) {
-            DB::table('users')->insert([
-                'email' => 'pmswga@gmail.com',
-                'password' => Hash::make('12345678'),
-                'token' => NULL
-            ]);
+            DB::table('users')->insert(
+                [
+                    [
+                        'id' => 1,
+                        'email' => 'rest@rest.com',
+                        'password' => Hash::make('rest_pass'),
+                        'token' => NULL
+                    ],
+                    [
+                        'id' => 2,
+                        'email' => 'pmswga@gmail.com',
+                        'password' => Hash::make('12345678'),
+                        'token' => NULL
+                    ],
+                ]
+            );
         }
     }
 }

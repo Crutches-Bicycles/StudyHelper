@@ -12,10 +12,10 @@
             <div class="border rounded" style="padding: 15px;">
                 <p class="text-center" style="color: rgb(255,255,255);font-size: 12px;background-color: #0085ff;margin-top: -32px;width: 145px;padding: 7px;margin-left: 10px;">Основная информация</p>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="sn" placeholder="Фамилия*" required="">
+                    <input class="form-control" type="text" name="sn" placeholder="Фамилия" required="">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="fn" placeholder="Имя*" required="">
+                    <input class="form-control" type="text" name="fn" placeholder="Имя" required="">
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="text" name="pt" placeholder="Отчество">
