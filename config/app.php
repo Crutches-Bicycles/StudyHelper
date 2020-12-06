@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'StudyHelper'),
 
+    'base_api' => env('BASE_API', 'https://studyhelper-api.herokuapp.com/api'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -67,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
