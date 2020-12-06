@@ -17,7 +17,7 @@ class APIRegistrationController extends APIController
             'i' => $isElder
         ];
 
-        return Http::asForm()->post(env('BASE_API') . '/auth/register', $accountData);
+        return Http::asForm()->post(self::$baseAPI . '/auth/register', $accountData);
     }
 
     public static function apiCreateStudent($secondName, $firstName, $patronymic, $idGroup, $idAccount)
@@ -30,7 +30,7 @@ class APIRegistrationController extends APIController
             'idAccount' => $idAccount
         ];
 
-        return self::request()->asForm()->post(env('BASE_API') . '/students', $studentData);
+        return self::request()->asForm()->post(self::$baseAPI . '/students', $studentData);
     }
 
     public static function apiCreateGroup($caption, $email)
@@ -40,7 +40,7 @@ class APIRegistrationController extends APIController
             'email' => $email
         ];
 
-        return Http::asForm()->post(env('BASE_API') . '/groups', $groupData);
+        return Http::asForm()->post(self::$baseAPI . '/groups', $groupData);
     }
 
 
