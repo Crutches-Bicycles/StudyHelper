@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\ResourceControllers\Auth;
+namespace App\Http\Controllers\ResourceControllers\API\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ResourceControllers\API\APIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 

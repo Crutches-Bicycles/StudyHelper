@@ -4,7 +4,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\ResourceControllers\API\APIController;
+use App\Http\Controllers\ResourceControllers\API\APIStudentController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class UserPageController extends Controller
 {
@@ -22,7 +25,14 @@ class UserPageController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        APIController::setCurrentUser(Auth::user());
+        $studentData = APIStudentController::getStudent();
+        $groupData = APIStudentController::getGroup();
+
+        return view('profile', [
+            'student' => $studentData,
+            'group' => $groupData
+        ]);
     }
 
     public function group()

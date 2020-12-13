@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ResourceControllers\Auth\APIController;
-use App\Http\Controllers\ResourceControllers\Auth\APILoginController;
-use App\Http\Controllers\ResourceControllers\Auth\APIRegistrationController;
+use App\Http\Controllers\ResourceControllers\API\APIController;
+use App\Http\Controllers\ResourceControllers\API\Auth\APILoginController;
+use App\Http\Controllers\ResourceControllers\API\Auth\APIRegistrationController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -64,9 +64,10 @@ class GuestPageController extends Controller
                 }
 
             } else {
-                //redirect with message: user exists
-            }
 
+                //redirect with message: user exists
+
+            }
 
             if ($regData['isElder'] === 1) {
                 $response = APIRegistrationController::apiCreateGroup($regData['group'], 'noset@group')->json();
@@ -74,7 +75,6 @@ class GuestPageController extends Controller
                     $regData['group'] = $response['idGroup'];
                 }
             }
-
 
             APIRegistrationController::apiCreateStudent(
                 $regData['sn'],
@@ -87,12 +87,10 @@ class GuestPageController extends Controller
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
-
             //redirect back with message: error
         }
 
-
-        exit("Here");
+        return redirect()->route('group');
     }
 
     public function registration()
