@@ -8,11 +8,11 @@
         <div class="row justify-content-center" style="margin-top: 35px;margin-bottom: 21px;">
             <div class="col-auto col-md-4 col-lg-3 col-xl-2"><img src="{{ asset('assets/img/Group 11.png') }}" style="margin-left: 23px;"><a class="btn btn-primary" role="button" style="color: rgb(0,0,0);margin-top: 9px;margin-left: 15px;font-size: 14px;" href="Repassword.html">Сменить пароль</a></div>
             <div class="col-md-4 col-lg-4 col-xl-4 offset-xl-1">
-                <p style="font-family: Muller;font-size: 18px;margin-top: 20px;"><strong>ФИО</strong>: Сидоров Вадим Алексеевич<br></p>
+                <p style="font-family: Muller;font-size: 18px;margin-top: 20px;"><strong>ФИО</strong>: {{ $student['secondName'] . ' ' . $student['firstName'] . ' ' . $student['patronymic'] }} <br></p>
                 <p style="font-family: Muller;font-size: 18px;"><strong>Email</strong>: {{ Auth::user()->getEmail() }}<br></p>
             </div>
             <div class="col-md-4 col-lg-5 col-xl-4">
-                <p style="font-family: Muller;font-size: 18px;margin-top: 20px;"><strong>Группа</strong>: ИКБО-07-18<br></p>
+                <p style="font-family: Muller;font-size: 18px;margin-top: 20px;"><strong>Группа</strong>: {{ $group['caption'] }}<br></p>
                 <p style="font-family: Muller;font-size: 18px;"><strong>Телефон</strong>: +79999999999<br></p>
                 <p style="font-family: Muller;font-size: 18px;"><strong>Статус</strong>: Староста<br></p>
             </div>
