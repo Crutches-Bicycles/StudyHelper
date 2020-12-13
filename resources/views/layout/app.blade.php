@@ -18,6 +18,7 @@
         <link rel="stylesheet" href={{ asset('assets/css/Simple-Slider.css') }}>
         <link rel="stylesheet" href={{ asset('assets/css/untitled-1.css') }}>
         <link rel="stylesheet" href={{ asset('assets/css/untitled.css') }}>
+        <link rel="stylesheet" href={{ asset('assets/main.css') }}>
     </head>
     <body>
 
@@ -36,5 +37,16 @@
         <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js') }}"></script>
         <script src="{{ asset('assets/js/Modal-commerce-popup-button.js') }}"></script>
         <script src="{{ asset('assets/js/Simple-Slider.js') }}"></script>
+
+
+        <script>
+            $(document).ready(function (){
+                $('#kirumba').on('click', function () {
+                    $(this).attr('src', '../media/kirill.jpg');
+                });
+            });
+
+        </script>
+
     </body>
 </html>

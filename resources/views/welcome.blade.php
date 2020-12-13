@@ -102,19 +102,22 @@
             <h2 class="mb-5" style="font-size: 50px;font-family: Roboto, sans-serif;">Наша команда</h2>
             <div class="row">
                 <div class="col-md-6 col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-1.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img class="rounded-circle img-fluid mb-3" src="../media/vasa.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Щербаков Василий</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Продукт-Менеджер</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-2.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img class="rounded-circle img-fluid mb-3" src="../media/ser.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Басыров Сергей</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Архитектор</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-3.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img class="rounded-circle img-fluid mb-3" src="../media/maga.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Магеррам Зейналов</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Backend -разработчик</p>
                     </div>
@@ -122,19 +125,22 @@
             </div>
             <div class="row" style="margin-top: 50px;">
                 <div class="col-md-6 col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-1.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img class="rounded-circle img-fluid mb-3" src="../media/max.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Тимошкин Максим</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Тестировщик</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-2.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img class="rounded-circle img-fluid mb-3" src="../media/vadim.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Сидоров Вадим</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Дизайнер</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="mx-auto testimonial-item mb-5 mb-lg-0"><img class="rounded-circle img-fluid mb-3" src="assets/img/testimonials-3.jpg">
+                    <div class="mx-auto testimonial-item mb-5 mb-lg-0">
+                        <img id="kirumba" class="rounded-circle img-fluid mb-3" src="../media/kirill-1.jpg">
                         <h5 style="font-family: Roboto, sans-serif;">Дорожков Кирилл</h5>
                         <p class="font-weight-light mb-0" style="font-family: Roboto, sans-serif;">Верстальщик/Frontend-разработчик</p>
                     </div>
