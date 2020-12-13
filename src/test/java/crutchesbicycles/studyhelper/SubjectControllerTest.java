@@ -1,12 +1,14 @@
 package crutchesbicycles.studyhelper;
 
 
+import crutchesbicycles.studyhelper.exception.SubjectExistException;
 import crutchesbicycles.studyhelper.exception.SubjectNotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,6 +32,7 @@ public class SubjectControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void getAllSubjectsTest()throws Exception{
         this.mockMvc.perform(get("/api/subjects"))
                 .andExpect(status().isOk())
@@ -37,7 +40,7 @@ public class SubjectControllerTest {
                 .andExpect(jsonPath("$[0].caption").value("first"));
     }
     @Test
-    // TODO: 09.10.2020 Нет обработки создания одинаковых предметов
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void createSubjectTest()throws Exception{
         this.mockMvc.perform(post("/api/subjects")
                 .param("caption","fourth"))
@@ -48,12 +51,22 @@ public class SubjectControllerTest {
                 .andExpect(jsonPath("$",hasSize(4)));
     }
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
+    public void SubjectExistsExceptionTest()throws Exception{
+        this.mockMvc.perform(post("/api/subjects")
+                .param("caption","first"))
+                .andExpect(status().isBadRequest())
+                .andExpect(result->assertTrue(result.getResolvedException()instanceof SubjectExistException));
+    }
+    @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void getSubjectByIdTest()throws Exception{
         this.mockMvc.perform(get("/api/subjects/10"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.caption").value("first"));
     }
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     public void SubjectNotFoundExceptionTest()throws Exception{
         this.mockMvc.perform(get("/api/subjects/13"))
                 .andExpect(status().isNotFound())
@@ -61,6 +74,7 @@ public class SubjectControllerTest {
     }
 
     @Test
+    @WithMockUser(roles = {"ADMIN","USER"})
     // TODO: 09.10.2020 Нет обработки изменения имени на существующее
     public void updateSubjectTest()throws Exception{
         this.mockMvc.perform(put("/api/subjects/10")
@@ -73,6 +87,7 @@ public class SubjectControllerTest {
     }
 
    @Test
+   @WithMockUser(roles = {"ADMIN","USER"})
     public void deleteSubjectTest() throws Exception{
         this.mockMvc.perform(delete("/api/subjects/10"))
                 .andExpect(status().isOk())
