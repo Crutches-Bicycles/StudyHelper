@@ -614,15 +614,24 @@
                                         </table>
                                     </div>
                                     <div class="row" style="height: 43px;padding-top: 2px;padding-bottom: 18px;background-color: rgba(23,23,23,0);">
-                                        <div class="col-lg-2 col-xl-4 offset-lg-10 offset-xl-8"><button class="btn btn-primary" type="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 17px;">Сохранить</button><button class="btn btn-primary" type="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 17px;">Редактировать</button></div>
+                                        <div class="col-lg-2 col-xl-4 offset-lg-10 offset-xl-8">
+                                            <button class="btn btn-primary" type="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 17px;">Сохранить</button>
+                                            <button class="btn btn-primary" type="button" style="padding-bottom: 2px;padding-top: 2px;margin-top: -6px;margin-left: 17px;">Редактировать</button> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev" style="height: 49px;width: 74px;margin-top: 52px;"><span class="carousel-control-prev-icon" style="background-image: url(&quot;none&quot;);"></span><span class="sr-only">Previous</span></a>
-                        <a
-                            class="carousel-control-next" href="#carousel-1" role="button" data-slide="next" style="height: 49px;width: 71px;margin-top: 53px;"><span class="carousel-control-next-icon" style="background-image: url(&quot;none&quot;);"></span><span class="sr-only">Next</span></a>
+                    <div>
+                        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev" style="height: 49px;width: 74px;margin-top: 52px;">
+                            <span class="carousel-control-prev-icon" style="background-image: url(&quot;none&quot;);"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next" style="height: 49px;width: 71px;margin-top: 53px;">
+                            <span class="carousel-control-next-icon" style="background-image: url(&quot;none&quot;);"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                     <ol class="carousel-indicators d-none">
                         <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
@@ -740,12 +749,8 @@
                     </div>
                 </div>
                 <div class="card" style="margin-top: 50px;">
-                    <div class="card-header" style="background-color: rgb(255,214,0);margin-top: 0px;">
-                        <div class="row">
-                            <div class="col-xl-2 offset-xl-0">
-                                <h5 class="text-center mb-0" style="color: rgb(0,0,0);font-family: Muller;font-style: normal;font-weight: normal;font-size: 24px;">Группа</h5>
-                            </div>
-                        </div>
+                    <div class="card-header" style="background-color: rgb(255,214,0);margin-top: 0;">
+                        <h5 class="text-center mb-0" style="color: rgb(0,0,0);font-family: Muller;font-style: normal;font-weight: bold;font-size: 24px;">Группа</h5>
                     </div>
                     <div class="card-body" style="padding-bottom: 0px;background-image: url(&quot;assets/img/Rectangle%2034.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: bottom;" data-spy="scroll">
                         <div class="table-responsive">
@@ -759,50 +764,16 @@
                                 </tr>
                                 </thead>
                                 <tbody class="text-left">
-                                <tr>
-                                    <td>1</td>
-                                    <td class="text-center" style="padding-left: 0px;padding-right: 0px;">Дорожков Кирилл Дмитриевич</td>
-                                    <td class="text-center">dorozhkov.k@yandex.ru</td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td class="text-center"></td>
-                                    <td class="text-center"></td>
-                                    <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
-                                    <td></td>
-                                </tr>
+
+                                @foreach ($students as $student)
+                                    <tr>
+                                        <td>{{ $loop->index+1 }}</td>
+                                        <td class="text-center" style="padding-left: 0px;padding-right: 0px;">{{ $student['secondName'] . ' ' . $student['firstName'] . ' ' . $student['patronymic'] }}</td>
+                                        <td class="text-center"></td>
+                                        <td><i class="icon ion-android-close" style="font-size: 22px;margin-left: 10px;" type="button"></i></td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -836,12 +807,8 @@
                     </div>
                 </div>
                 <div class="card" style="margin-top: 50px;">
-                    <div class="card-header" style="background-color: rgb(255,214,0);margin-top: 0px;">
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <h5 class="text-center mb-0" style="color: rgb(0,0,0);font-family: Muller;font-style: normal;font-weight: normal;font-size: 24px;">Преподаватели</h5>
-                            </div>
-                        </div>
+                    <div class="card-header" style="background-color: rgb(255,214,0);margin-top: 0;">
+                        <h5 class="text-center mb-0" style="color: rgb(0,0,0);font-family: Muller;font-style: normal;font-weight: bold;font-size: 24px;">Преподаватели</h5>
                     </div>
                     <div class="card-body" style="padding-bottom: 0px;background-image: url(&quot;assets/img/Rectangle%2034.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: bottom;" data-spy="scroll">
                         <div class="table-responsive">

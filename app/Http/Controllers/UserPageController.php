@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Http;
 class UserPageController extends Controller
 {
 
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -37,7 +38,12 @@ class UserPageController extends Controller
 
     public function group()
     {
-        return view('group');
+        APIController::setCurrentUser(Auth::user());
+        $students = APIStudentController::getSogroups();
+
+        return view('group', [
+            'students' => $students
+        ]);
     }
 
     public function schedule()
